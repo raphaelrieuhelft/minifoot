@@ -1,0 +1,1450 @@
+"misc.ml" 4 57 65 "misc.ml" 4 57 72
+type(
+  'a -> 'a -> int
+)
+ident(
+  def compare "misc.ml" 4 57 82 "misc.ml" 5 83 88
+)
+"misc.ml" 4 57 75 "misc.ml" 4 57 82
+type(
+  'a -> 'a -> int
+)
+ident(
+  ext_ref Pervasives.compare
+)
+"misc.ml" 2 19 21 "misc.ml" 5 83 89
+call(
+  stack
+)
+"misc.ml" 10 148 156 "misc.ml" 10 148 163
+type(
+  'a -> 'a -> int
+)
+ident(
+  def compare "misc.ml" 10 148 173 "misc.ml" 11 174 179
+)
+"misc.ml" 10 148 166 "misc.ml" 10 148 173
+type(
+  'a -> 'a -> int
+)
+ident(
+  ext_ref Pervasives.compare
+)
+"misc.ml" 8 110 112 "misc.ml" 11 174 180
+call(
+  stack
+)
+"misc.ml" 13 182 186 "misc.ml" 13 182 203
+type(
+  'a list -> 'a list
+)
+ident(
+  def remove_duplicates "misc.ml" 20 356 356 "misc.ml" 1 0 -1
+)
+"misc.ml" 13 182 204 "misc.ml" 13 182 205
+type(
+  'a list
+)
+ident(
+  def l "misc.ml" 14 208 210 "misc.ml" 18 345 354
+)
+"misc.ml" 14 208 214 "misc.ml" 14 208 216
+type(
+  'a list
+)
+ident(
+  def l2 "misc.ml" 15 249 251 "misc.ml" 18 345 354
+)
+"misc.ml" 14 208 219 "misc.ml" 14 208 235
+type(
+  ('a -> 'a -> int) -> 'a list -> 'a list
+)
+ident(
+  ext_ref List.stable_sort
+)
+"misc.ml" 14 208 236 "misc.ml" 14 208 243
+type(
+  'a -> 'a -> int
+)
+ident(
+  ext_ref Pervasives.compare
+)
+"misc.ml" 14 208 244 "misc.ml" 14 208 245
+type(
+  'a list
+)
+ident(
+  int_ref l "misc.ml" 13 182 204 "misc.ml" 13 182 205
+)
+"misc.ml" 14 208 219 "misc.ml" 14 208 245
+call(
+  stack
+)
+type(
+  'a list
+)
+"misc.ml" 15 249 259 "misc.ml" 15 249 260
+type(
+  'b list -> 'b list
+)
+ident(
+  def f "misc.ml" 15 249 251 "misc.ml" 18 345 354
+)
+"misc.ml" 16 272 278 "misc.ml" 16 272 279
+type(
+  'b
+)
+ident(
+  def x "misc.ml" 16 272 290 "misc.ml" 16 272 329
+)
+"misc.ml" 16 272 281 "misc.ml" 16 272 282
+type(
+  'b
+)
+ident(
+  def y "misc.ml" 16 272 290 "misc.ml" 16 272 329
+)
+"misc.ml" 16 272 284 "misc.ml" 16 272 286
+type(
+  'b list
+)
+ident(
+  def xs "misc.ml" 16 272 290 "misc.ml" 16 272 329
+)
+"misc.ml" 16 272 281 "misc.ml" 16 272 286
+type(
+  'b list
+)
+"misc.ml" 16 272 278 "misc.ml" 16 272 286
+type(
+  'b list
+)
+"misc.ml" 16 272 293 "misc.ml" 16 272 294
+type(
+  'b
+)
+ident(
+  int_ref x "misc.ml" 16 272 278 "misc.ml" 16 272 279
+)
+"misc.ml" 16 272 294 "misc.ml" 16 272 295
+type(
+  'b -> 'b -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"misc.ml" 16 272 295 "misc.ml" 16 272 296
+type(
+  'b
+)
+ident(
+  int_ref y "misc.ml" 16 272 281 "misc.ml" 16 272 282
+)
+"misc.ml" 16 272 293 "misc.ml" 16 272 296
+type(
+  bool
+)
+"misc.ml" 16 272 302 "misc.ml" 16 272 303
+type(
+  'b list -> 'b list
+)
+ident(
+  int_ref f "misc.ml" 15 249 259 "misc.ml" 15 249 260
+)
+"misc.ml" 16 272 304 "misc.ml" 16 272 305
+type(
+  'b
+)
+ident(
+  int_ref y "misc.ml" 16 272 281 "misc.ml" 16 272 282
+)
+"misc.ml" 16 272 307 "misc.ml" 16 272 309
+type(
+  'b list
+)
+ident(
+  int_ref xs "misc.ml" 16 272 284 "misc.ml" 16 272 286
+)
+"misc.ml" 16 272 303 "misc.ml" 16 272 310
+type(
+  'b list
+)
+"misc.ml" 16 272 302 "misc.ml" 16 272 310
+call(
+  tail
+)
+type(
+  'b list
+)
+"misc.ml" 16 272 316 "misc.ml" 16 272 317
+type(
+  'b
+)
+ident(
+  int_ref x "misc.ml" 16 272 278 "misc.ml" 16 272 279
+)
+"misc.ml" 16 272 320 "misc.ml" 16 272 321
+type(
+  'b list -> 'b list
+)
+ident(
+  int_ref f "misc.ml" 15 249 259 "misc.ml" 15 249 260
+)
+"misc.ml" 16 272 322 "misc.ml" 16 272 323
+type(
+  'b
+)
+ident(
+  int_ref y "misc.ml" 16 272 281 "misc.ml" 16 272 282
+)
+"misc.ml" 16 272 325 "misc.ml" 16 272 327
+type(
+  'b list
+)
+ident(
+  int_ref xs "misc.ml" 16 272 284 "misc.ml" 16 272 286
+)
+"misc.ml" 16 272 321 "misc.ml" 16 272 328
+type(
+  'b list
+)
+"misc.ml" 16 272 319 "misc.ml" 16 272 329
+call(
+  stack
+)
+type(
+  'b list
+)
+"misc.ml" 16 272 316 "misc.ml" 16 272 329
+type(
+  'b list
+)
+"misc.ml" 16 272 290 "misc.ml" 16 272 329
+type(
+  'b list
+)
+"misc.ml" 17 330 336 "misc.ml" 17 330 338
+type(
+  'b list
+)
+ident(
+  def xs "misc.ml" 17 330 342 "misc.ml" 17 330 344
+)
+"misc.ml" 17 330 342 "misc.ml" 17 330 344
+type(
+  'b list
+)
+ident(
+  int_ref xs "misc.ml" 17 330 336 "misc.ml" 17 330 338
+)
+"misc.ml" 15 249 263 "misc.ml" 17 330 344
+type(
+  'b list -> 'b list
+)
+"misc.ml" 18 345 350 "misc.ml" 18 345 351
+type(
+  'a list -> 'a list
+)
+ident(
+  int_ref f "misc.ml" 15 249 259 "misc.ml" 15 249 260
+)
+"misc.ml" 18 345 352 "misc.ml" 18 345 354
+type(
+  'a list
+)
+ident(
+  int_ref l2 "misc.ml" 14 208 214 "misc.ml" 14 208 216
+)
+"misc.ml" 18 345 350 "misc.ml" 18 345 354
+call(
+  tail
+)
+type(
+  'a list
+)
+"misc.ml" 15 249 251 "misc.ml" 18 345 354
+type(
+  'a list
+)
+"misc.ml" 14 208 210 "misc.ml" 18 345 354
+type(
+  'a list
+)
+"misc.ml" 20 356 364 "misc.ml" 20 356 374
+type(
+  ('a * 'b -> unit) -> 'a list -> 'b list -> unit
+)
+ident(
+  def iter_pairs "misc.ml" 20 356 356 "misc.ml" 1 0 -1
+)
+"misc.ml" 20 356 375 "misc.ml" 20 356 376
+type(
+  'a * 'b -> unit
+)
+ident(
+  def f "misc.ml" 20 356 377 "misc.ml" 22 433 452
+)
+"misc.ml" 20 356 377 "misc.ml" 20 356 379
+type(
+  'a list
+)
+ident(
+  def l1 "misc.ml" 20 356 380 "misc.ml" 22 433 452
+)
+"misc.ml" 20 356 380 "misc.ml" 20 356 382
+type(
+  'b list
+)
+ident(
+  def l2 "misc.ml" 21 385 387 "misc.ml" 22 433 452
+)
+"misc.ml" 21 385 391 "misc.ml" 21 385 392
+type(
+  'a -> unit
+)
+ident(
+  def g "misc.ml" 22 433 438 "misc.ml" 22 433 452
+)
+"misc.ml" 21 385 393 "misc.ml" 21 385 395
+type(
+  'a
+)
+ident(
+  def x1 "misc.ml" 21 385 398 "misc.ml" 21 385 432
+)
+"misc.ml" 21 385 398 "misc.ml" 21 385 407
+type(
+  ('b -> unit) -> 'b list -> unit
+)
+ident(
+  ext_ref List.iter
+)
+"misc.ml" 21 385 413 "misc.ml" 21 385 415
+type(
+  'b
+)
+ident(
+  def x2 "misc.ml" 21 385 419 "misc.ml" 21 385 428
+)
+"misc.ml" 21 385 419 "misc.ml" 21 385 420
+type(
+  'a * 'b -> unit
+)
+ident(
+  int_ref f "misc.ml" 20 356 375 "misc.ml" 20 356 376
+)
+"misc.ml" 21 385 422 "misc.ml" 21 385 424
+type(
+  'a
+)
+ident(
+  int_ref x1 "misc.ml" 21 385 393 "misc.ml" 21 385 395
+)
+"misc.ml" 21 385 425 "misc.ml" 21 385 427
+type(
+  'b
+)
+ident(
+  int_ref x2 "misc.ml" 21 385 413 "misc.ml" 21 385 415
+)
+"misc.ml" 21 385 421 "misc.ml" 21 385 428
+type(
+  'a * 'b
+)
+"misc.ml" 21 385 419 "misc.ml" 21 385 428
+call(
+  tail
+)
+type(
+  unit
+)
+"misc.ml" 21 385 408 "misc.ml" 21 385 429
+type(
+  'b -> unit
+)
+"misc.ml" 21 385 430 "misc.ml" 21 385 432
+type(
+  'b list
+)
+ident(
+  int_ref l2 "misc.ml" 20 356 380 "misc.ml" 20 356 382
+)
+"misc.ml" 21 385 398 "misc.ml" 21 385 432
+call(
+  tail
+)
+type(
+  unit
+)
+"misc.ml" 22 433 438 "misc.ml" 22 433 447
+type(
+  ('a -> unit) -> 'a list -> unit
+)
+ident(
+  ext_ref List.iter
+)
+"misc.ml" 22 433 448 "misc.ml" 22 433 449
+type(
+  'a -> unit
+)
+ident(
+  int_ref g "misc.ml" 21 385 391 "misc.ml" 21 385 392
+)
+"misc.ml" 22 433 450 "misc.ml" 22 433 452
+type(
+  'a list
+)
+ident(
+  int_ref l1 "misc.ml" 20 356 377 "misc.ml" 20 356 379
+)
+"misc.ml" 22 433 438 "misc.ml" 22 433 452
+call(
+  tail
+)
+type(
+  unit
+)
+"misc.ml" 21 385 387 "misc.ml" 22 433 452
+type(
+  unit
+)
+"misc.ml" 24 454 462 "misc.ml" 24 454 475
+type(
+  ('a * 'a -> unit) -> 'a list -> unit
+)
+ident(
+  def iter_pairwise "misc.ml" 24 454 454 "misc.ml" 1 0 -1
+)
+"misc.ml" 24 454 476 "misc.ml" 24 454 477
+type(
+  'a * 'a -> unit
+)
+ident(
+  def f "misc.ml" 24 454 480 "misc.ml" 27 551 580
+)
+"misc.ml" 25 489 493 "misc.ml" 25 489 495
+type(
+  'a list
+)
+"misc.ml" 25 489 499 "misc.ml" 25 489 501
+type(
+  unit
+)
+"misc.ml" 26 502 506 "misc.ml" 26 502 507
+type(
+  'a
+)
+ident(
+  def x "misc.ml" 26 502 514 "misc.ml" 27 551 580
+)
+"misc.ml" 26 502 509 "misc.ml" 26 502 510
+type(
+  'a list
+)
+ident(
+  def l "misc.ml" 26 502 514 "misc.ml" 27 551 580
+)
+"misc.ml" 26 502 506 "misc.ml" 26 502 510
+type(
+  'a list
+)
+"misc.ml" 26 502 514 "misc.ml" 26 502 523
+type(
+  ('a -> unit) -> 'a list -> unit
+)
+ident(
+  ext_ref List.iter
+)
+"misc.ml" 26 502 534 "misc.ml" 26 502 535
+type(
+  'a
+)
+ident(
+  def y "misc.ml" 26 502 539 "misc.ml" 26 502 546
+)
+"misc.ml" 26 502 539 "misc.ml" 26 502 540
+type(
+  'a * 'a -> unit
+)
+ident(
+  int_ref f "misc.ml" 24 454 476 "misc.ml" 24 454 477
+)
+"misc.ml" 26 502 542 "misc.ml" 26 502 543
+type(
+  'a
+)
+ident(
+  int_ref x "misc.ml" 26 502 506 "misc.ml" 26 502 507
+)
+"misc.ml" 26 502 544 "misc.ml" 26 502 545
+type(
+  'a
+)
+ident(
+  int_ref y "misc.ml" 26 502 534 "misc.ml" 26 502 535
+)
+"misc.ml" 26 502 541 "misc.ml" 26 502 546
+type(
+  'a * 'a
+)
+"misc.ml" 26 502 539 "misc.ml" 26 502 546
+call(
+  tail
+)
+type(
+  unit
+)
+"misc.ml" 26 502 524 "misc.ml" 26 502 547
+type(
+  'a -> unit
+)
+"misc.ml" 26 502 548 "misc.ml" 26 502 549
+type(
+  'a list
+)
+ident(
+  int_ref l "misc.ml" 26 502 509 "misc.ml" 26 502 510
+)
+"misc.ml" 26 502 514 "misc.ml" 26 502 549
+call(
+  stack
+)
+type(
+  unit
+)
+"misc.ml" 27 551 563 "misc.ml" 27 551 576
+type(
+  ('a * 'a -> unit) -> 'a list -> unit
+)
+ident(
+  int_ref iter_pairwise "misc.ml" 24 454 462 "misc.ml" 24 454 475
+)
+"misc.ml" 27 551 577 "misc.ml" 27 551 578
+type(
+  'a * 'a -> unit
+)
+ident(
+  int_ref f "misc.ml" 24 454 476 "misc.ml" 24 454 477
+)
+"misc.ml" 27 551 579 "misc.ml" 27 551 580
+type(
+  'a list
+)
+ident(
+  int_ref l "misc.ml" 26 502 509 "misc.ml" 26 502 510
+)
+"misc.ml" 27 551 563 "misc.ml" 27 551 580
+call(
+  tail
+)
+type(
+  unit
+)
+"misc.ml" 26 502 514 "misc.ml" 27 551 580
+type(
+  unit
+)
+"misc.ml" 24 454 480 "misc.ml" 27 551 580
+type(
+  'a list -> unit
+)
+"misc.ml" 37 859 867 "misc.ml" 37 859 874
+type(
+  'a -> 'a -> int
+)
+ident(
+  def compare "misc.ml" 37 859 884 "misc.ml" 38 885 890
+)
+"misc.ml" 37 859 877 "misc.ml" 37 859 884
+type(
+  'a -> 'a -> int
+)
+ident(
+  ext_ref Pervasives.compare
+)
+"misc.ml" 35 822 824 "misc.ml" 38 885 891
+call(
+  stack
+)
+"misc.ml" 43 945 953 "misc.ml" 43 945 960
+type(
+  'a -> 'a -> int
+)
+ident(
+  def compare "misc.ml" 43 945 970 "misc.ml" 44 971 976
+)
+"misc.ml" 43 945 963 "misc.ml" 43 945 970
+type(
+  'a -> 'a -> int
+)
+ident(
+  ext_ref Pervasives.compare
+)
+"misc.ml" 41 908 910 "misc.ml" 44 971 977
+call(
+  stack
+)
+"misc.ml" 46 979 983 "misc.ml" 46 979 995
+type(
+  int StringMap.t ref
+)
+ident(
+  def gensym_count "misc.ml" 47 1018 1018 "misc.ml" 1 0 -1
+)
+"misc.ml" 46 979 998 "misc.ml" 46 979 1001
+type(
+  int StringMap.t -> int StringMap.t ref
+)
+ident(
+  ext_ref Pervasives.ref
+)
+"misc.ml" 46 979 1002 "misc.ml" 46 979 1017
+type(
+  int StringMap.t
+)
+ident(
+  ext_ref StringMap.empty
+)
+"misc.ml" 46 979 998 "misc.ml" 46 979 1017
+type(
+  int StringMap.t ref
+)
+"misc.ml" 47 1018 1022 "misc.ml" 47 1018 1033
+type(
+  unit -> unit
+)
+ident(
+  def init_gensym "misc.ml" 51 1106 1106 "misc.ml" 1 0 -1
+)
+"misc.ml" 47 1018 1034 "misc.ml" 47 1018 1036
+type(
+  unit
+)
+"misc.ml" 47 1018 1039 "misc.ml" 47 1018 1051
+type(
+  int StringMap.t ref
+)
+ident(
+  int_ref gensym_count "misc.ml" 46 979 983 "misc.ml" 46 979 995
+)
+"misc.ml" 47 1018 1052 "misc.ml" 47 1018 1054
+type(
+  int StringMap.t ref -> int StringMap.t -> unit
+)
+ident(
+  ext_ref Pervasives.( := )
+)
+"misc.ml" 47 1018 1055 "misc.ml" 47 1018 1070
+type(
+  int StringMap.t
+)
+ident(
+  ext_ref StringMap.empty
+)
+"misc.ml" 47 1018 1039 "misc.ml" 47 1018 1070
+type(
+  unit
+)
+"misc.ml" 51 1106 1110 "misc.ml" 51 1106 1116
+type(
+  ident -> ident
+)
+ident(
+  def gensym "misc.ml" 58 1317 1317 "misc.ml" 1 0 -1
+)
+"misc.ml" 51 1106 1117 "misc.ml" 51 1106 1119
+type(
+  ident
+)
+ident(
+  def id "misc.ml" 52 1122 1124 "misc.ml" 56 1272 1315
+)
+"misc.ml" 52 1122 1128 "misc.ml" 52 1122 1133
+type(
+  int
+)
+ident(
+  def count "misc.ml" 55 1205 1209 "misc.ml" 56 1272 1315
+)
+"misc.ml" 52 1122 1140 "misc.ml" 52 1122 1154
+type(
+  StringMap.key -> int StringMap.t -> int
+)
+ident(
+  ext_ref StringMap.find
+)
+"misc.ml" 52 1122 1155 "misc.ml" 52 1122 1157
+type(
+  ident
+)
+ident(
+  int_ref id "misc.ml" 51 1106 1117 "misc.ml" 51 1106 1119
+)
+"misc.ml" 52 1122 1155 "misc.ml" 52 1122 1162
+type(
+  StringMap.key
+)
+"misc.ml" 52 1122 1163 "misc.ml" 52 1122 1164
+type(
+  int StringMap.t ref -> int StringMap.t
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"misc.ml" 52 1122 1164 "misc.ml" 52 1122 1176
+type(
+  int StringMap.t ref
+)
+ident(
+  int_ref gensym_count "misc.ml" 46 979 983 "misc.ml" 46 979 995
+)
+"misc.ml" 52 1122 1163 "misc.ml" 52 1122 1176
+type(
+  int StringMap.t
+)
+"misc.ml" 52 1122 1140 "misc.ml" 52 1122 1176
+call(
+  stack
+)
+type(
+  int
+)
+"misc.ml" 53 1177 1184 "misc.ml" 53 1177 1193
+type(
+  exn
+)
+"misc.ml" 53 1177 1197 "misc.ml" 53 1177 1199
+type(
+  int
+)
+"misc.ml" 52 1122 1136 "misc.ml" 53 1177 1199
+type(
+  int
+)
+"misc.ml" 55 1205 1209 "misc.ml" 55 1205 1221
+type(
+  int StringMap.t ref
+)
+ident(
+  int_ref gensym_count "misc.ml" 46 979 983 "misc.ml" 46 979 995
+)
+"misc.ml" 55 1205 1222 "misc.ml" 55 1205 1224
+type(
+  int StringMap.t ref -> int StringMap.t -> unit
+)
+ident(
+  ext_ref Pervasives.( := )
+)
+"misc.ml" 55 1205 1225 "misc.ml" 55 1205 1238
+type(
+  StringMap.key -> int -> int StringMap.t -> int StringMap.t
+)
+ident(
+  ext_ref StringMap.add
+)
+"misc.ml" 55 1205 1239 "misc.ml" 55 1205 1241
+type(
+  ident
+)
+ident(
+  int_ref id "misc.ml" 51 1106 1117 "misc.ml" 51 1106 1119
+)
+"misc.ml" 55 1205 1239 "misc.ml" 55 1205 1246
+type(
+  StringMap.key
+)
+"misc.ml" 55 1205 1248 "misc.ml" 55 1205 1253
+type(
+  int
+)
+ident(
+  int_ref count "misc.ml" 52 1122 1128 "misc.ml" 52 1122 1133
+)
+"misc.ml" 55 1205 1253 "misc.ml" 55 1205 1254
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"misc.ml" 55 1205 1254 "misc.ml" 55 1205 1255
+type(
+  int
+)
+"misc.ml" 55 1205 1247 "misc.ml" 55 1205 1256
+type(
+  int
+)
+"misc.ml" 55 1205 1257 "misc.ml" 55 1205 1258
+type(
+  int StringMap.t ref -> int StringMap.t
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"misc.ml" 55 1205 1258 "misc.ml" 55 1205 1270
+type(
+  int StringMap.t ref
+)
+ident(
+  int_ref gensym_count "misc.ml" 46 979 983 "misc.ml" 46 979 995
+)
+"misc.ml" 55 1205 1257 "misc.ml" 55 1205 1270
+type(
+  int StringMap.t
+)
+"misc.ml" 55 1205 1225 "misc.ml" 55 1205 1270
+call(
+  stack
+)
+type(
+  int StringMap.t
+)
+"misc.ml" 55 1205 1209 "misc.ml" 55 1205 1270
+type(
+  unit
+)
+"misc.ml" 56 1272 1277 "misc.ml" 56 1272 1279
+type(
+  ident
+)
+ident(
+  int_ref id "misc.ml" 51 1106 1117 "misc.ml" 51 1106 1119
+)
+"misc.ml" 56 1272 1292 "misc.ml" 56 1272 1299
+type(
+  id_status
+)
+"misc.ml" 56 1272 1309 "misc.ml" 56 1272 1314
+type(
+  int
+)
+ident(
+  int_ref count "misc.ml" 52 1122 1128 "misc.ml" 52 1122 1133
+)
+"misc.ml" 56 1272 1276 "misc.ml" 56 1272 1315
+type(
+  ident
+)
+"misc.ml" 55 1205 1209 "misc.ml" 56 1272 1315
+type(
+  ident
+)
+"misc.ml" 52 1122 1124 "misc.ml" 56 1272 1315
+type(
+  ident
+)
+"misc.ml" 58 1317 1321 "misc.ml" 58 1317 1337
+type(
+  string -> bool
+)
+ident(
+  def existential_name "misc.ml" 60 1364 1364 "misc.ml" 1 0 -1
+)
+"misc.ml" 58 1317 1338 "misc.ml" 58 1317 1339
+type(
+  string
+)
+ident(
+  def s "misc.ml" 58 1317 1342 "misc.ml" 58 1317 1362
+)
+"misc.ml" 58 1317 1342 "misc.ml" 58 1317 1352
+type(
+  string -> int -> char
+)
+ident(
+  ext_ref String.get
+)
+"misc.ml" 58 1317 1353 "misc.ml" 58 1317 1354
+type(
+  string
+)
+ident(
+  int_ref s "misc.ml" 58 1317 1338 "misc.ml" 58 1317 1339
+)
+"misc.ml" 58 1317 1355 "misc.ml" 58 1317 1356
+type(
+  int
+)
+"misc.ml" 58 1317 1342 "misc.ml" 58 1317 1356
+type(
+  char
+)
+"misc.ml" 58 1317 1357 "misc.ml" 58 1317 1358
+type(
+  char -> char -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"misc.ml" 58 1317 1359 "misc.ml" 58 1317 1362
+type(
+  char
+)
+"misc.ml" 58 1317 1342 "misc.ml" 58 1317 1362
+type(
+  bool
+)
+"misc.ml" 60 1364 1368 "misc.ml" 60 1364 1373
+type(
+  string -> string
+)
+ident(
+  def un_EX "misc.ml" 64 1460 1460 "misc.ml" 1 0 -1
+)
+"misc.ml" 60 1364 1374 "misc.ml" 60 1364 1375
+type(
+  string
+)
+ident(
+  def s "misc.ml" 61 1378 1382 "misc.ml" 62 1424 1458
+)
+"misc.ml" 61 1378 1386 "misc.ml" 61 1378 1396
+type(
+  string -> int -> int -> string
+)
+ident(
+  ext_ref String.sub
+)
+"misc.ml" 61 1378 1397 "misc.ml" 61 1378 1398
+type(
+  string
+)
+ident(
+  int_ref s "misc.ml" 60 1364 1374 "misc.ml" 60 1364 1375
+)
+"misc.ml" 61 1378 1399 "misc.ml" 61 1378 1400
+type(
+  int
+)
+"misc.ml" 61 1378 1403 "misc.ml" 61 1378 1416
+type(
+  string -> int
+)
+ident(
+  ext_ref String.length
+)
+"misc.ml" 61 1378 1417 "misc.ml" 61 1378 1418
+type(
+  string
+)
+ident(
+  int_ref s "misc.ml" 60 1364 1374 "misc.ml" 60 1364 1375
+)
+"misc.ml" 61 1378 1402 "misc.ml" 61 1378 1419
+type(
+  int
+)
+"misc.ml" 61 1378 1419 "misc.ml" 61 1378 1420
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"misc.ml" 61 1378 1421 "misc.ml" 61 1378 1422
+type(
+  int
+)
+"misc.ml" 61 1378 1401 "misc.ml" 61 1378 1423
+type(
+  int
+)
+"misc.ml" 61 1378 1386 "misc.ml" 61 1378 1423
+call(
+  stack
+)
+type(
+  string
+)
+"misc.ml" 62 1424 1433 "misc.ml" 62 1424 1442
+type(
+  exn
+)
+"misc.ml" 62 1424 1446 "misc.ml" 62 1424 1458
+type(
+  string
+)
+"misc.ml" 61 1378 1382 "misc.ml" 62 1424 1458
+type(
+  string
+)
+"misc.ml" 64 1460 1464 "misc.ml" 64 1460 1478
+type(
+  ident -> bool
+)
+ident(
+  def is_existential "misc.ml" 67 1513 1513 "misc.ml" 1 0 -1
+)
+"misc.ml" 64 1460 1479 "misc.ml" 64 1460 1481
+type(
+  ident
+)
+ident(
+  def id "misc.ml" 65 1484 1486 "misc.ml" 65 1484 1511
+)
+"misc.ml" 65 1484 1486 "misc.ml" 65 1484 1488
+type(
+  ident
+)
+ident(
+  int_ref id "misc.ml" 64 1460 1479 "misc.ml" 64 1460 1481
+)
+"misc.ml" 65 1484 1486 "misc.ml" 65 1484 1493
+type(
+  id_kind
+)
+"misc.ml" 65 1484 1494 "misc.ml" 65 1484 1495
+type(
+  id_kind -> id_kind -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"misc.ml" 65 1484 1496 "misc.ml" 65 1484 1511
+type(
+  id_kind
+)
+"misc.ml" 65 1484 1486 "misc.ml" 65 1484 1511
+type(
+  bool
+)
+"misc.ml" 67 1513 1517 "misc.ml" 67 1513 1529
+type(
+  string -> ident
+)
+ident(
+  def create_ident "misc.ml" 75 1705 1705 "misc.ml" 1 0 -1
+)
+"misc.ml" 67 1513 1530 "misc.ml" 67 1513 1531
+type(
+  string
+)
+ident(
+  def s "misc.ml" 68 1534 1536 "misc.ml" 71 1635 1687
+)
+"misc.ml" 68 1534 1541 "misc.ml" 68 1534 1545
+type(
+  string
+)
+ident(
+  def name "misc.ml" 71 1635 1639 "misc.ml" 71 1635 1687
+)
+"misc.ml" 68 1534 1546 "misc.ml" 68 1534 1550
+type(
+  id_kind
+)
+ident(
+  def kind "misc.ml" 71 1635 1639 "misc.ml" 71 1635 1687
+)
+"misc.ml" 68 1534 1540 "misc.ml" 68 1534 1551
+type(
+  string * id_kind
+)
+"misc.ml" 68 1534 1557 "misc.ml" 68 1534 1573
+type(
+  string -> bool
+)
+ident(
+  int_ref existential_name "misc.ml" 58 1317 1321 "misc.ml" 58 1317 1337
+)
+"misc.ml" 68 1534 1574 "misc.ml" 68 1534 1575
+type(
+  string
+)
+ident(
+  int_ref s "misc.ml" 67 1513 1530 "misc.ml" 67 1513 1531
+)
+"misc.ml" 68 1534 1557 "misc.ml" 68 1534 1575
+call(
+  stack
+)
+type(
+  bool
+)
+"misc.ml" 69 1576 1584 "misc.ml" 69 1576 1589
+type(
+  string -> string
+)
+ident(
+  int_ref un_EX "misc.ml" 60 1364 1368 "misc.ml" 60 1364 1373
+)
+"misc.ml" 69 1576 1590 "misc.ml" 69 1576 1591
+type(
+  string
+)
+ident(
+  int_ref s "misc.ml" 67 1513 1530 "misc.ml" 67 1513 1531
+)
+"misc.ml" 69 1576 1584 "misc.ml" 69 1576 1591
+call(
+  stack
+)
+type(
+  string
+)
+"misc.ml" 69 1576 1593 "misc.ml" 69 1576 1608
+type(
+  id_kind
+)
+"misc.ml" 69 1576 1583 "misc.ml" 69 1576 1609
+type(
+  string * id_kind
+)
+"misc.ml" 70 1610 1618 "misc.ml" 70 1610 1619
+type(
+  string
+)
+ident(
+  int_ref s "misc.ml" 67 1513 1530 "misc.ml" 67 1513 1531
+)
+"misc.ml" 70 1610 1620 "misc.ml" 70 1610 1630
+type(
+  id_kind
+)
+"misc.ml" 70 1610 1617 "misc.ml" 70 1610 1631
+type(
+  string * id_kind
+)
+"misc.ml" 68 1534 1554 "misc.ml" 70 1610 1631
+type(
+  string * id_kind
+)
+"misc.ml" 71 1635 1647 "misc.ml" 71 1635 1655
+type(
+  id_status
+)
+"misc.ml" 71 1635 1663 "misc.ml" 71 1635 1664
+type(
+  int
+)
+"misc.ml" 71 1635 1671 "misc.ml" 71 1635 1675
+type(
+  string
+)
+ident(
+  int_ref name "misc.ml" 68 1534 1541 "misc.ml" 68 1534 1545
+)
+"misc.ml" 71 1635 1682 "misc.ml" 71 1635 1686
+type(
+  id_kind
+)
+ident(
+  int_ref kind "misc.ml" 68 1534 1546 "misc.ml" 68 1534 1550
+)
+"misc.ml" 71 1635 1639 "misc.ml" 71 1635 1687
+type(
+  ident
+)
+"misc.ml" 68 1534 1536 "misc.ml" 71 1635 1687
+type(
+  ident
+)
+"misc.ml" 75 1705 1709 "misc.ml" 75 1705 1722
+type(
+  ident
+)
+ident(
+  def wildcard_base "misc.ml" 77 1748 1748 "misc.ml" 1 0 -1
+)
+"misc.ml" 75 1705 1725 "misc.ml" 75 1705 1737
+type(
+  string -> ident
+)
+ident(
+  int_ref create_ident "misc.ml" 67 1513 1517 "misc.ml" 67 1513 1529
+)
+"misc.ml" 75 1705 1738 "misc.ml" 75 1705 1746
+type(
+  string
+)
+"misc.ml" 75 1705 1725 "misc.ml" 75 1705 1746
+call(
+  stack
+)
+type(
+  ident
+)
+"misc.ml" 77 1748 1752 "misc.ml" 77 1748 1760
+type(
+  unit -> ident
+)
+ident(
+  def wildcard "misc.ml" 79 1789 1789 "misc.ml" 1 0 -1
+)
+"misc.ml" 77 1748 1761 "misc.ml" 77 1748 1763
+type(
+  unit
+)
+"misc.ml" 77 1748 1767 "misc.ml" 77 1748 1773
+type(
+  ident -> ident
+)
+ident(
+  int_ref gensym "misc.ml" 51 1106 1110 "misc.ml" 51 1106 1116
+)
+"misc.ml" 77 1748 1774 "misc.ml" 77 1748 1787
+type(
+  ident
+)
+ident(
+  int_ref wildcard_base "misc.ml" 75 1705 1709 "misc.ml" 75 1705 1722
+)
+"misc.ml" 77 1748 1767 "misc.ml" 77 1748 1787
+call(
+  tail
+)
+type(
+  ident
+)
+"misc.ml" 79 1789 1793 "misc.ml" 79 1789 1808
+type(
+  ident -> string
+)
+ident(
+  def string_of_ident "misc.ml" 84 1953 1953 "misc.ml" 1 0 -1
+)
+"misc.ml" 79 1789 1809 "misc.ml" 79 1789 1811
+type(
+  ident
+)
+ident(
+  def id "misc.ml" 80 1814 1816 "misc.ml" 82 1881 1951
+)
+"misc.ml" 80 1814 1820 "misc.ml" 80 1814 1822
+type(
+  ident
+)
+ident(
+  int_ref id "misc.ml" 79 1789 1809 "misc.ml" 79 1789 1811
+)
+"misc.ml" 80 1814 1820 "misc.ml" 80 1814 1827
+type(
+  id_kind
+)
+"misc.ml" 80 1814 1828 "misc.ml" 80 1814 1829
+type(
+  id_kind -> id_kind -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"misc.ml" 80 1814 1830 "misc.ml" 80 1814 1845
+type(
+  id_kind
+)
+"misc.ml" 80 1814 1820 "misc.ml" 80 1814 1845
+type(
+  bool
+)
+"misc.ml" 80 1814 1851 "misc.ml" 80 1814 1854
+type(
+  string
+)
+"misc.ml" 80 1814 1860 "misc.ml" 80 1814 1862
+type(
+  string
+)
+"misc.ml" 80 1814 1816 "misc.ml" 80 1814 1863
+type(
+  string
+)
+"misc.ml" 80 1814 1864 "misc.ml" 80 1814 1865
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"misc.ml" 81 1867 1871 "misc.ml" 81 1867 1873
+type(
+  ident
+)
+ident(
+  int_ref id "misc.ml" 79 1789 1809 "misc.ml" 79 1789 1811
+)
+"misc.ml" 81 1867 1871 "misc.ml" 81 1867 1878
+type(
+  string
+)
+"misc.ml" 81 1867 1879 "misc.ml" 81 1867 1880
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"misc.ml" 82 1881 1889 "misc.ml" 82 1881 1891
+type(
+  ident
+)
+ident(
+  int_ref id "misc.ml" 79 1789 1809 "misc.ml" 79 1789 1811
+)
+"misc.ml" 82 1881 1889 "misc.ml" 82 1881 1897
+type(
+  int
+)
+"misc.ml" 82 1881 1898 "misc.ml" 82 1881 1899
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"misc.ml" 82 1881 1900 "misc.ml" 82 1881 1901
+type(
+  int
+)
+"misc.ml" 82 1881 1889 "misc.ml" 82 1881 1901
+type(
+  bool
+)
+"misc.ml" 82 1881 1907 "misc.ml" 82 1881 1909
+type(
+  string
+)
+"misc.ml" 82 1881 1915 "misc.ml" 82 1881 1918
+type(
+  string
+)
+"misc.ml" 82 1881 1919 "misc.ml" 82 1881 1920
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"misc.ml" 82 1881 1921 "misc.ml" 82 1881 1934
+type(
+  int -> string
+)
+ident(
+  ext_ref Pervasives.string_of_int
+)
+"misc.ml" 82 1881 1936 "misc.ml" 82 1881 1938
+type(
+  int
+)
+"misc.ml" 82 1881 1939 "misc.ml" 82 1881 1940
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"misc.ml" 82 1881 1941 "misc.ml" 82 1881 1943
+type(
+  ident
+)
+ident(
+  int_ref id "misc.ml" 79 1789 1809 "misc.ml" 79 1789 1811
+)
+"misc.ml" 82 1881 1941 "misc.ml" 82 1881 1949
+type(
+  int
+)
+"misc.ml" 82 1881 1935 "misc.ml" 82 1881 1950
+type(
+  int
+)
+"misc.ml" 82 1881 1921 "misc.ml" 82 1881 1950
+call(
+  stack
+)
+type(
+  string
+)
+"misc.ml" 82 1881 1915 "misc.ml" 82 1881 1950
+call(
+  stack
+)
+type(
+  string
+)
+"misc.ml" 82 1881 1885 "misc.ml" 82 1881 1951
+type(
+  string
+)
+"misc.ml" 81 1867 1871 "misc.ml" 82 1881 1951
+call(
+  stack
+)
+type(
+  string
+)
+"misc.ml" 80 1814 1816 "misc.ml" 82 1881 1951
+call(
+  tail
+)
+type(
+  string
+)
+"misc.ml" 84 1953 1957 "misc.ml" 84 1953 1965
+type(
+  Format.formatter -> ident -> unit
+)
+ident(
+  def pp_ident "misc.ml" 84 1953 2015 "misc.ml" 1 0 -1
+)
+"misc.ml" 84 1953 1966 "misc.ml" 84 1953 1967
+type(
+  Format.formatter
+)
+ident(
+  def f "misc.ml" 84 1953 1968 "misc.ml" 84 1953 2015
+)
+"misc.ml" 84 1953 1968 "misc.ml" 84 1953 1970
+type(
+  ident
+)
+ident(
+  def id "misc.ml" 84 1953 1973 "misc.ml" 84 1953 2015
+)
+"misc.ml" 84 1953 1973 "misc.ml" 84 1953 1987
+type(
+  Format.formatter ->
+  (string -> unit, Format.formatter, unit) format -> string -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"misc.ml" 84 1953 1988 "misc.ml" 84 1953 1989
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "misc.ml" 84 1953 1966 "misc.ml" 84 1953 1967
+)
+"misc.ml" 84 1953 1990 "misc.ml" 84 1953 1994
+type(
+  (string -> unit, Format.formatter, unit) format
+)
+"misc.ml" 84 1953 1996 "misc.ml" 84 1953 2011
+type(
+  ident -> string
+)
+ident(
+  int_ref string_of_ident "misc.ml" 79 1789 1793 "misc.ml" 79 1789 1808
+)
+"misc.ml" 84 1953 2012 "misc.ml" 84 1953 2014
+type(
+  ident
+)
+ident(
+  int_ref id "misc.ml" 84 1953 1968 "misc.ml" 84 1953 1970
+)
+"misc.ml" 84 1953 1995 "misc.ml" 84 1953 2015
+call(
+  stack
+)
+type(
+  string
+)
+"misc.ml" 84 1953 1973 "misc.ml" 84 1953 2015
+call(
+  tail
+)
+type(
+  unit
+)

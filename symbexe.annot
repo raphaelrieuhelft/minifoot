@@ -1,0 +1,1049 @@
+"symbexe.ml" 9 126 130 "symbexe.ml" 9 126 154
+type(
+  Entailment.esh -> string -> Defs.atom_symb_inst -> Entailment.esh
+)
+ident(
+  def execute_atomic_statement "symbexe.ml" 18 419 419 "symbexe.ml" 1 0 -1
+)
+"symbexe.ml" 9 126 155 "symbexe.ml" 9 126 158
+type(
+  Entailment.esh
+)
+ident(
+  def esh "symbexe.ml" 9 126 159 "symbexe.ml" 16 372 417
+)
+"symbexe.ml" 9 126 159 "symbexe.ml" 9 126 163
+type(
+  string
+)
+ident(
+  def info "symbexe.ml" 9 126 166 "symbexe.ml" 16 372 417
+)
+"symbexe.ml" 10 175 190 "symbexe.ml" 10 175 194
+ident(
+  def esh2 "symbexe.ml" 11 200 204 "symbexe.ml" 14 319 329
+)
+"symbexe.ml" 10 175 189 "symbexe.ml" 10 175 195
+type(
+  Defs.ext_symb_heap
+)
+"symbexe.ml" 10 175 179 "symbexe.ml" 10 175 195
+type(
+  Defs.atom_symb_inst
+)
+"symbexe.ml" 11 200 208 "symbexe.ml" 11 200 211
+type(
+  Entailment.esh
+)
+ident(
+  def ans "symbexe.ml" 14 319 326 "symbexe.ml" 14 319 329
+)
+"symbexe.ml" 11 200 220 "symbexe.ml" 11 200 229
+type(
+  Entailment.esh -> Entailment.esh -> Entailment.esh option
+)
+ident(
+  ext_ref Entailment.get_frame
+)
+"symbexe.ml" 11 200 230 "symbexe.ml" 11 200 233
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh "symbexe.ml" 9 126 155 "symbexe.ml" 9 126 158
+)
+"symbexe.ml" 11 200 234 "symbexe.ml" 11 200 238
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh2 "symbexe.ml" 10 175 189 "symbexe.ml" 10 175 195
+)
+"symbexe.ml" 11 200 220 "symbexe.ml" 11 200 238
+call(
+  stack
+)
+type(
+  Entailment.esh option
+)
+"symbexe.ml" 12 244 257 "symbexe.ml" 12 244 261
+ident(
+  def esh3 "symbexe.ml" 12 244 266 "symbexe.ml" 12 244 270
+)
+"symbexe.ml" 12 244 256 "symbexe.ml" 12 244 262
+type(
+  Entailment.esh
+)
+"symbexe.ml" 12 244 252 "symbexe.ml" 12 244 262
+type(
+  Entailment.esh option
+)
+"symbexe.ml" 12 244 266 "symbexe.ml" 12 244 270
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh3 "symbexe.ml" 12 244 256 "symbexe.ml" 12 244 262
+)
+"symbexe.ml" 13 271 279 "symbexe.ml" 13 271 283
+type(
+  Entailment.esh option
+)
+"symbexe.ml" 13 271 287 "symbexe.ml" 13 271 292
+type(
+  exn -> Entailment.esh
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"symbexe.ml" 13 271 303 "symbexe.ml" 13 271 306
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh "symbexe.ml" 9 126 155 "symbexe.ml" 9 126 158
+)
+"symbexe.ml" 13 271 307 "symbexe.ml" 13 271 311
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "symbexe.ml" 10 175 189 "symbexe.ml" 10 175 195
+)
+"symbexe.ml" 13 271 312 "symbexe.ml" 13 271 316
+type(
+  string
+)
+ident(
+  int_ref info "symbexe.ml" 9 126 159 "symbexe.ml" 9 126 163
+)
+"symbexe.ml" 13 271 293 "symbexe.ml" 13 271 318
+type(
+  exn
+)
+"symbexe.ml" 13 271 287 "symbexe.ml" 13 271 318
+type(
+  Entailment.esh
+)
+"symbexe.ml" 11 200 214 "symbexe.ml" 13 271 318
+type(
+  Entailment.esh
+)
+"symbexe.ml" 14 319 326 "symbexe.ml" 14 319 329
+type(
+  Entailment.esh
+)
+ident(
+  int_ref ans "symbexe.ml" 11 200 208 "symbexe.ml" 11 200 211
+)
+"symbexe.ml" 11 200 204 "symbexe.ml" 14 319 329
+type(
+  Entailment.esh
+)
+"symbexe.ml" 15 330 345 "symbexe.ml" 15 330 349
+ident(
+  def esh2 "symbexe.ml" 15 330 354 "symbexe.ml" 15 330 371
+)
+"symbexe.ml" 15 330 344 "symbexe.ml" 15 330 350
+type(
+  Defs.ext_symb_heap
+)
+"symbexe.ml" 15 330 334 "symbexe.ml" 15 330 350
+type(
+  Defs.atom_symb_inst
+)
+"symbexe.ml" 15 330 354 "symbexe.ml" 15 330 362
+type(
+  Entailment.esh -> Defs.ext_symb_heap -> Entailment.esh
+)
+ident(
+  ext_ref Symbheap.esh_star
+)
+"symbexe.ml" 15 330 363 "symbexe.ml" 15 330 366
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh "symbexe.ml" 9 126 155 "symbexe.ml" 9 126 158
+)
+"symbexe.ml" 15 330 367 "symbexe.ml" 15 330 371
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "symbexe.ml" 15 330 344 "symbexe.ml" 15 330 350
+)
+"symbexe.ml" 15 330 354 "symbexe.ml" 15 330 371
+call(
+  tail
+)
+type(
+  Entailment.esh
+)
+"symbexe.ml" 16 372 387 "symbexe.ml" 16 372 392
+ident(
+  def subst "symbexe.ml" 16 372 397 "symbexe.ml" 16 372 417
+)
+"symbexe.ml" 16 372 386 "symbexe.ml" 16 372 393
+type(
+  Defs.substitution
+)
+"symbexe.ml" 16 372 376 "symbexe.ml" 16 372 393
+type(
+  Defs.atom_symb_inst
+)
+"symbexe.ml" 16 372 397 "symbexe.ml" 16 372 407
+type(
+  Defs.substitution -> Entailment.esh -> Entailment.esh
+)
+ident(
+  ext_ref Symbheap.esh_rename
+)
+"symbexe.ml" 16 372 408 "symbexe.ml" 16 372 413
+type(
+  Defs.substitution
+)
+ident(
+  int_ref subst "symbexe.ml" 16 372 386 "symbexe.ml" 16 372 393
+)
+"symbexe.ml" 16 372 414 "symbexe.ml" 16 372 417
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh "symbexe.ml" 9 126 155 "symbexe.ml" 9 126 158
+)
+"symbexe.ml" 16 372 397 "symbexe.ml" 16 372 417
+call(
+  tail
+)
+type(
+  Entailment.esh
+)
+"symbexe.ml" 9 126 166 "symbexe.ml" 16 372 417
+type(
+  Defs.atom_symb_inst -> Entailment.esh
+)
+"symbexe.ml" 18 419 427 "symbexe.ml" 18 419 444
+type(
+  Entailment.esh -> string -> Defs.symb_inst -> Entailment.esh list
+)
+ident(
+  def execute_statement "symbexe.ml" 18 419 419 "symbexe.ml" 1 0 -1
+)
+"symbexe.ml" 18 419 445 "symbexe.ml" 18 419 448
+type(
+  Entailment.esh
+)
+ident(
+  def esh "symbexe.ml" 18 419 449 "symbexe.ml" 24 625 698
+)
+"symbexe.ml" 18 419 449 "symbexe.ml" 18 419 453
+type(
+  string
+)
+ident(
+  def info "symbexe.ml" 18 419 456 "symbexe.ml" 24 625 698
+)
+"symbexe.ml" 19 465 469 "symbexe.ml" 19 465 476
+type(
+  Defs.symb_inst
+)
+"symbexe.ml" 20 481 486 "symbexe.ml" 20 481 489
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh "symbexe.ml" 18 419 445 "symbexe.ml" 18 419 448
+)
+"symbexe.ml" 20 481 485 "symbexe.ml" 20 481 490
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 21 491 505 "symbexe.ml" 21 491 510
+type(
+  Defs.atom_symb_inst
+)
+ident(
+  def astmt "symbexe.ml" 22 521 525 "symbexe.ml" 22 521 594
+)
+"symbexe.ml" 21 491 511 "symbexe.ml" 21 491 515
+type(
+  Defs.symb_inst
+)
+ident(
+  def stmt "symbexe.ml" 22 521 525 "symbexe.ml" 22 521 594
+)
+"symbexe.ml" 21 491 495 "symbexe.ml" 21 491 516
+type(
+  Defs.symb_inst
+)
+"symbexe.ml" 22 521 525 "symbexe.ml" 22 521 542
+type(
+  Entailment.esh -> string -> Defs.symb_inst -> Entailment.esh list
+)
+ident(
+  int_ref execute_statement "symbexe.ml" 18 419 427 "symbexe.ml" 18 419 444
+)
+"symbexe.ml" 22 521 544 "symbexe.ml" 22 521 568
+type(
+  Entailment.esh -> string -> Defs.atom_symb_inst -> Entailment.esh
+)
+ident(
+  int_ref execute_atomic_statement "symbexe.ml" 9 126 130 "symbexe.ml" 9 126 154
+)
+"symbexe.ml" 22 521 569 "symbexe.ml" 22 521 572
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh "symbexe.ml" 18 419 445 "symbexe.ml" 18 419 448
+)
+"symbexe.ml" 22 521 573 "symbexe.ml" 22 521 577
+type(
+  string
+)
+ident(
+  int_ref info "symbexe.ml" 18 419 449 "symbexe.ml" 18 419 453
+)
+"symbexe.ml" 22 521 578 "symbexe.ml" 22 521 583
+type(
+  Defs.atom_symb_inst
+)
+ident(
+  int_ref astmt "symbexe.ml" 21 491 505 "symbexe.ml" 21 491 510
+)
+"symbexe.ml" 22 521 543 "symbexe.ml" 22 521 584
+call(
+  stack
+)
+type(
+  Entailment.esh
+)
+"symbexe.ml" 22 521 585 "symbexe.ml" 22 521 589
+type(
+  string
+)
+ident(
+  int_ref info "symbexe.ml" 18 419 449 "symbexe.ml" 18 419 453
+)
+"symbexe.ml" 22 521 590 "symbexe.ml" 22 521 594
+type(
+  Defs.symb_inst
+)
+ident(
+  int_ref stmt "symbexe.ml" 21 491 511 "symbexe.ml" 21 491 515
+)
+"symbexe.ml" 22 521 525 "symbexe.ml" 22 521 594
+call(
+  tail
+)
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 23 595 609 "symbexe.ml" 23 595 614
+type(
+  Defs.symb_inst
+)
+ident(
+  def stmt1 "symbexe.ml" 24 625 629 "symbexe.ml" 24 625 698
+)
+"symbexe.ml" 23 595 615 "symbexe.ml" 23 595 620
+type(
+  Defs.symb_inst
+)
+ident(
+  def stmt2 "symbexe.ml" 24 625 629 "symbexe.ml" 24 625 698
+)
+"symbexe.ml" 23 595 599 "symbexe.ml" 23 595 621
+type(
+  Defs.symb_inst
+)
+"symbexe.ml" 24 625 630 "symbexe.ml" 24 625 647
+type(
+  Entailment.esh -> string -> Defs.symb_inst -> Entailment.esh list
+)
+ident(
+  int_ref execute_statement "symbexe.ml" 18 419 427 "symbexe.ml" 18 419 444
+)
+"symbexe.ml" 24 625 648 "symbexe.ml" 24 625 651
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh "symbexe.ml" 18 419 445 "symbexe.ml" 18 419 448
+)
+"symbexe.ml" 24 625 652 "symbexe.ml" 24 625 656
+type(
+  string
+)
+ident(
+  int_ref info "symbexe.ml" 18 419 449 "symbexe.ml" 18 419 453
+)
+"symbexe.ml" 24 625 657 "symbexe.ml" 24 625 662
+type(
+  Defs.symb_inst
+)
+ident(
+  int_ref stmt1 "symbexe.ml" 23 595 609 "symbexe.ml" 23 595 614
+)
+"symbexe.ml" 24 625 629 "symbexe.ml" 24 625 663
+call(
+  stack
+)
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 24 625 663 "symbexe.ml" 24 625 664
+type(
+  Entailment.esh list -> Entailment.esh list -> Entailment.esh list
+)
+ident(
+  ext_ref Pervasives.( @ )
+)
+"symbexe.ml" 24 625 665 "symbexe.ml" 24 625 682
+type(
+  Entailment.esh -> string -> Defs.symb_inst -> Entailment.esh list
+)
+ident(
+  int_ref execute_statement "symbexe.ml" 18 419 427 "symbexe.ml" 18 419 444
+)
+"symbexe.ml" 24 625 683 "symbexe.ml" 24 625 686
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh "symbexe.ml" 18 419 445 "symbexe.ml" 18 419 448
+)
+"symbexe.ml" 24 625 687 "symbexe.ml" 24 625 691
+type(
+  string
+)
+ident(
+  int_ref info "symbexe.ml" 18 419 449 "symbexe.ml" 18 419 453
+)
+"symbexe.ml" 24 625 692 "symbexe.ml" 24 625 697
+type(
+  Defs.symb_inst
+)
+ident(
+  int_ref stmt2 "symbexe.ml" 23 595 615 "symbexe.ml" 23 595 620
+)
+"symbexe.ml" 24 625 664 "symbexe.ml" 24 625 698
+call(
+  stack
+)
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 24 625 629 "symbexe.ml" 24 625 698
+call(
+  tail
+)
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 18 419 456 "symbexe.ml" 24 625 698
+type(
+  Defs.symb_inst -> Entailment.esh list
+)
+"symbexe.ml" 26 700 704 "symbexe.ml" 26 700 712
+type(
+  Defs.verification_condition -> bool
+)
+ident(
+  def check_vc "symbexe.ml" 48 1416 1456 "symbexe.ml" 1 0 -1
+)
+"symbexe.ml" 26 700 713 "symbexe.ml" 26 700 715
+type(
+  Defs.verification_condition
+)
+ident(
+  def vc "symbexe.ml" 27 718 720 "symbexe.ml" 48 1416 1456
+)
+"symbexe.ml" 27 718 723 "symbexe.ml" 27 718 724
+type(
+  bool ref -> bool
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"symbexe.ml" 27 718 724 "symbexe.ml" 27 718 739
+type(
+  bool ref
+)
+ident(
+  ext_ref Config.verbose1
+)
+"symbexe.ml" 27 718 723 "symbexe.ml" 27 718 739
+type(
+  bool
+)
+"symbexe.ml" 27 718 745 "symbexe.ml" 27 718 759
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.verification_condition -> unit) ->
+   Defs.verification_condition -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.verification_condition -> unit) ->
+  Defs.verification_condition -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"symbexe.ml" 27 718 760 "symbexe.ml" 27 718 761
+type(
+  Format.formatter ref -> Format.formatter
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"symbexe.ml" 27 718 761 "symbexe.ml" 27 718 777
+type(
+  Format.formatter ref
+)
+ident(
+  ext_ref Config.formatter
+)
+"symbexe.ml" 27 718 760 "symbexe.ml" 27 718 777
+type(
+  Format.formatter
+)
+"symbexe.ml" 27 718 778 "symbexe.ml" 27 718 791
+type(
+  ((Format.formatter -> Defs.verification_condition -> unit) ->
+   Defs.verification_condition -> unit, Format.formatter, unit)
+  format
+)
+"symbexe.ml" 27 718 792 "symbexe.ml" 27 718 797
+type(
+  Format.formatter -> Defs.verification_condition -> unit
+)
+ident(
+  ext_ref Print.pp_vc
+)
+"symbexe.ml" 27 718 798 "symbexe.ml" 27 718 800
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "symbexe.ml" 26 700 713 "symbexe.ml" 26 700 715
+)
+"symbexe.ml" 27 718 745 "symbexe.ml" 27 718 800
+call(
+  stack
+)
+type(
+  unit
+)
+"symbexe.ml" 27 718 720 "symbexe.ml" 27 718 800
+type(
+  unit
+)
+"symbexe.ml" 28 802 808 "symbexe.ml" 28 802 816
+type(
+  Entailment.esh list
+)
+ident(
+  def esh_list "symbexe.ml" 36 1039 1041 "symbexe.ml" 48 1416 1456
+)
+"symbexe.ml" 29 820 828 "symbexe.ml" 29 820 845
+type(
+  Entailment.esh -> string -> Defs.symb_inst -> Entailment.esh list
+)
+ident(
+  int_ref execute_statement "symbexe.ml" 18 419 427 "symbexe.ml" 18 419 444
+)
+"symbexe.ml" 29 820 846 "symbexe.ml" 29 820 848
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "symbexe.ml" 26 700 713 "symbexe.ml" 26 700 715
+)
+"symbexe.ml" 29 820 846 "symbexe.ml" 29 820 855
+type(
+  Entailment.esh
+)
+"symbexe.ml" 29 820 856 "symbexe.ml" 29 820 858
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "symbexe.ml" 26 700 713 "symbexe.ml" 26 700 715
+)
+"symbexe.ml" 29 820 856 "symbexe.ml" 29 820 866
+type(
+  string
+)
+"symbexe.ml" 29 820 867 "symbexe.ml" 29 820 869
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "symbexe.ml" 26 700 713 "symbexe.ml" 26 700 715
+)
+"symbexe.ml" 29 820 867 "symbexe.ml" 29 820 882
+type(
+  Defs.symb_inst
+)
+"symbexe.ml" 29 820 828 "symbexe.ml" 29 820 882
+call(
+  stack
+)
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 30 884 902 "symbexe.ml" 30 884 906
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh1 "symbexe.ml" 30 884 921 "symbexe.ml" 34 1026 1033
+)
+"symbexe.ml" 30 884 907 "symbexe.ml" 30 884 911
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh2 "symbexe.ml" 30 884 921 "symbexe.ml" 34 1026 1033
+)
+"symbexe.ml" 30 884 912 "symbexe.ml" 30 884 916
+type(
+  string
+)
+ident(
+  def info "symbexe.ml" 30 884 921 "symbexe.ml" 34 1026 1033
+)
+"symbexe.ml" 30 884 893 "symbexe.ml" 30 884 917
+type(
+  exn
+)
+"symbexe.ml" 31 927 933 "symbexe.ml" 31 927 947
+type(
+  Format.formatter ->
+  (string ->
+   (Format.formatter -> Defs.ext_symb_heap * Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap * Defs.ext_symb_heap -> unit, Format.formatter, 
+   unit)
+  format ->
+  string ->
+  (Format.formatter -> Defs.ext_symb_heap * Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap * Defs.ext_symb_heap -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"symbexe.ml" 31 927 948 "symbexe.ml" 31 927 951
+type(
+  Format.formatter
+)
+ident(
+  ext_ref Error.fmt
+)
+"symbexe.ml" 31 927 952 "symbexe.ml" 31 927 987
+type(
+  (string ->
+   (Format.formatter -> Defs.ext_symb_heap * Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap * Defs.ext_symb_heap -> unit, Format.formatter, 
+   unit)
+  format
+)
+"symbexe.ml" 31 927 988 "symbexe.ml" 31 927 992
+type(
+  string
+)
+ident(
+  int_ref info "symbexe.ml" 30 884 912 "symbexe.ml" 30 884 916
+)
+"symbexe.ml" 32 994 995 "symbexe.ml" 32 994 1003
+type(
+  Format.formatter -> Defs.ext_symb_heap * Defs.ext_symb_heap -> unit
+)
+ident(
+  ext_ref Print.pp_frame
+)
+"symbexe.ml" 32 994 1005 "symbexe.ml" 32 994 1009
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh1 "symbexe.ml" 30 884 902 "symbexe.ml" 30 884 906
+)
+"symbexe.ml" 32 994 1010 "symbexe.ml" 32 994 1014
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "symbexe.ml" 30 884 907 "symbexe.ml" 30 884 911
+)
+"symbexe.ml" 32 994 1004 "symbexe.ml" 32 994 1015
+type(
+  Defs.ext_symb_heap * Defs.ext_symb_heap
+)
+"symbexe.ml" 31 927 933 "symbexe.ml" 32 994 1015
+call(
+  stack
+)
+type(
+  unit
+)
+"symbexe.ml" 33 1017 1023 "symbexe.ml" 33 1017 1025
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 30 884 921 "symbexe.ml" 34 1026 1033
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 29 820 824 "symbexe.ml" 34 1026 1033
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 36 1039 1049 "symbexe.ml" 36 1039 1050
+type(
+  bool -> Entailment.esh list -> bool
+)
+ident(
+  def f "symbexe.ml" 36 1039 1041 "symbexe.ml" 48 1416 1456
+)
+"symbexe.ml" 36 1039 1051 "symbexe.ml" 36 1039 1054
+type(
+  bool
+)
+ident(
+  def res "symbexe.ml" 36 1039 1057 "symbexe.ml" 47 1406 1415
+)
+"symbexe.ml" 37 1066 1072 "symbexe.ml" 37 1066 1075
+type(
+  Entailment.esh
+)
+ident(
+  def esh "symbexe.ml" 38 1089 1095 "symbexe.ml" 44 1295 1304
+)
+"symbexe.ml" 37 1066 1077 "symbexe.ml" 37 1066 1085
+type(
+  Entailment.esh list
+)
+ident(
+  def esh_list "symbexe.ml" 38 1089 1095 "symbexe.ml" 44 1295 1304
+)
+"symbexe.ml" 37 1066 1072 "symbexe.ml" 37 1066 1085
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 38 1089 1098 "symbexe.ml" 38 1089 1105
+type(
+  Entailment.esh -> Entailment.esh -> bool
+)
+ident(
+  ext_ref Entailment.entails
+)
+"symbexe.ml" 38 1089 1106 "symbexe.ml" 38 1089 1109
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh "symbexe.ml" 37 1066 1072 "symbexe.ml" 37 1066 1075
+)
+"symbexe.ml" 38 1089 1110 "symbexe.ml" 38 1089 1112
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "symbexe.ml" 26 700 713 "symbexe.ml" 26 700 715
+)
+"symbexe.ml" 38 1089 1110 "symbexe.ml" 38 1089 1120
+type(
+  Entailment.esh
+)
+"symbexe.ml" 38 1089 1098 "symbexe.ml" 38 1089 1120
+call(
+  stack
+)
+type(
+  bool
+)
+"symbexe.ml" 39 1121 1132 "symbexe.ml" 39 1121 1133
+type(
+  bool -> Entailment.esh list -> bool
+)
+ident(
+  int_ref f "symbexe.ml" 36 1039 1049 "symbexe.ml" 36 1039 1050
+)
+"symbexe.ml" 39 1121 1134 "symbexe.ml" 39 1121 1137
+type(
+  bool
+)
+ident(
+  int_ref res "symbexe.ml" 36 1039 1051 "symbexe.ml" 36 1039 1054
+)
+"symbexe.ml" 39 1121 1138 "symbexe.ml" 39 1121 1146
+type(
+  Entailment.esh list
+)
+ident(
+  int_ref esh_list "symbexe.ml" 37 1066 1077 "symbexe.ml" 37 1066 1085
+)
+"symbexe.ml" 39 1121 1132 "symbexe.ml" 39 1121 1146
+call(
+  tail
+)
+type(
+  bool
+)
+"symbexe.ml" 41 1166 1167 "symbexe.ml" 41 1166 1181
+type(
+  Format.formatter ->
+  (string ->
+   (Format.formatter -> Entailment.esh * Defs.ext_symb_heap -> unit) ->
+   Entailment.esh * Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format ->
+  string ->
+  (Format.formatter -> Entailment.esh * Defs.ext_symb_heap -> unit) ->
+  Entailment.esh * Defs.ext_symb_heap -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"symbexe.ml" 41 1166 1182 "symbexe.ml" 41 1166 1185
+type(
+  Format.formatter
+)
+ident(
+  ext_ref Error.fmt
+)
+"symbexe.ml" 41 1166 1186 "symbexe.ml" 41 1166 1223
+type(
+  (string ->
+   (Format.formatter -> Entailment.esh * Defs.ext_symb_heap -> unit) ->
+   Entailment.esh * Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format
+)
+"symbexe.ml" 41 1166 1224 "symbexe.ml" 41 1166 1226
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "symbexe.ml" 26 700 713 "symbexe.ml" 26 700 715
+)
+"symbexe.ml" 41 1166 1224 "symbexe.ml" 41 1166 1234
+type(
+  string
+)
+"symbexe.ml" 42 1236 1239 "symbexe.ml" 42 1236 1258
+type(
+  Format.formatter -> Entailment.esh * Defs.ext_symb_heap -> unit
+)
+ident(
+  ext_ref Print.pp_entailment
+)
+"symbexe.ml" 42 1236 1260 "symbexe.ml" 42 1236 1263
+type(
+  Entailment.esh
+)
+ident(
+  int_ref esh "symbexe.ml" 37 1066 1072 "symbexe.ml" 37 1066 1075
+)
+"symbexe.ml" 42 1236 1264 "symbexe.ml" 42 1236 1266
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "symbexe.ml" 26 700 713 "symbexe.ml" 26 700 715
+)
+"symbexe.ml" 42 1236 1264 "symbexe.ml" 42 1236 1274
+type(
+  Defs.ext_symb_heap
+)
+"symbexe.ml" 42 1236 1259 "symbexe.ml" 42 1236 1275
+type(
+  Entailment.esh * Defs.ext_symb_heap
+)
+"symbexe.ml" 41 1166 1167 "symbexe.ml" 42 1236 1275
+call(
+  stack
+)
+type(
+  unit
+)
+"symbexe.ml" 43 1277 1278 "symbexe.ml" 43 1277 1279
+type(
+  bool -> Entailment.esh list -> bool
+)
+ident(
+  int_ref f "symbexe.ml" 36 1039 1049 "symbexe.ml" 36 1039 1050
+)
+"symbexe.ml" 43 1277 1280 "symbexe.ml" 43 1277 1285
+type(
+  bool
+)
+"symbexe.ml" 43 1277 1286 "symbexe.ml" 43 1277 1294
+type(
+  Entailment.esh list
+)
+ident(
+  int_ref esh_list "symbexe.ml" 37 1066 1077 "symbexe.ml" 37 1066 1085
+)
+"symbexe.ml" 43 1277 1278 "symbexe.ml" 43 1277 1294
+call(
+  tail
+)
+type(
+  bool
+)
+"symbexe.ml" 40 1147 1158 "symbexe.ml" 44 1295 1304
+type(
+  bool
+)
+"symbexe.ml" 38 1089 1095 "symbexe.ml" 44 1295 1304
+type(
+  bool
+)
+"symbexe.ml" 45 1305 1311 "symbexe.ml" 45 1305 1313
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 46 1318 1327 "symbexe.ml" 46 1318 1328
+type(
+  bool ref -> bool
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"symbexe.ml" 46 1318 1328 "symbexe.ml" 46 1318 1343
+type(
+  bool ref
+)
+ident(
+  ext_ref Config.verbose1
+)
+"symbexe.ml" 46 1318 1327 "symbexe.ml" 46 1318 1343
+type(
+  bool
+)
+"symbexe.ml" 46 1318 1349 "symbexe.ml" 46 1318 1363
+type(
+  Format.formatter -> (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"symbexe.ml" 46 1318 1364 "symbexe.ml" 46 1318 1365
+type(
+  Format.formatter ref -> Format.formatter
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"symbexe.ml" 46 1318 1365 "symbexe.ml" 46 1318 1381
+type(
+  Format.formatter ref
+)
+ident(
+  ext_ref Config.formatter
+)
+"symbexe.ml" 46 1318 1364 "symbexe.ml" 46 1318 1381
+type(
+  Format.formatter
+)
+"symbexe.ml" 46 1318 1382 "symbexe.ml" 46 1318 1403
+type(
+  (unit, Format.formatter, unit) format
+)
+"symbexe.ml" 46 1318 1349 "symbexe.ml" 46 1318 1403
+call(
+  stack
+)
+type(
+  unit
+)
+"symbexe.ml" 46 1318 1324 "symbexe.ml" 46 1318 1403
+type(
+  unit
+)
+"symbexe.ml" 47 1406 1412 "symbexe.ml" 47 1406 1415
+type(
+  bool
+)
+ident(
+  int_ref res "symbexe.ml" 36 1039 1051 "symbexe.ml" 36 1039 1054
+)
+"symbexe.ml" 46 1318 1324 "symbexe.ml" 47 1406 1415
+type(
+  bool
+)
+"symbexe.ml" 36 1039 1057 "symbexe.ml" 47 1406 1415
+type(
+  Entailment.esh list -> bool
+)
+"symbexe.ml" 48 1416 1422 "symbexe.ml" 48 1416 1430
+type(
+  Entailment.esh list
+)
+ident(
+  int_ref esh_list "symbexe.ml" 28 802 808 "symbexe.ml" 28 802 816
+)
+"symbexe.ml" 48 1416 1431 "symbexe.ml" 48 1416 1433
+type(
+  Entailment.esh list -> Entailment.esh list -> bool
+)
+ident(
+  ext_ref Pervasives.( != )
+)
+"symbexe.ml" 48 1416 1434 "symbexe.ml" 48 1416 1436
+type(
+  Entailment.esh list
+)
+"symbexe.ml" 48 1416 1421 "symbexe.ml" 48 1416 1437
+type(
+  bool
+)
+"symbexe.ml" 48 1416 1438 "symbexe.ml" 48 1416 1440
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( && )
+)
+"symbexe.ml" 48 1416 1441 "symbexe.ml" 48 1416 1442
+type(
+  bool -> Entailment.esh list -> bool
+)
+ident(
+  int_ref f "symbexe.ml" 36 1039 1049 "symbexe.ml" 36 1039 1050
+)
+"symbexe.ml" 48 1416 1443 "symbexe.ml" 48 1416 1447
+type(
+  bool
+)
+"symbexe.ml" 48 1416 1448 "symbexe.ml" 48 1416 1456
+type(
+  Entailment.esh list
+)
+ident(
+  int_ref esh_list "symbexe.ml" 28 802 808 "symbexe.ml" 28 802 816
+)
+"symbexe.ml" 48 1416 1441 "symbexe.ml" 48 1416 1456
+call(
+  tail
+)
+type(
+  bool
+)
+"symbexe.ml" 48 1416 1421 "symbexe.ml" 48 1416 1456
+type(
+  bool
+)
+"symbexe.ml" 36 1039 1041 "symbexe.ml" 48 1416 1456
+type(
+  bool
+)
+"symbexe.ml" 28 802 804 "symbexe.ml" 48 1416 1456
+type(
+  bool
+)
+"symbexe.ml" 27 718 720 "symbexe.ml" 48 1416 1456
+type(
+  bool
+)

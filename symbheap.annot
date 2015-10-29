@@ -1,0 +1,2588 @@
+"symbheap.ml" 7 60 64 "symbheap.ml" 7 60 72
+type(
+  'a list * Defs.atomic_spatial_formula list
+)
+ident(
+  def sh_false "symbheap.ml" 8 89 89 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 7 60 75 "symbheap.ml" 7 60 77
+type(
+  'a list
+)
+"symbheap.ml" 7 60 79 "symbheap.ml" 7 60 87
+type(
+  Defs.atomic_spatial_formula
+)
+"symbheap.ml" 7 60 78 "symbheap.ml" 7 60 88
+type(
+  Defs.atomic_spatial_formula list
+)
+"symbheap.ml" 7 60 75 "symbheap.ml" 7 60 88
+type(
+  'a list * Defs.atomic_spatial_formula list
+)
+"symbheap.ml" 8 89 93 "symbheap.ml" 8 89 102
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh_false "symbheap.ml" 9 124 124 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 8 89 113 "symbheap.ml" 8 89 123
+type(
+  Defs.symb_heap
+)
+ident(
+  int_ref sh_false "symbheap.ml" 7 60 64 "symbheap.ml" 7 60 72
+)
+"symbheap.ml" 8 89 105 "symbheap.ml" 8 89 123
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 9 124 128 "symbheap.ml" 9 124 134
+type(
+  'a list * 'b list
+)
+ident(
+  def sh_emp "symbheap.ml" 10 143 143 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 9 124 137 "symbheap.ml" 9 124 139
+type(
+  'a list
+)
+"symbheap.ml" 9 124 140 "symbheap.ml" 9 124 142
+type(
+  'b list
+)
+"symbheap.ml" 9 124 137 "symbheap.ml" 9 124 142
+type(
+  'a list * 'b list
+)
+"symbheap.ml" 10 143 147 "symbheap.ml" 10 143 154
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh_emp "symbheap.ml" 13 211 211 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 10 143 165 "symbheap.ml" 10 143 173
+type(
+  Defs.symb_heap
+)
+ident(
+  int_ref sh_emp "symbheap.ml" 9 124 128 "symbheap.ml" 9 124 134
+)
+"symbheap.ml" 10 143 157 "symbheap.ml" 10 143 173
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  def vars_of_exp "symbheap.ml" 17 305 305 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 14 238 252 "symbheap.ml" 14 238 253
+ident(
+  def i "symbheap.ml" 14 238 258 "symbheap.ml" 14 238 275
+)
+"symbheap.ml" 14 238 251 "symbheap.ml" 14 238 254
+type(
+  Defs.ident
+)
+"symbheap.ml" 14 238 242 "symbheap.ml" 14 238 254
+type(
+  Defs.exp
+)
+"symbheap.ml" 14 238 258 "symbheap.ml" 14 238 273
+type(
+  Misc.IdSet.elt -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.singleton
+)
+"symbheap.ml" 14 238 274 "symbheap.ml" 14 238 275
+type(
+  Defs.ident
+)
+ident(
+  int_ref i "symbheap.ml" 14 238 251 "symbheap.ml" 14 238 254
+)
+"symbheap.ml" 14 238 258 "symbheap.ml" 14 238 275
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 15 276 280 "symbheap.ml" 15 276 288
+type(
+  Defs.exp
+)
+"symbheap.ml" 15 276 292 "symbheap.ml" 15 276 303
+type(
+  Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.empty
+)
+"symbheap.ml" 13 211 229 "symbheap.ml" 15 276 303
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+"symbheap.ml" 17 305 309 "symbheap.ml" 17 305 328
+type(
+  Defs.atomic_pure_formula -> Misc.IdSet.t
+)
+ident(
+  def vars_of_atomic_pure "symbheap.ml" 20 423 423 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 18 340 350 "symbheap.ml" 18 340 352
+type(
+  Defs.exp
+)
+ident(
+  def e1 "symbheap.ml" 18 340 376 "symbheap.ml" 18 340 421
+)
+"symbheap.ml" 18 340 353 "symbheap.ml" 18 340 355
+type(
+  Defs.exp
+)
+ident(
+  def e2 "symbheap.ml" 18 340 376 "symbheap.ml" 18 340 421
+)
+"symbheap.ml" 18 340 344 "symbheap.ml" 18 340 356
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 18 340 366 "symbheap.ml" 18 340 368
+type(
+  Defs.exp
+)
+ident(
+  def e1 "symbheap.ml" 18 340 376 "symbheap.ml" 18 340 421
+)
+"symbheap.ml" 18 340 369 "symbheap.ml" 18 340 371
+type(
+  Defs.exp
+)
+ident(
+  def e2 "symbheap.ml" 18 340 376 "symbheap.ml" 18 340 421
+)
+"symbheap.ml" 18 340 359 "symbheap.ml" 18 340 372
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 18 340 344 "symbheap.ml" 18 340 372
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 18 340 376 "symbheap.ml" 18 340 387
+type(
+  Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.union
+)
+"symbheap.ml" 18 340 389 "symbheap.ml" 18 340 400
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_exp "symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+)
+"symbheap.ml" 18 340 401 "symbheap.ml" 18 340 403
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "symbheap.ml" 18 340 350 "symbheap.ml" 18 340 352
+)
+"symbheap.ml" 18 340 388 "symbheap.ml" 18 340 404
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 18 340 406 "symbheap.ml" 18 340 417
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_exp "symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+)
+"symbheap.ml" 18 340 418 "symbheap.ml" 18 340 420
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "symbheap.ml" 18 340 353 "symbheap.ml" 18 340 355
+)
+"symbheap.ml" 18 340 405 "symbheap.ml" 18 340 421
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 18 340 376 "symbheap.ml" 18 340 421
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 17 305 331 "symbheap.ml" 18 340 421
+type(
+  Defs.atomic_pure_formula -> Misc.IdSet.t
+)
+"symbheap.ml" 20 423 427 "symbheap.ml" 20 423 449
+type(
+  Defs.atomic_spatial_formula -> Misc.IdSet.t
+)
+ident(
+  def vars_of_atomic_spatial "symbheap.ml" 25 570 570 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 21 461 477 "symbheap.ml" 21 461 479
+type(
+  Defs.exp
+)
+ident(
+  def e1 "symbheap.ml" 22 487 493 "symbheap.ml" 22 487 538
+)
+"symbheap.ml" 21 461 480 "symbheap.ml" 21 461 482
+type(
+  Defs.exp
+)
+ident(
+  def e2 "symbheap.ml" 22 487 493 "symbheap.ml" 22 487 538
+)
+"symbheap.ml" 21 461 465 "symbheap.ml" 21 461 483
+type(
+  Defs.atomic_spatial_formula
+)
+"symbheap.ml" 22 487 493 "symbheap.ml" 22 487 504
+type(
+  Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.union
+)
+"symbheap.ml" 22 487 506 "symbheap.ml" 22 487 517
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_exp "symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+)
+"symbheap.ml" 22 487 518 "symbheap.ml" 22 487 520
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "symbheap.ml" 21 461 477 "symbheap.ml" 21 461 479
+)
+"symbheap.ml" 22 487 505 "symbheap.ml" 22 487 521
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 22 487 523 "symbheap.ml" 22 487 534
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_exp "symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+)
+"symbheap.ml" 22 487 535 "symbheap.ml" 22 487 537
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "symbheap.ml" 21 461 480 "symbheap.ml" 21 461 482
+)
+"symbheap.ml" 22 487 522 "symbheap.ml" 22 487 538
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 22 487 493 "symbheap.ml" 22 487 538
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 23 539 543 "symbheap.ml" 23 539 551
+type(
+  Defs.atomic_spatial_formula
+)
+"symbheap.ml" 23 539 555 "symbheap.ml" 23 539 566
+type(
+  Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.empty
+)
+"symbheap.ml" 20 423 452 "symbheap.ml" 23 539 566
+type(
+  Defs.atomic_spatial_formula -> Misc.IdSet.t
+)
+"symbheap.ml" 25 570 574 "symbheap.ml" 25 570 586
+type(
+  Defs.atomic_pure_formula list -> Misc.IdSet.t
+)
+ident(
+  def vars_of_pure "symbheap.ml" 28 669 669 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 25 570 587 "symbheap.ml" 25 570 589
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  def pi "symbheap.ml" 26 593 595 "symbheap.ml" 26 593 667
+)
+"symbheap.ml" 26 593 595 "symbheap.ml" 26 593 609
+type(
+  (Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t) ->
+  Misc.IdSet.t -> Misc.IdSet.t list -> Misc.IdSet.t
+)
+ident(
+  ext_ref List.fold_left
+)
+"symbheap.ml" 26 593 610 "symbheap.ml" 26 593 621
+type(
+  Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.union
+)
+"symbheap.ml" 26 593 622 "symbheap.ml" 26 593 633
+type(
+  Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.empty
+)
+"symbheap.ml" 26 593 635 "symbheap.ml" 26 593 643
+type(
+  (Defs.atomic_pure_formula -> Misc.IdSet.t) ->
+  Defs.atomic_pure_formula list -> Misc.IdSet.t list
+)
+ident(
+  ext_ref List.map
+)
+"symbheap.ml" 26 593 644 "symbheap.ml" 26 593 663
+type(
+  Defs.atomic_pure_formula -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_atomic_pure "symbheap.ml" 17 305 309 "symbheap.ml" 17 305 328
+)
+"symbheap.ml" 26 593 664 "symbheap.ml" 26 593 666
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  int_ref pi "symbheap.ml" 25 570 587 "symbheap.ml" 25 570 589
+)
+"symbheap.ml" 26 593 634 "symbheap.ml" 26 593 667
+call(
+  stack
+)
+type(
+  Misc.IdSet.t list
+)
+"symbheap.ml" 26 593 595 "symbheap.ml" 26 593 667
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 28 669 673 "symbheap.ml" 28 669 688
+type(
+  Defs.atomic_spatial_formula list -> Misc.IdSet.t
+)
+ident(
+  def vars_of_spatial "symbheap.ml" 31 780 780 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 28 669 689 "symbheap.ml" 28 669 694
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  def sigma "symbheap.ml" 29 698 700 "symbheap.ml" 29 698 778
+)
+"symbheap.ml" 29 698 700 "symbheap.ml" 29 698 714
+type(
+  (Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t) ->
+  Misc.IdSet.t -> Misc.IdSet.t list -> Misc.IdSet.t
+)
+ident(
+  ext_ref List.fold_left
+)
+"symbheap.ml" 29 698 715 "symbheap.ml" 29 698 726
+type(
+  Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.union
+)
+"symbheap.ml" 29 698 727 "symbheap.ml" 29 698 738
+type(
+  Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.empty
+)
+"symbheap.ml" 29 698 740 "symbheap.ml" 29 698 748
+type(
+  (Defs.atomic_spatial_formula -> Misc.IdSet.t) ->
+  Defs.atomic_spatial_formula list -> Misc.IdSet.t list
+)
+ident(
+  ext_ref List.map
+)
+"symbheap.ml" 29 698 749 "symbheap.ml" 29 698 771
+type(
+  Defs.atomic_spatial_formula -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_atomic_spatial "symbheap.ml" 20 423 427 "symbheap.ml" 20 423 449
+)
+"symbheap.ml" 29 698 772 "symbheap.ml" 29 698 777
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  int_ref sigma "symbheap.ml" 28 669 689 "symbheap.ml" 28 669 694
+)
+"symbheap.ml" 29 698 739 "symbheap.ml" 29 698 778
+call(
+  stack
+)
+type(
+  Misc.IdSet.t list
+)
+"symbheap.ml" 29 698 700 "symbheap.ml" 29 698 778
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 31 780 784 "symbheap.ml" 31 780 794
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list ->
+  Misc.IdSet.t
+)
+ident(
+  def vars_of_sh "symbheap.ml" 34 866 866 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 31 780 796 "symbheap.ml" 31 780 798
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  def pi "symbheap.ml" 32 809 811 "symbheap.ml" 32 809 864
+)
+"symbheap.ml" 31 780 799 "symbheap.ml" 31 780 804
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  def sigma "symbheap.ml" 32 809 811 "symbheap.ml" 32 809 864
+)
+"symbheap.ml" 31 780 795 "symbheap.ml" 31 780 805
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list
+)
+"symbheap.ml" 32 809 811 "symbheap.ml" 32 809 822
+type(
+  Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.union
+)
+"symbheap.ml" 32 809 824 "symbheap.ml" 32 809 836
+type(
+  Defs.atomic_pure_formula list -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_pure "symbheap.ml" 25 570 574 "symbheap.ml" 25 570 586
+)
+"symbheap.ml" 32 809 837 "symbheap.ml" 32 809 839
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  int_ref pi "symbheap.ml" 31 780 796 "symbheap.ml" 31 780 798
+)
+"symbheap.ml" 32 809 823 "symbheap.ml" 32 809 840
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 32 809 842 "symbheap.ml" 32 809 857
+type(
+  Defs.atomic_spatial_formula list -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_spatial "symbheap.ml" 28 669 673 "symbheap.ml" 28 669 688
+)
+"symbheap.ml" 32 809 858 "symbheap.ml" 32 809 863
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  int_ref sigma "symbheap.ml" 31 780 799 "symbheap.ml" 31 780 804
+)
+"symbheap.ml" 32 809 841 "symbheap.ml" 32 809 864
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 32 809 811 "symbheap.ml" 32 809 864
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 34 866 874 "symbheap.ml" 34 866 885
+type(
+  Defs.ext_symb_heap -> Misc.IdSet.t
+)
+ident(
+  def vars_of_esh "symbheap.ml" 34 866 866 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 35 897 910 "symbheap.ml" 35 897 912
+ident(
+  def sh "symbheap.ml" 35 897 917 "symbheap.ml" 35 897 930
+)
+"symbheap.ml" 35 897 909 "symbheap.ml" 35 897 913
+type(
+  Defs.symb_heap
+)
+"symbheap.ml" 35 897 901 "symbheap.ml" 35 897 913
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 35 897 917 "symbheap.ml" 35 897 927
+type(
+  Defs.symb_heap -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_sh "symbheap.ml" 31 780 784 "symbheap.ml" 31 780 794
+)
+"symbheap.ml" 35 897 928 "symbheap.ml" 35 897 930
+type(
+  Defs.symb_heap
+)
+ident(
+  int_ref sh "symbheap.ml" 35 897 909 "symbheap.ml" 35 897 913
+)
+"symbheap.ml" 35 897 917 "symbheap.ml" 35 897 930
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 36 931 950 "symbheap.ml" 36 931 954
+type(
+  Defs.atomic_pure_formula
+)
+ident(
+  def cond "symbheap.ml" 37 970 974 "symbheap.ml" 38 1014 1071
+)
+"symbheap.ml" 36 931 955 "symbheap.ml" 36 931 959
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh1 "symbheap.ml" 37 970 974 "symbheap.ml" 38 1014 1071
+)
+"symbheap.ml" 36 931 960 "symbheap.ml" 36 931 964
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh2 "symbheap.ml" 37 970 974 "symbheap.ml" 38 1014 1071
+)
+"symbheap.ml" 36 931 935 "symbheap.ml" 36 931 965
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 37 970 974 "symbheap.ml" 37 970 985
+type(
+  Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.union
+)
+"symbheap.ml" 37 970 987 "symbheap.ml" 37 970 1006
+type(
+  Defs.atomic_pure_formula -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_atomic_pure "symbheap.ml" 17 305 309 "symbheap.ml" 17 305 328
+)
+"symbheap.ml" 37 970 1007 "symbheap.ml" 37 970 1011
+type(
+  Defs.atomic_pure_formula
+)
+ident(
+  int_ref cond "symbheap.ml" 36 931 950 "symbheap.ml" 36 931 954
+)
+"symbheap.ml" 37 970 986 "symbheap.ml" 37 970 1012
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 38 1014 1021 "symbheap.ml" 38 1014 1032
+type(
+  Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.union
+)
+"symbheap.ml" 38 1014 1034 "symbheap.ml" 38 1014 1045
+type(
+  Defs.ext_symb_heap -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_esh "symbheap.ml" 34 866 874 "symbheap.ml" 34 866 885
+)
+"symbheap.ml" 38 1014 1046 "symbheap.ml" 38 1014 1050
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh1 "symbheap.ml" 36 931 955 "symbheap.ml" 36 931 959
+)
+"symbheap.ml" 38 1014 1033 "symbheap.ml" 38 1014 1051
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 38 1014 1053 "symbheap.ml" 38 1014 1064
+type(
+  Defs.ext_symb_heap -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_esh "symbheap.ml" 34 866 874 "symbheap.ml" 34 866 885
+)
+"symbheap.ml" 38 1014 1065 "symbheap.ml" 38 1014 1069
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "symbheap.ml" 36 931 960 "symbheap.ml" 36 931 964
+)
+"symbheap.ml" 38 1014 1052 "symbheap.ml" 38 1014 1070
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 38 1014 1020 "symbheap.ml" 38 1014 1071
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 37 970 974 "symbheap.ml" 38 1014 1071
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 34 866 888 "symbheap.ml" 38 1014 1071
+type(
+  Defs.ext_symb_heap -> Misc.IdSet.t
+)
+"symbheap.ml" 40 1073 1077 "symbheap.ml" 40 1073 1095
+type(
+  Defs.ext_symb_heap -> Misc.IdSet.t
+)
+ident(
+  def non_ex_vars_of_esh "symbheap.ml" 42 1168 1168 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 40 1073 1096 "symbheap.ml" 40 1073 1099
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh "symbheap.ml" 40 1073 1102 "symbheap.ml" 40 1073 1166
+)
+"symbheap.ml" 40 1073 1102 "symbheap.ml" 40 1073 1114
+type(
+  (Misc.IdSet.elt -> bool) -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.filter
+)
+"symbheap.ml" 40 1073 1120 "symbheap.ml" 40 1073 1122
+type(
+  Misc.IdSet.elt
+)
+ident(
+  def id "symbheap.ml" 40 1073 1124 "symbheap.ml" 40 1073 1147
+)
+"symbheap.ml" 40 1073 1124 "symbheap.ml" 40 1073 1127
+type(
+  bool -> bool
+)
+ident(
+  ext_ref Pervasives.not
+)
+"symbheap.ml" 40 1073 1129 "symbheap.ml" 40 1073 1143
+type(
+  Misc.IdSet.elt -> bool
+)
+ident(
+  ext_ref Misc.is_existential
+)
+"symbheap.ml" 40 1073 1144 "symbheap.ml" 40 1073 1146
+type(
+  Misc.IdSet.elt
+)
+ident(
+  int_ref id "symbheap.ml" 40 1073 1120 "symbheap.ml" 40 1073 1122
+)
+"symbheap.ml" 40 1073 1128 "symbheap.ml" 40 1073 1147
+call(
+  stack
+)
+type(
+  bool
+)
+"symbheap.ml" 40 1073 1124 "symbheap.ml" 40 1073 1147
+type(
+  bool
+)
+"symbheap.ml" 40 1073 1115 "symbheap.ml" 40 1073 1148
+type(
+  Misc.IdSet.elt -> bool
+)
+"symbheap.ml" 40 1073 1150 "symbheap.ml" 40 1073 1161
+type(
+  Defs.ext_symb_heap -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_esh "symbheap.ml" 34 866 874 "symbheap.ml" 34 866 885
+)
+"symbheap.ml" 40 1073 1162 "symbheap.ml" 40 1073 1165
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh "symbheap.ml" 40 1073 1096 "symbheap.ml" 40 1073 1099
+)
+"symbheap.ml" 40 1073 1149 "symbheap.ml" 40 1073 1166
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 40 1073 1102 "symbheap.ml" 40 1073 1166
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 42 1168 1172 "symbheap.ml" 42 1168 1194
+type(
+  Defs.atomic_command -> Misc.IdSet.t
+)
+ident(
+  def vars_of_atomic_command "symbheap.ml" 48 1434 1434 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 43 1206 1217 "symbheap.ml" 43 1206 1218
+ident(
+  def x "symbheap.ml" 43 1206 1223 "symbheap.ml" 43 1206 1240
+)
+"symbheap.ml" 43 1206 1216 "symbheap.ml" 43 1206 1219
+type(
+  Defs.ident
+)
+"symbheap.ml" 43 1206 1210 "symbheap.ml" 43 1206 1219
+type(
+  Defs.atomic_command
+)
+"symbheap.ml" 43 1206 1223 "symbheap.ml" 43 1206 1238
+type(
+  Misc.IdSet.elt -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.singleton
+)
+"symbheap.ml" 43 1206 1239 "symbheap.ml" 43 1206 1240
+type(
+  Defs.ident
+)
+ident(
+  int_ref x "symbheap.ml" 43 1206 1216 "symbheap.ml" 43 1206 1219
+)
+"symbheap.ml" 43 1206 1223 "symbheap.ml" 43 1206 1240
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 44 1241 1256 "symbheap.ml" 44 1241 1257
+ident(
+  def e "symbheap.ml" 44 1241 1262 "symbheap.ml" 44 1241 1275
+)
+"symbheap.ml" 44 1241 1255 "symbheap.ml" 44 1241 1258
+type(
+  Defs.exp
+)
+"symbheap.ml" 44 1241 1245 "symbheap.ml" 44 1241 1258
+type(
+  Defs.atomic_command
+)
+"symbheap.ml" 44 1241 1262 "symbheap.ml" 44 1241 1273
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_exp "symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+)
+"symbheap.ml" 44 1241 1274 "symbheap.ml" 44 1241 1275
+type(
+  Defs.exp
+)
+ident(
+  int_ref e "symbheap.ml" 44 1241 1255 "symbheap.ml" 44 1241 1258
+)
+"symbheap.ml" 44 1241 1262 "symbheap.ml" 44 1241 1275
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 45 1276 1290 "symbheap.ml" 45 1276 1291
+type(
+  Defs.ident
+)
+ident(
+  def x "symbheap.ml" 45 1276 1315 "symbheap.ml" 45 1276 1362
+)
+"symbheap.ml" 45 1276 1292 "symbheap.ml" 45 1276 1293
+type(
+  Defs.exp
+)
+ident(
+  def e "symbheap.ml" 45 1276 1315 "symbheap.ml" 45 1276 1362
+)
+"symbheap.ml" 45 1276 1280 "symbheap.ml" 45 1276 1294
+type(
+  Defs.atomic_command
+)
+"symbheap.ml" 45 1276 1307 "symbheap.ml" 45 1276 1308
+type(
+  Defs.ident
+)
+ident(
+  def x "symbheap.ml" 45 1276 1315 "symbheap.ml" 45 1276 1362
+)
+"symbheap.ml" 45 1276 1309 "symbheap.ml" 45 1276 1310
+type(
+  Defs.exp
+)
+ident(
+  def e "symbheap.ml" 45 1276 1315 "symbheap.ml" 45 1276 1362
+)
+"symbheap.ml" 45 1276 1297 "symbheap.ml" 45 1276 1311
+type(
+  Defs.atomic_command
+)
+"symbheap.ml" 45 1276 1280 "symbheap.ml" 45 1276 1311
+type(
+  Defs.atomic_command
+)
+"symbheap.ml" 45 1276 1315 "symbheap.ml" 45 1276 1326
+type(
+  Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.union
+)
+"symbheap.ml" 45 1276 1328 "symbheap.ml" 45 1276 1343
+type(
+  Misc.IdSet.elt -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.singleton
+)
+"symbheap.ml" 45 1276 1344 "symbheap.ml" 45 1276 1345
+type(
+  Defs.ident
+)
+ident(
+  int_ref x "symbheap.ml" 45 1276 1290 "symbheap.ml" 45 1276 1291
+)
+"symbheap.ml" 45 1276 1327 "symbheap.ml" 45 1276 1346
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 45 1276 1348 "symbheap.ml" 45 1276 1359
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_exp "symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+)
+"symbheap.ml" 45 1276 1360 "symbheap.ml" 45 1276 1361
+type(
+  Defs.exp
+)
+ident(
+  int_ref e "symbheap.ml" 45 1276 1292 "symbheap.ml" 45 1276 1293
+)
+"symbheap.ml" 45 1276 1347 "symbheap.ml" 45 1276 1362
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 45 1276 1315 "symbheap.ml" 45 1276 1362
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 46 1363 1377 "symbheap.ml" 46 1363 1379
+type(
+  Defs.exp
+)
+ident(
+  def e1 "symbheap.ml" 46 1363 1387 "symbheap.ml" 46 1363 1432
+)
+"symbheap.ml" 46 1363 1380 "symbheap.ml" 46 1363 1382
+type(
+  Defs.exp
+)
+ident(
+  def e2 "symbheap.ml" 46 1363 1387 "symbheap.ml" 46 1363 1432
+)
+"symbheap.ml" 46 1363 1367 "symbheap.ml" 46 1363 1383
+type(
+  Defs.atomic_command
+)
+"symbheap.ml" 46 1363 1387 "symbheap.ml" 46 1363 1398
+type(
+  Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.union
+)
+"symbheap.ml" 46 1363 1400 "symbheap.ml" 46 1363 1411
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_exp "symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+)
+"symbheap.ml" 46 1363 1412 "symbheap.ml" 46 1363 1414
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "symbheap.ml" 46 1363 1377 "symbheap.ml" 46 1363 1379
+)
+"symbheap.ml" 46 1363 1399 "symbheap.ml" 46 1363 1415
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 46 1363 1417 "symbheap.ml" 46 1363 1428
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_exp "symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+)
+"symbheap.ml" 46 1363 1429 "symbheap.ml" 46 1363 1431
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "symbheap.ml" 46 1363 1380 "symbheap.ml" 46 1363 1382
+)
+"symbheap.ml" 46 1363 1416 "symbheap.ml" 46 1363 1432
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 46 1363 1387 "symbheap.ml" 46 1363 1432
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 42 1168 1197 "symbheap.ml" 46 1363 1432
+type(
+  Defs.atomic_command -> Misc.IdSet.t
+)
+"symbheap.ml" 48 1434 1438 "symbheap.ml" 48 1434 1455
+type(
+  Defs.atomic_pure_formula -> Misc.IdSet.t
+)
+ident(
+  def vars_of_condition "symbheap.ml" 53 1576 1576 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 49 1467 1477 "symbheap.ml" 49 1467 1479
+type(
+  Defs.exp
+)
+ident(
+  def e1 "symbheap.ml" 49 1467 1503 "symbheap.ml" 49 1467 1548
+)
+"symbheap.ml" 49 1467 1480 "symbheap.ml" 49 1467 1482
+type(
+  Defs.exp
+)
+ident(
+  def e2 "symbheap.ml" 49 1467 1503 "symbheap.ml" 49 1467 1548
+)
+"symbheap.ml" 49 1467 1471 "symbheap.ml" 49 1467 1483
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 49 1467 1493 "symbheap.ml" 49 1467 1495
+type(
+  Defs.exp
+)
+ident(
+  def e1 "symbheap.ml" 49 1467 1503 "symbheap.ml" 49 1467 1548
+)
+"symbheap.ml" 49 1467 1496 "symbheap.ml" 49 1467 1498
+type(
+  Defs.exp
+)
+ident(
+  def e2 "symbheap.ml" 49 1467 1503 "symbheap.ml" 49 1467 1548
+)
+"symbheap.ml" 49 1467 1486 "symbheap.ml" 49 1467 1499
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 49 1467 1471 "symbheap.ml" 49 1467 1499
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 49 1467 1503 "symbheap.ml" 49 1467 1514
+type(
+  Misc.IdSet.t -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.union
+)
+"symbheap.ml" 49 1467 1516 "symbheap.ml" 49 1467 1527
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_exp "symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+)
+"symbheap.ml" 49 1467 1528 "symbheap.ml" 49 1467 1530
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "symbheap.ml" 49 1467 1477 "symbheap.ml" 49 1467 1479
+)
+"symbheap.ml" 49 1467 1515 "symbheap.ml" 49 1467 1531
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 49 1467 1533 "symbheap.ml" 49 1467 1544
+type(
+  Defs.exp -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_exp "symbheap.ml" 13 211 215 "symbheap.ml" 13 211 226
+)
+"symbheap.ml" 49 1467 1545 "symbheap.ml" 49 1467 1547
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "symbheap.ml" 49 1467 1480 "symbheap.ml" 49 1467 1482
+)
+"symbheap.ml" 49 1467 1532 "symbheap.ml" 49 1467 1548
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 49 1467 1503 "symbheap.ml" 49 1467 1548
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 48 1434 1458 "symbheap.ml" 49 1467 1548
+type(
+  Defs.atomic_pure_formula -> Misc.IdSet.t
+)
+"symbheap.ml" 53 1576 1580 "symbheap.ml" 53 1576 1590
+type(
+  (Defs.ident * Defs.exp) list -> Defs.exp -> Defs.exp
+)
+ident(
+  def exp_rename "symbheap.ml" 57 1703 1703 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 53 1576 1591 "symbheap.ml" 53 1576 1596
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  def subst "symbheap.ml" 53 1576 1599 "symbheap.ml" 55 1633 1701
+)
+"symbheap.ml" 54 1608 1612 "symbheap.ml" 54 1608 1620
+type(
+  Defs.exp
+)
+"symbheap.ml" 54 1608 1624 "symbheap.ml" 54 1608 1632
+type(
+  Defs.exp
+)
+"symbheap.ml" 55 1633 1647 "symbheap.ml" 55 1633 1649
+ident(
+  def id "symbheap.ml" 55 1633 1658 "symbheap.ml" 55 1633 1701
+)
+"symbheap.ml" 55 1633 1646 "symbheap.ml" 55 1633 1650
+type(
+  Defs.ident
+)
+"symbheap.ml" 55 1633 1637 "symbheap.ml" 55 1633 1650
+type(
+  Defs.exp
+)
+"symbheap.ml" 55 1633 1654 "symbheap.ml" 55 1633 1655
+ident(
+  def e "symbheap.ml" 55 1633 1658 "symbheap.ml" 55 1633 1701
+)
+"symbheap.ml" 55 1633 1637 "symbheap.ml" 55 1633 1655
+type(
+  Defs.exp
+)
+"symbheap.ml" 55 1633 1662 "symbheap.ml" 55 1633 1672
+type(
+  Defs.ident -> (Defs.ident * Defs.exp) list -> Defs.exp
+)
+ident(
+  ext_ref List.assoc
+)
+"symbheap.ml" 55 1633 1673 "symbheap.ml" 55 1633 1675
+type(
+  Defs.ident
+)
+ident(
+  int_ref id "symbheap.ml" 55 1633 1646 "symbheap.ml" 55 1633 1650
+)
+"symbheap.ml" 55 1633 1676 "symbheap.ml" 55 1633 1681
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 53 1576 1591 "symbheap.ml" 53 1576 1596
+)
+"symbheap.ml" 55 1633 1662 "symbheap.ml" 55 1633 1681
+call(
+  stack
+)
+type(
+  Defs.exp
+)
+"symbheap.ml" 55 1633 1687 "symbheap.ml" 55 1633 1696
+type(
+  exn
+)
+"symbheap.ml" 55 1633 1700 "symbheap.ml" 55 1633 1701
+type(
+  Defs.exp
+)
+ident(
+  int_ref e "symbheap.ml" 55 1633 1637 "symbheap.ml" 55 1633 1655
+)
+"symbheap.ml" 55 1633 1658 "symbheap.ml" 55 1633 1701
+type(
+  Defs.exp
+)
+"symbheap.ml" 53 1576 1599 "symbheap.ml" 55 1633 1701
+type(
+  Defs.exp -> Defs.exp
+)
+"symbheap.ml" 57 1703 1707 "symbheap.ml" 57 1703 1723
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_pure_formula -> Defs.atomic_pure_formula
+)
+ident(
+  def atom_pure_rename "symbheap.ml" 61 1878 1878 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 57 1703 1724 "symbheap.ml" 57 1703 1729
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  def subst "symbheap.ml" 57 1703 1732 "symbheap.ml" 59 1808 1876
+)
+"symbheap.ml" 58 1741 1751 "symbheap.ml" 58 1741 1753
+type(
+  Defs.exp
+)
+ident(
+  def e1 "symbheap.ml" 58 1741 1761 "symbheap.ml" 58 1741 1807
+)
+"symbheap.ml" 58 1741 1754 "symbheap.ml" 58 1741 1756
+type(
+  Defs.exp
+)
+ident(
+  def e2 "symbheap.ml" 58 1741 1761 "symbheap.ml" 58 1741 1807
+)
+"symbheap.ml" 58 1741 1745 "symbheap.ml" 58 1741 1757
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 58 1741 1767 "symbheap.ml" 58 1741 1777
+type(
+  (Defs.ident * Defs.exp) list -> Defs.exp -> Defs.exp
+)
+ident(
+  int_ref exp_rename "symbheap.ml" 53 1576 1580 "symbheap.ml" 53 1576 1590
+)
+"symbheap.ml" 58 1741 1778 "symbheap.ml" 58 1741 1783
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 57 1703 1724 "symbheap.ml" 57 1703 1729
+)
+"symbheap.ml" 58 1741 1784 "symbheap.ml" 58 1741 1786
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "symbheap.ml" 58 1741 1751 "symbheap.ml" 58 1741 1753
+)
+"symbheap.ml" 58 1741 1767 "symbheap.ml" 58 1741 1786
+call(
+  stack
+)
+type(
+  Defs.exp
+)
+"symbheap.ml" 58 1741 1787 "symbheap.ml" 58 1741 1797
+type(
+  (Defs.ident * Defs.exp) list -> Defs.exp -> Defs.exp
+)
+ident(
+  int_ref exp_rename "symbheap.ml" 53 1576 1580 "symbheap.ml" 53 1576 1590
+)
+"symbheap.ml" 58 1741 1798 "symbheap.ml" 58 1741 1803
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 57 1703 1724 "symbheap.ml" 57 1703 1729
+)
+"symbheap.ml" 58 1741 1804 "symbheap.ml" 58 1741 1806
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "symbheap.ml" 58 1741 1754 "symbheap.ml" 58 1741 1756
+)
+"symbheap.ml" 58 1741 1787 "symbheap.ml" 58 1741 1806
+call(
+  stack
+)
+type(
+  Defs.exp
+)
+"symbheap.ml" 58 1741 1761 "symbheap.ml" 58 1741 1807
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 59 1808 1819 "symbheap.ml" 59 1808 1821
+type(
+  Defs.exp
+)
+ident(
+  def e1 "symbheap.ml" 59 1808 1829 "symbheap.ml" 59 1808 1876
+)
+"symbheap.ml" 59 1808 1822 "symbheap.ml" 59 1808 1824
+type(
+  Defs.exp
+)
+ident(
+  def e2 "symbheap.ml" 59 1808 1829 "symbheap.ml" 59 1808 1876
+)
+"symbheap.ml" 59 1808 1812 "symbheap.ml" 59 1808 1825
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 59 1808 1836 "symbheap.ml" 59 1808 1846
+type(
+  (Defs.ident * Defs.exp) list -> Defs.exp -> Defs.exp
+)
+ident(
+  int_ref exp_rename "symbheap.ml" 53 1576 1580 "symbheap.ml" 53 1576 1590
+)
+"symbheap.ml" 59 1808 1847 "symbheap.ml" 59 1808 1852
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 57 1703 1724 "symbheap.ml" 57 1703 1729
+)
+"symbheap.ml" 59 1808 1853 "symbheap.ml" 59 1808 1855
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "symbheap.ml" 59 1808 1819 "symbheap.ml" 59 1808 1821
+)
+"symbheap.ml" 59 1808 1836 "symbheap.ml" 59 1808 1855
+call(
+  stack
+)
+type(
+  Defs.exp
+)
+"symbheap.ml" 59 1808 1856 "symbheap.ml" 59 1808 1866
+type(
+  (Defs.ident * Defs.exp) list -> Defs.exp -> Defs.exp
+)
+ident(
+  int_ref exp_rename "symbheap.ml" 53 1576 1580 "symbheap.ml" 53 1576 1590
+)
+"symbheap.ml" 59 1808 1867 "symbheap.ml" 59 1808 1872
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 57 1703 1724 "symbheap.ml" 57 1703 1729
+)
+"symbheap.ml" 59 1808 1873 "symbheap.ml" 59 1808 1875
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "symbheap.ml" 59 1808 1822 "symbheap.ml" 59 1808 1824
+)
+"symbheap.ml" 59 1808 1856 "symbheap.ml" 59 1808 1875
+call(
+  stack
+)
+type(
+  Defs.exp
+)
+"symbheap.ml" 59 1808 1829 "symbheap.ml" 59 1808 1876
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 57 1703 1732 "symbheap.ml" 59 1808 1876
+type(
+  Defs.atomic_pure_formula -> Defs.atomic_pure_formula
+)
+"symbheap.ml" 61 1878 1882 "symbheap.ml" 61 1878 1893
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_pure_formula -> Defs.atomic_pure_formula
+)
+ident(
+  def cond_rename "symbheap.ml" 63 1914 1914 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 61 1878 1896 "symbheap.ml" 61 1878 1912
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_pure_formula -> Defs.atomic_pure_formula
+)
+ident(
+  int_ref atom_pure_rename "symbheap.ml" 57 1703 1707 "symbheap.ml" 57 1703 1723
+)
+"symbheap.ml" 63 1914 1918 "symbheap.ml" 63 1914 1937
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_spatial_formula -> Defs.atomic_spatial_formula
+)
+ident(
+  def atom_spatial_rename "symbheap.ml" 67 2060 2060 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 63 1914 1938 "symbheap.ml" 63 1914 1943
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  def subst "symbheap.ml" 63 1914 1946 "symbheap.ml" 65 1980 2058
+)
+"symbheap.ml" 64 1955 1959 "symbheap.ml" 64 1955 1967
+type(
+  Defs.atomic_spatial_formula
+)
+"symbheap.ml" 64 1955 1971 "symbheap.ml" 64 1955 1979
+type(
+  Defs.atomic_spatial_formula
+)
+"symbheap.ml" 65 1980 1996 "symbheap.ml" 65 1980 1998
+type(
+  Defs.exp
+)
+ident(
+  def e1 "symbheap.ml" 65 1980 2006 "symbheap.ml" 65 1980 2058
+)
+"symbheap.ml" 65 1980 1999 "symbheap.ml" 65 1980 2001
+type(
+  Defs.exp
+)
+ident(
+  def e2 "symbheap.ml" 65 1980 2006 "symbheap.ml" 65 1980 2058
+)
+"symbheap.ml" 65 1980 1984 "symbheap.ml" 65 1980 2002
+type(
+  Defs.atomic_spatial_formula
+)
+"symbheap.ml" 65 1980 2018 "symbheap.ml" 65 1980 2028
+type(
+  (Defs.ident * Defs.exp) list -> Defs.exp -> Defs.exp
+)
+ident(
+  int_ref exp_rename "symbheap.ml" 53 1576 1580 "symbheap.ml" 53 1576 1590
+)
+"symbheap.ml" 65 1980 2029 "symbheap.ml" 65 1980 2034
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 63 1914 1938 "symbheap.ml" 63 1914 1943
+)
+"symbheap.ml" 65 1980 2035 "symbheap.ml" 65 1980 2037
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "symbheap.ml" 65 1980 1996 "symbheap.ml" 65 1980 1998
+)
+"symbheap.ml" 65 1980 2018 "symbheap.ml" 65 1980 2037
+call(
+  stack
+)
+type(
+  Defs.exp
+)
+"symbheap.ml" 65 1980 2038 "symbheap.ml" 65 1980 2048
+type(
+  (Defs.ident * Defs.exp) list -> Defs.exp -> Defs.exp
+)
+ident(
+  int_ref exp_rename "symbheap.ml" 53 1576 1580 "symbheap.ml" 53 1576 1590
+)
+"symbheap.ml" 65 1980 2049 "symbheap.ml" 65 1980 2054
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 63 1914 1938 "symbheap.ml" 63 1914 1943
+)
+"symbheap.ml" 65 1980 2055 "symbheap.ml" 65 1980 2057
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "symbheap.ml" 65 1980 1999 "symbheap.ml" 65 1980 2001
+)
+"symbheap.ml" 65 1980 2038 "symbheap.ml" 65 1980 2057
+call(
+  stack
+)
+type(
+  Defs.exp
+)
+"symbheap.ml" 65 1980 2006 "symbheap.ml" 65 1980 2058
+type(
+  Defs.atomic_spatial_formula
+)
+"symbheap.ml" 63 1914 1946 "symbheap.ml" 65 1980 2058
+type(
+  Defs.atomic_spatial_formula -> Defs.atomic_spatial_formula
+)
+"symbheap.ml" 67 2060 2064 "symbheap.ml" 67 2060 2075
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_pure_formula list -> Defs.atomic_pure_formula list
+)
+ident(
+  def pure_rename "symbheap.ml" 69 2131 2131 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 67 2060 2076 "symbheap.ml" 67 2060 2081
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  def subst "symbheap.ml" 67 2060 2082 "symbheap.ml" 67 2060 2129
+)
+"symbheap.ml" 67 2060 2082 "symbheap.ml" 67 2060 2087
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  def sigma "symbheap.ml" 67 2060 2090 "symbheap.ml" 67 2060 2129
+)
+"symbheap.ml" 67 2060 2090 "symbheap.ml" 67 2060 2098
+type(
+  (Defs.atomic_pure_formula -> Defs.atomic_pure_formula) ->
+  Defs.atomic_pure_formula list -> Defs.atomic_pure_formula list
+)
+ident(
+  ext_ref List.map
+)
+"symbheap.ml" 67 2060 2100 "symbheap.ml" 67 2060 2116
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_pure_formula -> Defs.atomic_pure_formula
+)
+ident(
+  int_ref atom_pure_rename "symbheap.ml" 57 1703 1707 "symbheap.ml" 57 1703 1723
+)
+"symbheap.ml" 67 2060 2117 "symbheap.ml" 67 2060 2122
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 67 2060 2076 "symbheap.ml" 67 2060 2081
+)
+"symbheap.ml" 67 2060 2099 "symbheap.ml" 67 2060 2123
+call(
+  stack
+)
+type(
+  Defs.atomic_pure_formula -> Defs.atomic_pure_formula
+)
+"symbheap.ml" 67 2060 2124 "symbheap.ml" 67 2060 2129
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  int_ref sigma "symbheap.ml" 67 2060 2082 "symbheap.ml" 67 2060 2087
+)
+"symbheap.ml" 67 2060 2090 "symbheap.ml" 67 2060 2129
+call(
+  tail
+)
+type(
+  Defs.atomic_pure_formula list
+)
+"symbheap.ml" 69 2131 2135 "symbheap.ml" 69 2131 2149
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_spatial_formula list -> Defs.atomic_spatial_formula list
+)
+ident(
+  def spatial_rename "symbheap.ml" 71 2208 2208 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 69 2131 2150 "symbheap.ml" 69 2131 2155
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  def subst "symbheap.ml" 69 2131 2156 "symbheap.ml" 69 2131 2206
+)
+"symbheap.ml" 69 2131 2156 "symbheap.ml" 69 2131 2161
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  def sigma "symbheap.ml" 69 2131 2164 "symbheap.ml" 69 2131 2206
+)
+"symbheap.ml" 69 2131 2164 "symbheap.ml" 69 2131 2172
+type(
+  (Defs.atomic_spatial_formula -> Defs.atomic_spatial_formula) ->
+  Defs.atomic_spatial_formula list -> Defs.atomic_spatial_formula list
+)
+ident(
+  ext_ref List.map
+)
+"symbheap.ml" 69 2131 2174 "symbheap.ml" 69 2131 2193
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_spatial_formula -> Defs.atomic_spatial_formula
+)
+ident(
+  int_ref atom_spatial_rename "symbheap.ml" 63 1914 1918 "symbheap.ml" 63 1914 1937
+)
+"symbheap.ml" 69 2131 2194 "symbheap.ml" 69 2131 2199
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 69 2131 2150 "symbheap.ml" 69 2131 2155
+)
+"symbheap.ml" 69 2131 2173 "symbheap.ml" 69 2131 2200
+call(
+  stack
+)
+type(
+  Defs.atomic_spatial_formula -> Defs.atomic_spatial_formula
+)
+"symbheap.ml" 69 2131 2201 "symbheap.ml" 69 2131 2206
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  int_ref sigma "symbheap.ml" 69 2131 2156 "symbheap.ml" 69 2131 2161
+)
+"symbheap.ml" 69 2131 2164 "symbheap.ml" 69 2131 2206
+call(
+  tail
+)
+type(
+  Defs.atomic_spatial_formula list
+)
+"symbheap.ml" 71 2208 2212 "symbheap.ml" 71 2208 2221
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list ->
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list
+)
+ident(
+  def sh_rename "symbheap.ml" 73 2292 2292 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 71 2208 2222 "symbheap.ml" 71 2208 2227
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  def subst "symbheap.ml" 71 2208 2228 "symbheap.ml" 71 2208 2290
+)
+"symbheap.ml" 71 2208 2229 "symbheap.ml" 71 2208 2231
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  def pi "symbheap.ml" 71 2208 2241 "symbheap.ml" 71 2208 2290
+)
+"symbheap.ml" 71 2208 2232 "symbheap.ml" 71 2208 2237
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  def sigma "symbheap.ml" 71 2208 2241 "symbheap.ml" 71 2208 2290
+)
+"symbheap.ml" 71 2208 2228 "symbheap.ml" 71 2208 2238
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list
+)
+"symbheap.ml" 71 2208 2242 "symbheap.ml" 71 2208 2253
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_pure_formula list -> Defs.atomic_pure_formula list
+)
+ident(
+  int_ref pure_rename "symbheap.ml" 67 2060 2064 "symbheap.ml" 67 2060 2075
+)
+"symbheap.ml" 71 2208 2254 "symbheap.ml" 71 2208 2259
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 71 2208 2222 "symbheap.ml" 71 2208 2227
+)
+"symbheap.ml" 71 2208 2260 "symbheap.ml" 71 2208 2262
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  int_ref pi "symbheap.ml" 71 2208 2229 "symbheap.ml" 71 2208 2231
+)
+"symbheap.ml" 71 2208 2242 "symbheap.ml" 71 2208 2262
+call(
+  stack
+)
+type(
+  Defs.atomic_pure_formula list
+)
+"symbheap.ml" 71 2208 2263 "symbheap.ml" 71 2208 2277
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_spatial_formula list -> Defs.atomic_spatial_formula list
+)
+ident(
+  int_ref spatial_rename "symbheap.ml" 69 2131 2135 "symbheap.ml" 69 2131 2149
+)
+"symbheap.ml" 71 2208 2278 "symbheap.ml" 71 2208 2283
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 71 2208 2222 "symbheap.ml" 71 2208 2227
+)
+"symbheap.ml" 71 2208 2284 "symbheap.ml" 71 2208 2289
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  int_ref sigma "symbheap.ml" 71 2208 2232 "symbheap.ml" 71 2208 2237
+)
+"symbheap.ml" 71 2208 2263 "symbheap.ml" 71 2208 2289
+call(
+  stack
+)
+type(
+  Defs.atomic_spatial_formula list
+)
+"symbheap.ml" 71 2208 2241 "symbheap.ml" 71 2208 2290
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list
+)
+"symbheap.ml" 73 2292 2300 "symbheap.ml" 73 2292 2310
+type(
+  (Defs.ident * Defs.exp) list -> Defs.ext_symb_heap -> Defs.ext_symb_heap
+)
+ident(
+  def esh_rename "symbheap.ml" 73 2292 2292 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 73 2292 2311 "symbheap.ml" 73 2292 2316
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  def subst "symbheap.ml" 73 2292 2319 "symbheap.ml" 76 2415 2501
+)
+"symbheap.ml" 74 2328 2341 "symbheap.ml" 74 2328 2343
+ident(
+  def sh "symbheap.ml" 74 2328 2348 "symbheap.ml" 74 2328 2376
+)
+"symbheap.ml" 74 2328 2340 "symbheap.ml" 74 2328 2344
+type(
+  Defs.symb_heap
+)
+"symbheap.ml" 74 2328 2332 "symbheap.ml" 74 2328 2344
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 74 2328 2357 "symbheap.ml" 74 2328 2366
+type(
+  (Defs.ident * Defs.exp) list -> Defs.symb_heap -> Defs.symb_heap
+)
+ident(
+  int_ref sh_rename "symbheap.ml" 71 2208 2212 "symbheap.ml" 71 2208 2221
+)
+"symbheap.ml" 74 2328 2367 "symbheap.ml" 74 2328 2372
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 73 2292 2311 "symbheap.ml" 73 2292 2316
+)
+"symbheap.ml" 74 2328 2373 "symbheap.ml" 74 2328 2375
+type(
+  Defs.symb_heap
+)
+ident(
+  int_ref sh "symbheap.ml" 74 2328 2340 "symbheap.ml" 74 2328 2344
+)
+"symbheap.ml" 74 2328 2356 "symbheap.ml" 74 2328 2376
+call(
+  stack
+)
+type(
+  Defs.symb_heap
+)
+"symbheap.ml" 74 2328 2348 "symbheap.ml" 74 2328 2376
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 75 2377 2396 "symbheap.ml" 75 2377 2400
+type(
+  Defs.atomic_pure_formula
+)
+ident(
+  def cond "symbheap.ml" 76 2415 2419 "symbheap.ml" 76 2415 2501
+)
+"symbheap.ml" 75 2377 2401 "symbheap.ml" 75 2377 2405
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh1 "symbheap.ml" 76 2415 2419 "symbheap.ml" 76 2415 2501
+)
+"symbheap.ml" 75 2377 2406 "symbheap.ml" 75 2377 2410
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh2 "symbheap.ml" 76 2415 2419 "symbheap.ml" 76 2415 2501
+)
+"symbheap.ml" 75 2377 2381 "symbheap.ml" 75 2377 2411
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 76 2415 2434 "symbheap.ml" 76 2415 2445
+type(
+  (Defs.ident * Defs.exp) list ->
+  Defs.atomic_pure_formula -> Defs.atomic_pure_formula
+)
+ident(
+  int_ref cond_rename "symbheap.ml" 61 1878 1882 "symbheap.ml" 61 1878 1893
+)
+"symbheap.ml" 76 2415 2446 "symbheap.ml" 76 2415 2451
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 73 2292 2311 "symbheap.ml" 73 2292 2316
+)
+"symbheap.ml" 76 2415 2452 "symbheap.ml" 76 2415 2456
+type(
+  Defs.atomic_pure_formula
+)
+ident(
+  int_ref cond "symbheap.ml" 75 2377 2396 "symbheap.ml" 75 2377 2400
+)
+"symbheap.ml" 76 2415 2434 "symbheap.ml" 76 2415 2456
+call(
+  stack
+)
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 76 2415 2457 "symbheap.ml" 76 2415 2467
+type(
+  (Defs.ident * Defs.exp) list -> Defs.ext_symb_heap -> Defs.ext_symb_heap
+)
+ident(
+  int_ref esh_rename "symbheap.ml" 73 2292 2300 "symbheap.ml" 73 2292 2310
+)
+"symbheap.ml" 76 2415 2468 "symbheap.ml" 76 2415 2473
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 73 2292 2311 "symbheap.ml" 73 2292 2316
+)
+"symbheap.ml" 76 2415 2474 "symbheap.ml" 76 2415 2478
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh1 "symbheap.ml" 75 2377 2401 "symbheap.ml" 75 2377 2405
+)
+"symbheap.ml" 76 2415 2457 "symbheap.ml" 76 2415 2478
+call(
+  stack
+)
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 76 2415 2479 "symbheap.ml" 76 2415 2489
+type(
+  (Defs.ident * Defs.exp) list -> Defs.ext_symb_heap -> Defs.ext_symb_heap
+)
+ident(
+  int_ref esh_rename "symbheap.ml" 73 2292 2300 "symbheap.ml" 73 2292 2310
+)
+"symbheap.ml" 76 2415 2490 "symbheap.ml" 76 2415 2495
+type(
+  (Defs.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "symbheap.ml" 73 2292 2311 "symbheap.ml" 73 2292 2316
+)
+"symbheap.ml" 76 2415 2496 "symbheap.ml" 76 2415 2500
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "symbheap.ml" 75 2377 2406 "symbheap.ml" 75 2377 2410
+)
+"symbheap.ml" 76 2415 2479 "symbheap.ml" 76 2415 2500
+call(
+  stack
+)
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 76 2415 2419 "symbheap.ml" 76 2415 2501
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 73 2292 2319 "symbheap.ml" 76 2415 2501
+type(
+  Defs.ext_symb_heap -> Defs.ext_symb_heap
+)
+"symbheap.ml" 80 2520 2528 "symbheap.ml" 80 2520 2546
+type(
+  Defs.ext_symb_heap -> Misc.IdSet.t
+)
+ident(
+  def non_ex_vars_of_esh "symbheap.ml" 80 2520 2520 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 80 2520 2547 "symbheap.ml" 80 2520 2550
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh "symbheap.ml" 81 2554 2556 "symbheap.ml" 81 2554 2619
+)
+"symbheap.ml" 81 2554 2556 "symbheap.ml" 81 2554 2568
+type(
+  (Misc.IdSet.elt -> bool) -> Misc.IdSet.t -> Misc.IdSet.t
+)
+ident(
+  ext_ref Misc.IdSet.filter
+)
+"symbheap.ml" 81 2554 2574 "symbheap.ml" 81 2554 2575
+type(
+  Misc.IdSet.elt
+)
+ident(
+  def x "symbheap.ml" 81 2554 2578 "symbheap.ml" 81 2554 2600
+)
+"symbheap.ml" 81 2554 2578 "symbheap.ml" 81 2554 2581
+type(
+  bool -> bool
+)
+ident(
+  ext_ref Pervasives.not
+)
+"symbheap.ml" 81 2554 2583 "symbheap.ml" 81 2554 2597
+type(
+  Misc.IdSet.elt -> bool
+)
+ident(
+  ext_ref Misc.is_existential
+)
+"symbheap.ml" 81 2554 2598 "symbheap.ml" 81 2554 2599
+type(
+  Misc.IdSet.elt
+)
+ident(
+  int_ref x "symbheap.ml" 81 2554 2574 "symbheap.ml" 81 2554 2575
+)
+"symbheap.ml" 81 2554 2582 "symbheap.ml" 81 2554 2600
+call(
+  stack
+)
+type(
+  bool
+)
+"symbheap.ml" 81 2554 2578 "symbheap.ml" 81 2554 2600
+type(
+  bool
+)
+"symbheap.ml" 81 2554 2569 "symbheap.ml" 81 2554 2601
+type(
+  Misc.IdSet.elt -> bool
+)
+"symbheap.ml" 81 2554 2603 "symbheap.ml" 81 2554 2614
+type(
+  Defs.ext_symb_heap -> Misc.IdSet.t
+)
+ident(
+  int_ref vars_of_esh "symbheap.ml" 34 866 874 "symbheap.ml" 34 866 885
+)
+"symbheap.ml" 81 2554 2615 "symbheap.ml" 81 2554 2618
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh "symbheap.ml" 80 2520 2547 "symbheap.ml" 80 2520 2550
+)
+"symbheap.ml" 81 2554 2602 "symbheap.ml" 81 2554 2619
+call(
+  stack
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 81 2554 2556 "symbheap.ml" 81 2554 2619
+call(
+  tail
+)
+type(
+  Misc.IdSet.t
+)
+"symbheap.ml" 83 2621 2625 "symbheap.ml" 83 2621 2632
+type(
+  'a list * 'b list -> 'a list * 'b list -> 'a list * 'b list
+)
+ident(
+  def sh_star "symbheap.ml" 85 2686 2686 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 83 2621 2634 "symbheap.ml" 83 2621 2637
+type(
+  'a list
+)
+ident(
+  def pi1 "symbheap.ml" 83 2621 2646 "symbheap.ml" 83 2621 2684
+)
+"symbheap.ml" 83 2621 2638 "symbheap.ml" 83 2621 2644
+type(
+  'b list
+)
+ident(
+  def sigma1 "symbheap.ml" 83 2621 2646 "symbheap.ml" 83 2621 2684
+)
+"symbheap.ml" 83 2621 2633 "symbheap.ml" 83 2621 2645
+type(
+  'a list * 'b list
+)
+"symbheap.ml" 83 2621 2647 "symbheap.ml" 83 2621 2650
+type(
+  'a list
+)
+ident(
+  def pi2 "symbheap.ml" 83 2621 2661 "symbheap.ml" 83 2621 2684
+)
+"symbheap.ml" 83 2621 2651 "symbheap.ml" 83 2621 2657
+type(
+  'b list
+)
+ident(
+  def sigma2 "symbheap.ml" 83 2621 2661 "symbheap.ml" 83 2621 2684
+)
+"symbheap.ml" 83 2621 2646 "symbheap.ml" 83 2621 2658
+type(
+  'a list * 'b list
+)
+"symbheap.ml" 83 2621 2662 "symbheap.ml" 83 2621 2665
+type(
+  'a list
+)
+ident(
+  int_ref pi1 "symbheap.ml" 83 2621 2634 "symbheap.ml" 83 2621 2637
+)
+"symbheap.ml" 83 2621 2665 "symbheap.ml" 83 2621 2666
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  ext_ref Pervasives.( @ )
+)
+"symbheap.ml" 83 2621 2666 "symbheap.ml" 83 2621 2669
+type(
+  'a list
+)
+ident(
+  int_ref pi2 "symbheap.ml" 83 2621 2647 "symbheap.ml" 83 2621 2650
+)
+"symbheap.ml" 83 2621 2662 "symbheap.ml" 83 2621 2669
+call(
+  stack
+)
+type(
+  'a list
+)
+"symbheap.ml" 83 2621 2670 "symbheap.ml" 83 2621 2676
+type(
+  'b list
+)
+ident(
+  int_ref sigma1 "symbheap.ml" 83 2621 2638 "symbheap.ml" 83 2621 2644
+)
+"symbheap.ml" 83 2621 2676 "symbheap.ml" 83 2621 2677
+type(
+  'b list -> 'b list -> 'b list
+)
+ident(
+  ext_ref Pervasives.( @ )
+)
+"symbheap.ml" 83 2621 2677 "symbheap.ml" 83 2621 2683
+type(
+  'b list
+)
+ident(
+  int_ref sigma2 "symbheap.ml" 83 2621 2651 "symbheap.ml" 83 2621 2657
+)
+"symbheap.ml" 83 2621 2670 "symbheap.ml" 83 2621 2683
+call(
+  stack
+)
+type(
+  'b list
+)
+"symbheap.ml" 83 2621 2661 "symbheap.ml" 83 2621 2684
+type(
+  'a list * 'b list
+)
+"symbheap.ml" 85 2686 2694 "symbheap.ml" 85 2686 2702
+type(
+  Defs.ext_symb_heap -> Defs.ext_symb_heap -> Defs.ext_symb_heap
+)
+ident(
+  def esh_star "symbheap.ml" 85 2686 2686 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 85 2686 2703 "symbheap.ml" 85 2686 2707
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh1 "symbheap.ml" 85 2686 2708 "symbheap.ml" 90 2948 3010
+)
+"symbheap.ml" 85 2686 2708 "symbheap.ml" 85 2686 2712
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh2 "symbheap.ml" 85 2686 2715 "symbheap.ml" 90 2948 3010
+)
+"symbheap.ml" 85 2686 2722 "symbheap.ml" 85 2686 2726
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh1 "symbheap.ml" 85 2686 2703 "symbheap.ml" 85 2686 2707
+)
+"symbheap.ml" 85 2686 2727 "symbheap.ml" 85 2686 2731
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "symbheap.ml" 85 2686 2708 "symbheap.ml" 85 2686 2712
+)
+"symbheap.ml" 85 2686 2721 "symbheap.ml" 85 2686 2732
+type(
+  Defs.ext_symb_heap * Defs.ext_symb_heap
+)
+"symbheap.ml" 86 2738 2751 "symbheap.ml" 86 2738 2754
+ident(
+  def sh1 "symbheap.ml" 86 2738 2773 "symbheap.ml" 86 2738 2798
+)
+"symbheap.ml" 86 2738 2750 "symbheap.ml" 86 2738 2755
+type(
+  Defs.symb_heap
+)
+"symbheap.ml" 86 2738 2742 "symbheap.ml" 86 2738 2755
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 86 2738 2765 "symbheap.ml" 86 2738 2768
+ident(
+  def sh2 "symbheap.ml" 86 2738 2773 "symbheap.ml" 86 2738 2798
+)
+"symbheap.ml" 86 2738 2764 "symbheap.ml" 86 2738 2769
+type(
+  Defs.symb_heap
+)
+"symbheap.ml" 86 2738 2756 "symbheap.ml" 86 2738 2769
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 86 2738 2742 "symbheap.ml" 86 2738 2769
+type(
+  Defs.ext_symb_heap * Defs.ext_symb_heap
+)
+"symbheap.ml" 86 2738 2782 "symbheap.ml" 86 2738 2789
+type(
+  Defs.symb_heap -> Defs.symb_heap -> Defs.symb_heap
+)
+ident(
+  int_ref sh_star "symbheap.ml" 83 2621 2625 "symbheap.ml" 83 2621 2632
+)
+"symbheap.ml" 86 2738 2790 "symbheap.ml" 86 2738 2793
+type(
+  Defs.symb_heap
+)
+ident(
+  int_ref sh1 "symbheap.ml" 86 2738 2750 "symbheap.ml" 86 2738 2755
+)
+"symbheap.ml" 86 2738 2794 "symbheap.ml" 86 2738 2797
+type(
+  Defs.symb_heap
+)
+ident(
+  int_ref sh2 "symbheap.ml" 86 2738 2764 "symbheap.ml" 86 2738 2769
+)
+"symbheap.ml" 86 2738 2781 "symbheap.ml" 86 2738 2798
+call(
+  stack
+)
+type(
+  Defs.symb_heap
+)
+"symbheap.ml" 86 2738 2773 "symbheap.ml" 86 2738 2798
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 87 2799 2818 "symbheap.ml" 87 2799 2822
+type(
+  Defs.atomic_pure_formula
+)
+ident(
+  def cond "symbheap.ml" 88 2842 2846 "symbheap.ml" 88 2842 2904
+)
+"symbheap.ml" 87 2799 2823 "symbheap.ml" 87 2799 2827
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh1 "symbheap.ml" 88 2842 2846 "symbheap.ml" 88 2842 2904
+)
+"symbheap.ml" 87 2799 2828 "symbheap.ml" 87 2799 2832
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh2 "symbheap.ml" 88 2842 2846 "symbheap.ml" 88 2842 2904
+)
+"symbheap.ml" 87 2799 2803 "symbheap.ml" 87 2799 2833
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 87 2799 2834 "symbheap.ml" 87 2799 2838
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh3 "symbheap.ml" 88 2842 2846 "symbheap.ml" 88 2842 2904
+)
+"symbheap.ml" 87 2799 2803 "symbheap.ml" 87 2799 2838
+type(
+  Defs.ext_symb_heap * Defs.ext_symb_heap
+)
+"symbheap.ml" 88 2842 2861 "symbheap.ml" 88 2842 2865
+type(
+  Defs.atomic_pure_formula
+)
+ident(
+  int_ref cond "symbheap.ml" 87 2799 2818 "symbheap.ml" 87 2799 2822
+)
+"symbheap.ml" 88 2842 2866 "symbheap.ml" 88 2842 2874
+type(
+  Defs.ext_symb_heap -> Defs.ext_symb_heap -> Defs.ext_symb_heap
+)
+ident(
+  int_ref esh_star "symbheap.ml" 85 2686 2694 "symbheap.ml" 85 2686 2702
+)
+"symbheap.ml" 88 2842 2875 "symbheap.ml" 88 2842 2879
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh1 "symbheap.ml" 87 2799 2823 "symbheap.ml" 87 2799 2827
+)
+"symbheap.ml" 88 2842 2880 "symbheap.ml" 88 2842 2884
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh3 "symbheap.ml" 87 2799 2834 "symbheap.ml" 87 2799 2838
+)
+"symbheap.ml" 88 2842 2866 "symbheap.ml" 88 2842 2884
+call(
+  stack
+)
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 88 2842 2885 "symbheap.ml" 88 2842 2893
+type(
+  Defs.ext_symb_heap -> Defs.ext_symb_heap -> Defs.ext_symb_heap
+)
+ident(
+  int_ref esh_star "symbheap.ml" 85 2686 2694 "symbheap.ml" 85 2686 2702
+)
+"symbheap.ml" 88 2842 2894 "symbheap.ml" 88 2842 2898
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "symbheap.ml" 87 2799 2828 "symbheap.ml" 87 2799 2832
+)
+"symbheap.ml" 88 2842 2899 "symbheap.ml" 88 2842 2903
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh3 "symbheap.ml" 87 2799 2834 "symbheap.ml" 87 2799 2838
+)
+"symbheap.ml" 88 2842 2885 "symbheap.ml" 88 2842 2903
+call(
+  stack
+)
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 88 2842 2846 "symbheap.ml" 88 2842 2904
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 89 2905 2909 "symbheap.ml" 89 2905 2913
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh1 "symbheap.ml" 90 2948 2952 "symbheap.ml" 90 2948 3010
+)
+"symbheap.ml" 89 2905 2929 "symbheap.ml" 89 2905 2933
+type(
+  Defs.atomic_pure_formula
+)
+ident(
+  def cond "symbheap.ml" 90 2948 2952 "symbheap.ml" 90 2948 3010
+)
+"symbheap.ml" 89 2905 2934 "symbheap.ml" 89 2905 2938
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh2 "symbheap.ml" 90 2948 2952 "symbheap.ml" 90 2948 3010
+)
+"symbheap.ml" 89 2905 2939 "symbheap.ml" 89 2905 2943
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh3 "symbheap.ml" 90 2948 2952 "symbheap.ml" 90 2948 3010
+)
+"symbheap.ml" 89 2905 2914 "symbheap.ml" 89 2905 2944
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 89 2905 2909 "symbheap.ml" 89 2905 2944
+type(
+  Defs.ext_symb_heap * Defs.ext_symb_heap
+)
+"symbheap.ml" 90 2948 2967 "symbheap.ml" 90 2948 2971
+type(
+  Defs.atomic_pure_formula
+)
+ident(
+  int_ref cond "symbheap.ml" 89 2905 2929 "symbheap.ml" 89 2905 2933
+)
+"symbheap.ml" 90 2948 2972 "symbheap.ml" 90 2948 2980
+type(
+  Defs.ext_symb_heap -> Defs.ext_symb_heap -> Defs.ext_symb_heap
+)
+ident(
+  int_ref esh_star "symbheap.ml" 85 2686 2694 "symbheap.ml" 85 2686 2702
+)
+"symbheap.ml" 90 2948 2981 "symbheap.ml" 90 2948 2985
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh1 "symbheap.ml" 89 2905 2909 "symbheap.ml" 89 2905 2913
+)
+"symbheap.ml" 90 2948 2986 "symbheap.ml" 90 2948 2990
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "symbheap.ml" 89 2905 2934 "symbheap.ml" 89 2905 2938
+)
+"symbheap.ml" 90 2948 2972 "symbheap.ml" 90 2948 2990
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 90 2948 2991 "symbheap.ml" 90 2948 2999
+type(
+  Defs.ext_symb_heap -> Defs.ext_symb_heap -> Defs.ext_symb_heap
+)
+ident(
+  int_ref esh_star "symbheap.ml" 85 2686 2694 "symbheap.ml" 85 2686 2702
+)
+"symbheap.ml" 90 2948 3000 "symbheap.ml" 90 2948 3004
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh1 "symbheap.ml" 89 2905 2909 "symbheap.ml" 89 2905 2913
+)
+"symbheap.ml" 90 2948 3005 "symbheap.ml" 90 2948 3009
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh3 "symbheap.ml" 89 2905 2939 "symbheap.ml" 89 2905 2943
+)
+"symbheap.ml" 90 2948 2991 "symbheap.ml" 90 2948 3009
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 90 2948 2952 "symbheap.ml" 90 2948 3010
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 85 2686 2715 "symbheap.ml" 90 2948 3010
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 92 3012 3016 "symbheap.ml" 92 3012 3029
+type(
+  Defs.ext_symb_heap list -> Defs.ext_symb_heap
+)
+ident(
+  def esh_star_list "symbheap.ml" 94 3069 3069 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 92 3012 3030 "symbheap.ml" 92 3012 3031
+type(
+  Defs.ext_symb_heap list
+)
+ident(
+  def l "symbheap.ml" 92 3012 3034 "symbheap.ml" 92 3012 3067
+)
+"symbheap.ml" 92 3012 3034 "symbheap.ml" 92 3012 3048
+type(
+  (Defs.ext_symb_heap -> Defs.ext_symb_heap -> Defs.ext_symb_heap) ->
+  Defs.ext_symb_heap -> Defs.ext_symb_heap list -> Defs.ext_symb_heap
+)
+ident(
+  ext_ref List.fold_left
+)
+"symbheap.ml" 92 3012 3049 "symbheap.ml" 92 3012 3057
+type(
+  Defs.ext_symb_heap -> Defs.ext_symb_heap -> Defs.ext_symb_heap
+)
+ident(
+  int_ref esh_star "symbheap.ml" 85 2686 2694 "symbheap.ml" 85 2686 2702
+)
+"symbheap.ml" 92 3012 3058 "symbheap.ml" 92 3012 3065
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh_emp "symbheap.ml" 10 143 147 "symbheap.ml" 10 143 154
+)
+"symbheap.ml" 92 3012 3066 "symbheap.ml" 92 3012 3067
+type(
+  Defs.ext_symb_heap list
+)
+ident(
+  int_ref l "symbheap.ml" 92 3012 3030 "symbheap.ml" 92 3012 3031
+)
+"symbheap.ml" 92 3012 3034 "symbheap.ml" 92 3012 3067
+call(
+  tail
+)
+type(
+  Defs.ext_symb_heap
+)
+"symbheap.ml" 94 3069 3073 "symbheap.ml" 94 3069 3081
+type(
+  Defs.atomic_pure_formula -> Defs.atomic_pure_formula
+)
+ident(
+  def pure_neg "symbheap.ml" 96 3123 3151 "symbheap.ml" 1 0 -1
+)
+"symbheap.ml" 95 3093 3103 "symbheap.ml" 95 3093 3104
+type(
+  Defs.exp
+)
+ident(
+  def e "symbheap.ml" 95 3093 3111 "symbheap.ml" 95 3093 3122
+)
+"symbheap.ml" 95 3093 3105 "symbheap.ml" 95 3093 3106
+type(
+  Defs.exp
+)
+ident(
+  def f "symbheap.ml" 95 3093 3111 "symbheap.ml" 95 3093 3122
+)
+"symbheap.ml" 95 3093 3097 "symbheap.ml" 95 3093 3107
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 95 3093 3118 "symbheap.ml" 95 3093 3119
+type(
+  Defs.exp
+)
+ident(
+  int_ref e "symbheap.ml" 95 3093 3103 "symbheap.ml" 95 3093 3104
+)
+"symbheap.ml" 95 3093 3120 "symbheap.ml" 95 3093 3121
+type(
+  Defs.exp
+)
+ident(
+  int_ref f "symbheap.ml" 95 3093 3105 "symbheap.ml" 95 3093 3106
+)
+"symbheap.ml" 95 3093 3111 "symbheap.ml" 95 3093 3122
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 96 3123 3134 "symbheap.ml" 96 3123 3135
+type(
+  Defs.exp
+)
+ident(
+  def e "symbheap.ml" 96 3123 3141 "symbheap.ml" 96 3123 3151
+)
+"symbheap.ml" 96 3123 3136 "symbheap.ml" 96 3123 3137
+type(
+  Defs.exp
+)
+ident(
+  def f "symbheap.ml" 96 3123 3141 "symbheap.ml" 96 3123 3151
+)
+"symbheap.ml" 96 3123 3127 "symbheap.ml" 96 3123 3138
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 96 3123 3147 "symbheap.ml" 96 3123 3148
+type(
+  Defs.exp
+)
+ident(
+  int_ref e "symbheap.ml" 96 3123 3134 "symbheap.ml" 96 3123 3135
+)
+"symbheap.ml" 96 3123 3149 "symbheap.ml" 96 3123 3150
+type(
+  Defs.exp
+)
+ident(
+  int_ref f "symbheap.ml" 96 3123 3136 "symbheap.ml" 96 3123 3137
+)
+"symbheap.ml" 96 3123 3141 "symbheap.ml" 96 3123 3151
+type(
+  Defs.atomic_pure_formula
+)
+"symbheap.ml" 94 3069 3084 "symbheap.ml" 96 3123 3151
+type(
+  Defs.atomic_pure_formula -> Defs.atomic_pure_formula
+)

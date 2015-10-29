@@ -1,0 +1,891 @@
+"toplevel.ml" 5 36 40 "toplevel.ml" 5 36 42
+type(
+  Lexing.lexbuf -> Defs.function_declaration list
+)
+ident(
+  def wp "toplevel.ml" 12 203 203 "toplevel.ml" 1 0 -1
+)
+"toplevel.ml" 5 36 43 "toplevel.ml" 5 36 46
+type(
+  Lexing.lexbuf
+)
+ident(
+  def lex "toplevel.ml" 6 49 51 "toplevel.ml" 10 166 201
+)
+"toplevel.ml" 6 49 66 "toplevel.ml" 6 49 67
+type(
+  Parsetree.a_component list
+)
+"toplevel.ml" 6 49 68 "toplevel.ml" 6 49 73
+type(
+  Parsetree.p_item list
+)
+ident(
+  def iteml "toplevel.ml" 10 166 171 "toplevel.ml" 10 166 201
+)
+"toplevel.ml" 6 49 55 "toplevel.ml" 6 49 75
+type(
+  Parsetree.p_program
+)
+"toplevel.ml" 7 78 86 "toplevel.ml" 7 78 89
+type(
+  Parsetree.p_program
+)
+ident(
+  def ast "toplevel.ml" 8 126 132 "toplevel.ml" 9 156 165
+)
+"toplevel.ml" 7 78 92 "toplevel.ml" 7 78 106
+type(
+  (Lexing.lexbuf -> Parser.token) -> Lexing.lexbuf -> Parsetree.p_program
+)
+ident(
+  ext_ref Parser.program
+)
+"toplevel.ml" 7 78 107 "toplevel.ml" 7 78 118
+type(
+  Lexing.lexbuf -> Parser.token
+)
+ident(
+  ext_ref Lexer.token
+)
+"toplevel.ml" 7 78 119 "toplevel.ml" 7 78 122
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lex "toplevel.ml" 5 36 43 "toplevel.ml" 5 36 46
+)
+"toplevel.ml" 7 78 92 "toplevel.ml" 7 78 122
+call(
+  stack
+)
+type(
+  Parsetree.p_program
+)
+"toplevel.ml" 8 126 132 "toplevel.ml" 8 126 152
+type(
+  unit -> unit
+)
+ident(
+  ext_ref Parsing.clear_parser
+)
+"toplevel.ml" 8 126 152 "toplevel.ml" 8 126 154
+type(
+  unit
+)
+"toplevel.ml" 8 126 132 "toplevel.ml" 8 126 154
+call(
+  stack
+)
+type(
+  unit
+)
+"toplevel.ml" 9 156 162 "toplevel.ml" 9 156 165
+type(
+  Parsetree.p_program
+)
+ident(
+  int_ref ast "toplevel.ml" 7 78 86 "toplevel.ml" 7 78 89
+)
+"toplevel.ml" 8 126 132 "toplevel.ml" 9 156 165
+type(
+  Parsetree.p_program
+)
+"toplevel.ml" 7 78 82 "toplevel.ml" 9 156 165
+type(
+  Parsetree.p_program
+)
+"toplevel.ml" 10 166 171 "toplevel.ml" 10 166 195
+type(
+  Parsetree.p_item list -> Defs.function_declaration list
+)
+ident(
+  ext_ref Ast.fundecls_of_itemlist
+)
+"toplevel.ml" 10 166 196 "toplevel.ml" 10 166 201
+type(
+  Parsetree.p_item list
+)
+ident(
+  int_ref iteml "toplevel.ml" 6 49 68 "toplevel.ml" 6 49 73
+)
+"toplevel.ml" 10 166 171 "toplevel.ml" 10 166 201
+call(
+  tail
+)
+type(
+  Defs.function_declaration list
+)
+"toplevel.ml" 6 49 51 "toplevel.ml" 10 166 201
+type(
+  Defs.function_declaration list
+)
+"toplevel.ml" 12 203 207 "toplevel.ml" 12 203 216
+type(
+  Lexing.lexbuf -> unit
+)
+ident(
+  def verify_wp "toplevel.ml" 30 766 766 "toplevel.ml" 1 0 -1
+)
+"toplevel.ml" 12 203 217 "toplevel.ml" 12 203 220
+type(
+  Lexing.lexbuf
+)
+ident(
+  def lex "toplevel.ml" 13 223 225 "toplevel.ml" 28 707 764
+)
+"toplevel.ml" 13 223 229 "toplevel.ml" 13 223 232
+type(
+  Format.formatter
+)
+ident(
+  def fmt "toplevel.ml" 16 282 284 "toplevel.ml" 28 707 764
+)
+"toplevel.ml" 13 223 235 "toplevel.ml" 13 223 236
+type(
+  Format.formatter ref -> Format.formatter
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"toplevel.ml" 13 223 236 "toplevel.ml" 13 223 252
+type(
+  Format.formatter ref
+)
+ident(
+  ext_ref Config.formatter
+)
+"toplevel.ml" 13 223 235 "toplevel.ml" 13 223 252
+type(
+  Format.formatter
+)
+"toplevel.ml" 14 253 259 "toplevel.ml" 14 253 264
+type(
+  bool ref
+)
+ident(
+  def valid "toplevel.ml" 16 282 284 "toplevel.ml" 28 707 764
+)
+"toplevel.ml" 14 253 267 "toplevel.ml" 14 253 270
+type(
+  bool -> bool ref
+)
+ident(
+  ext_ref Pervasives.ref
+)
+"toplevel.ml" 14 253 271 "toplevel.ml" 14 253 275
+type(
+  bool
+)
+"toplevel.ml" 14 253 267 "toplevel.ml" 14 253 275
+type(
+  bool ref
+)
+"toplevel.ml" 16 282 288 "toplevel.ml" 16 282 300
+type(
+  ?nonfatal_thunk:(unit -> '_a) -> (unit -> unit) -> unit
+)
+ident(
+  ext_ref Error.report
+)
+"toplevel.ml" 16 282 306 "toplevel.ml" 16 282 308
+type(
+  unit
+)
+"toplevel.ml" 17 312 320 "toplevel.ml" 17 312 328
+type(
+  Defs.function_declaration list
+)
+ident(
+  def fundecls "toplevel.ml" 18 341 345 "toplevel.ml" 27 637 705
+)
+"toplevel.ml" 17 312 331 "toplevel.ml" 17 312 333
+type(
+  Lexing.lexbuf -> Defs.function_declaration list
+)
+ident(
+  int_ref wp "toplevel.ml" 5 36 40 "toplevel.ml" 5 36 42
+)
+"toplevel.ml" 17 312 334 "toplevel.ml" 17 312 337
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lex "toplevel.ml" 12 203 217 "toplevel.ml" 12 203 220
+)
+"toplevel.ml" 17 312 331 "toplevel.ml" 17 312 337
+call(
+  stack
+)
+type(
+  Defs.function_declaration list
+)
+"toplevel.ml" 18 341 349 "toplevel.ml" 18 341 350
+type(
+  Defs.function_declaration -> unit
+)
+ident(
+  def f "toplevel.ml" 24 560 564 "toplevel.ml" 27 637 705
+)
+"toplevel.ml" 18 341 351 "toplevel.ml" 18 341 358
+type(
+  Defs.function_declaration
+)
+ident(
+  def fundecl "toplevel.ml" 19 361 367 "toplevel.ml" 22 531 552
+)
+"toplevel.ml" 19 361 367 "toplevel.ml" 19 361 381
+type(
+  Format.formatter ->
+  (string -> unit, Format.formatter, unit) format -> string -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"toplevel.ml" 19 361 382 "toplevel.ml" 19 361 385
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "toplevel.ml" 13 223 229 "toplevel.ml" 13 223 232
+)
+"toplevel.ml" 19 361 386 "toplevel.ml" 19 361 403
+type(
+  (string -> unit, Format.formatter, unit) format
+)
+"toplevel.ml" 19 361 404 "toplevel.ml" 19 361 411
+type(
+  Defs.function_declaration
+)
+ident(
+  int_ref fundecl "toplevel.ml" 18 341 351 "toplevel.ml" 18 341 358
+)
+"toplevel.ml" 19 361 404 "toplevel.ml" 19 361 419
+type(
+  string
+)
+"toplevel.ml" 19 361 367 "toplevel.ml" 19 361 419
+call(
+  stack
+)
+type(
+  unit
+)
+"toplevel.ml" 20 421 431 "toplevel.ml" 20 421 434
+type(
+  Defs.verification_condition list
+)
+ident(
+  def vcs "toplevel.ml" 21 470 476 "toplevel.ml" 22 531 552
+)
+"toplevel.ml" 20 421 437 "toplevel.ml" 20 421 449
+type(
+  Defs.function_declaration ->
+  Defs.function_declaration list -> Defs.verification_condition list
+)
+ident(
+  ext_ref Vcgen.vc_gen
+)
+"toplevel.ml" 20 421 450 "toplevel.ml" 20 421 457
+type(
+  Defs.function_declaration
+)
+ident(
+  int_ref fundecl "toplevel.ml" 18 341 351 "toplevel.ml" 18 341 358
+)
+"toplevel.ml" 20 421 458 "toplevel.ml" 20 421 466
+type(
+  Defs.function_declaration list
+)
+ident(
+  int_ref fundecls "toplevel.ml" 17 312 320 "toplevel.ml" 17 312 328
+)
+"toplevel.ml" 20 421 437 "toplevel.ml" 20 421 466
+call(
+  stack
+)
+type(
+  Defs.verification_condition list
+)
+"toplevel.ml" 21 470 480 "toplevel.ml" 21 470 481
+type(
+  Defs.verification_condition -> unit
+)
+ident(
+  def g "toplevel.ml" 22 531 537 "toplevel.ml" 22 531 552
+)
+"toplevel.ml" 21 470 482 "toplevel.ml" 21 470 484
+type(
+  Defs.verification_condition
+)
+ident(
+  def vc "toplevel.ml" 21 470 487 "toplevel.ml" 21 470 527
+)
+"toplevel.ml" 21 470 487 "toplevel.ml" 21 470 492
+type(
+  bool ref
+)
+ident(
+  int_ref valid "toplevel.ml" 14 253 259 "toplevel.ml" 14 253 264
+)
+"toplevel.ml" 21 470 493 "toplevel.ml" 21 470 495
+type(
+  bool ref -> bool -> unit
+)
+ident(
+  ext_ref Pervasives.( := )
+)
+"toplevel.ml" 21 470 497 "toplevel.ml" 21 470 513
+type(
+  Defs.verification_condition -> bool
+)
+ident(
+  ext_ref Symbexe.check_vc
+)
+"toplevel.ml" 21 470 514 "toplevel.ml" 21 470 516
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "toplevel.ml" 21 470 482 "toplevel.ml" 21 470 484
+)
+"toplevel.ml" 21 470 496 "toplevel.ml" 21 470 517
+call(
+  stack
+)
+type(
+  bool
+)
+"toplevel.ml" 21 470 518 "toplevel.ml" 21 470 520
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( && )
+)
+"toplevel.ml" 21 470 521 "toplevel.ml" 21 470 522
+type(
+  bool ref -> bool
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"toplevel.ml" 21 470 522 "toplevel.ml" 21 470 527
+type(
+  bool ref
+)
+ident(
+  int_ref valid "toplevel.ml" 14 253 259 "toplevel.ml" 14 253 264
+)
+"toplevel.ml" 21 470 521 "toplevel.ml" 21 470 527
+type(
+  bool
+)
+"toplevel.ml" 21 470 496 "toplevel.ml" 21 470 527
+type(
+  bool
+)
+"toplevel.ml" 21 470 487 "toplevel.ml" 21 470 527
+type(
+  unit
+)
+"toplevel.ml" 22 531 537 "toplevel.ml" 22 531 546
+type(
+  (Defs.verification_condition -> unit) ->
+  Defs.verification_condition list -> unit
+)
+ident(
+  ext_ref List.iter
+)
+"toplevel.ml" 22 531 547 "toplevel.ml" 22 531 548
+type(
+  Defs.verification_condition -> unit
+)
+ident(
+  int_ref g "toplevel.ml" 21 470 480 "toplevel.ml" 21 470 481
+)
+"toplevel.ml" 22 531 549 "toplevel.ml" 22 531 552
+type(
+  Defs.verification_condition list
+)
+ident(
+  int_ref vcs "toplevel.ml" 20 421 431 "toplevel.ml" 20 421 434
+)
+"toplevel.ml" 22 531 537 "toplevel.ml" 22 531 552
+call(
+  tail
+)
+type(
+  unit
+)
+"toplevel.ml" 21 470 476 "toplevel.ml" 22 531 552
+type(
+  unit
+)
+"toplevel.ml" 20 421 427 "toplevel.ml" 22 531 552
+type(
+  unit
+)
+"toplevel.ml" 19 361 367 "toplevel.ml" 22 531 552
+type(
+  unit
+)
+"toplevel.ml" 24 560 570 "toplevel.ml" 24 560 571
+type(
+  int
+)
+"toplevel.ml" 24 560 575 "toplevel.ml" 24 560 576
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"toplevel.ml" 24 560 576 "toplevel.ml" 24 560 594
+type(
+  int ref
+)
+ident(
+  ext_ref Config.repetitions
+)
+"toplevel.ml" 24 560 575 "toplevel.ml" 24 560 594
+type(
+  int
+)
+"toplevel.ml" 25 599 605 "toplevel.ml" 25 599 614
+type(
+  (Defs.function_declaration -> unit) ->
+  Defs.function_declaration list -> unit
+)
+ident(
+  ext_ref List.iter
+)
+"toplevel.ml" 25 599 615 "toplevel.ml" 25 599 616
+type(
+  Defs.function_declaration -> unit
+)
+ident(
+  int_ref f "toplevel.ml" 18 341 349 "toplevel.ml" 18 341 350
+)
+"toplevel.ml" 25 599 617 "toplevel.ml" 25 599 625
+type(
+  Defs.function_declaration list
+)
+ident(
+  int_ref fundecls "toplevel.ml" 17 312 320 "toplevel.ml" 17 312 328
+)
+"toplevel.ml" 25 599 605 "toplevel.ml" 25 599 625
+call(
+  stack
+)
+type(
+  unit
+)
+"toplevel.ml" 24 560 564 "toplevel.ml" 26 627 635
+type(
+  unit
+)
+"toplevel.ml" 27 637 641 "toplevel.ml" 27 637 655
+type(
+  Format.formatter ->
+  (string -> unit, Format.formatter, unit) format -> string -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"toplevel.ml" 27 637 656 "toplevel.ml" 27 637 659
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "toplevel.ml" 13 223 229 "toplevel.ml" 13 223 232
+)
+"toplevel.ml" 27 637 660 "toplevel.ml" 27 637 673
+type(
+  (string -> unit, Format.formatter, unit) format
+)
+"toplevel.ml" 27 637 678 "toplevel.ml" 27 637 679
+type(
+  bool ref -> bool
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"toplevel.ml" 27 637 679 "toplevel.ml" 27 637 684
+type(
+  bool ref
+)
+ident(
+  int_ref valid "toplevel.ml" 14 253 259 "toplevel.ml" 14 253 264
+)
+"toplevel.ml" 27 637 678 "toplevel.ml" 27 637 684
+type(
+  bool
+)
+"toplevel.ml" 27 637 690 "toplevel.ml" 27 637 692
+type(
+  string
+)
+"toplevel.ml" 27 637 698 "toplevel.ml" 27 637 704
+type(
+  string
+)
+"toplevel.ml" 27 637 674 "toplevel.ml" 27 637 705
+type(
+  string
+)
+"toplevel.ml" 27 637 641 "toplevel.ml" 27 637 705
+call(
+  tail
+)
+type(
+  unit
+)
+"toplevel.ml" 24 560 564 "toplevel.ml" 27 637 705
+type(
+  unit
+)
+"toplevel.ml" 18 341 345 "toplevel.ml" 27 637 705
+type(
+  unit
+)
+"toplevel.ml" 17 312 316 "toplevel.ml" 27 637 705
+type(
+  unit
+)
+"toplevel.ml" 16 282 301 "toplevel.ml" 27 637 706
+type(
+  unit -> unit
+)
+"toplevel.ml" 16 282 288 "toplevel.ml" 27 637 706
+call(
+  stack
+)
+type(
+  unit
+)
+"toplevel.ml" 28 707 731 "toplevel.ml" 28 707 732
+type(
+  string
+)
+ident(
+  def s "toplevel.ml" 28 707 736 "toplevel.ml" 28 707 764
+)
+"toplevel.ml" 28 707 714 "toplevel.ml" 28 707 732
+type(
+  exn
+)
+"toplevel.ml" 28 707 736 "toplevel.ml" 28 707 758
+type(
+  Format.formatter -> string -> unit
+)
+ident(
+  ext_ref Format.pp_print_string
+)
+"toplevel.ml" 28 707 759 "toplevel.ml" 28 707 762
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "toplevel.ml" 13 223 229 "toplevel.ml" 13 223 232
+)
+"toplevel.ml" 28 707 763 "toplevel.ml" 28 707 764
+type(
+  string
+)
+ident(
+  int_ref s "toplevel.ml" 28 707 731 "toplevel.ml" 28 707 732
+)
+"toplevel.ml" 28 707 736 "toplevel.ml" 28 707 764
+call(
+  tail
+)
+type(
+  unit
+)
+"toplevel.ml" 16 282 284 "toplevel.ml" 28 707 764
+type(
+  unit
+)
+"toplevel.ml" 13 223 225 "toplevel.ml" 28 707 764
+type(
+  unit
+)
+"toplevel.ml" 30 766 770 "toplevel.ml" 30 766 786
+type(
+  string -> unit
+)
+ident(
+  def verify_wp_string "toplevel.ml" 34 844 844 "toplevel.ml" 1 0 -1
+)
+"toplevel.ml" 30 766 787 "toplevel.ml" 30 766 788
+type(
+  string
+)
+ident(
+  def s "toplevel.ml" 31 791 793 "toplevel.ml" 32 824 842
+)
+"toplevel.ml" 31 791 797 "toplevel.ml" 31 791 800
+type(
+  Lexing.lexbuf
+)
+ident(
+  def lex "toplevel.ml" 32 824 829 "toplevel.ml" 32 824 842
+)
+"toplevel.ml" 31 791 803 "toplevel.ml" 31 791 821
+type(
+  string -> Lexing.lexbuf
+)
+ident(
+  ext_ref Lexing.from_string
+)
+"toplevel.ml" 31 791 822 "toplevel.ml" 31 791 823
+type(
+  string
+)
+ident(
+  int_ref s "toplevel.ml" 30 766 787 "toplevel.ml" 30 766 788
+)
+"toplevel.ml" 31 791 803 "toplevel.ml" 31 791 823
+call(
+  stack
+)
+type(
+  Lexing.lexbuf
+)
+"toplevel.ml" 32 824 829 "toplevel.ml" 32 824 838
+type(
+  Lexing.lexbuf -> unit
+)
+ident(
+  int_ref verify_wp "toplevel.ml" 12 203 207 "toplevel.ml" 12 203 216
+)
+"toplevel.ml" 32 824 839 "toplevel.ml" 32 824 842
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lex "toplevel.ml" 31 791 797 "toplevel.ml" 31 791 800
+)
+"toplevel.ml" 32 824 829 "toplevel.ml" 32 824 842
+call(
+  tail
+)
+type(
+  unit
+)
+"toplevel.ml" 31 791 793 "toplevel.ml" 32 824 842
+type(
+  unit
+)
+"toplevel.ml" 34 844 848 "toplevel.ml" 34 844 863
+type(
+  string -> unit
+)
+ident(
+  def verify_wp_fname "toplevel.ml" 40 1028 1041 "toplevel.ml" 1 0 -1
+)
+"toplevel.ml" 34 844 864 "toplevel.ml" 34 844 869
+type(
+  string
+)
+ident(
+  def fname "toplevel.ml" 35 872 874 "toplevel.ml" 40 1028 1041
+)
+"toplevel.ml" 35 872 878 "toplevel.ml" 35 872 880
+type(
+  in_channel
+)
+ident(
+  def ic "toplevel.ml" 36 931 933 "toplevel.ml" 40 1028 1041
+)
+"toplevel.ml" 35 872 886 "toplevel.ml" 35 872 891
+type(
+  string
+)
+ident(
+  int_ref fname "toplevel.ml" 34 844 864 "toplevel.ml" 34 844 869
+)
+"toplevel.ml" 35 872 892 "toplevel.ml" 35 872 893
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"toplevel.ml" 35 872 894 "toplevel.ml" 35 872 897
+type(
+  string
+)
+"toplevel.ml" 35 872 886 "toplevel.ml" 35 872 897
+type(
+  bool
+)
+"toplevel.ml" 35 872 903 "toplevel.ml" 35 872 908
+type(
+  in_channel
+)
+ident(
+  ext_ref Pervasives.stdin
+)
+"toplevel.ml" 35 872 914 "toplevel.ml" 35 872 921
+type(
+  string -> in_channel
+)
+ident(
+  ext_ref Pervasives.open_in
+)
+"toplevel.ml" 35 872 922 "toplevel.ml" 35 872 927
+type(
+  string
+)
+ident(
+  int_ref fname "toplevel.ml" 34 844 864 "toplevel.ml" 34 844 869
+)
+"toplevel.ml" 35 872 914 "toplevel.ml" 35 872 927
+call(
+  stack
+)
+type(
+  in_channel
+)
+"toplevel.ml" 35 872 883 "toplevel.ml" 35 872 927
+type(
+  in_channel
+)
+"toplevel.ml" 36 931 937 "toplevel.ml" 36 931 940
+type(
+  Lexing.lexbuf
+)
+ident(
+  def lex "toplevel.ml" 37 969 971 "toplevel.ml" 40 1028 1041
+)
+"toplevel.ml" 36 931 943 "toplevel.ml" 36 931 962
+type(
+  in_channel -> Lexing.lexbuf
+)
+ident(
+  ext_ref Lexing.from_channel
+)
+"toplevel.ml" 36 931 963 "toplevel.ml" 36 931 965
+type(
+  in_channel
+)
+ident(
+  int_ref ic "toplevel.ml" 35 872 878 "toplevel.ml" 35 872 880
+)
+"toplevel.ml" 36 931 943 "toplevel.ml" 36 931 965
+call(
+  stack
+)
+type(
+  Lexing.lexbuf
+)
+"toplevel.ml" 37 969 971 "toplevel.ml" 37 969 981
+type(
+  Lexing.lexbuf -> string -> unit
+)
+ident(
+  ext_ref Lexer.init
+)
+"toplevel.ml" 37 969 982 "toplevel.ml" 37 969 985
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lex "toplevel.ml" 36 931 937 "toplevel.ml" 36 931 940
+)
+"toplevel.ml" 37 969 986 "toplevel.ml" 37 969 991
+type(
+  string
+)
+ident(
+  int_ref fname "toplevel.ml" 34 844 864 "toplevel.ml" 34 844 869
+)
+"toplevel.ml" 37 969 971 "toplevel.ml" 37 969 991
+call(
+  stack
+)
+type(
+  unit
+)
+"toplevel.ml" 38 993 995 "toplevel.ml" 38 993 1006
+type(
+  unit -> unit
+)
+ident(
+  ext_ref Misc.init_gensym
+)
+"toplevel.ml" 38 993 1007 "toplevel.ml" 38 993 1009
+type(
+  unit
+)
+"toplevel.ml" 38 993 995 "toplevel.ml" 38 993 1009
+call(
+  stack
+)
+type(
+  unit
+)
+"toplevel.ml" 39 1011 1013 "toplevel.ml" 39 1011 1022
+type(
+  Lexing.lexbuf -> unit
+)
+ident(
+  int_ref verify_wp "toplevel.ml" 12 203 207 "toplevel.ml" 12 203 216
+)
+"toplevel.ml" 39 1011 1023 "toplevel.ml" 39 1011 1026
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lex "toplevel.ml" 36 931 937 "toplevel.ml" 36 931 940
+)
+"toplevel.ml" 39 1011 1013 "toplevel.ml" 39 1011 1026
+call(
+  stack
+)
+type(
+  unit
+)
+"toplevel.ml" 40 1028 1030 "toplevel.ml" 40 1028 1038
+type(
+  in_channel -> unit
+)
+ident(
+  ext_ref Pervasives.close_in
+)
+"toplevel.ml" 40 1028 1039 "toplevel.ml" 40 1028 1041
+type(
+  in_channel
+)
+ident(
+  int_ref ic "toplevel.ml" 35 872 878 "toplevel.ml" 35 872 880
+)
+"toplevel.ml" 40 1028 1030 "toplevel.ml" 40 1028 1041
+call(
+  tail
+)
+type(
+  unit
+)
+"toplevel.ml" 39 1011 1013 "toplevel.ml" 40 1028 1041
+type(
+  unit
+)
+"toplevel.ml" 38 993 995 "toplevel.ml" 40 1028 1041
+type(
+  unit
+)
+"toplevel.ml" 37 969 971 "toplevel.ml" 40 1028 1041
+type(
+  unit
+)
+"toplevel.ml" 36 931 933 "toplevel.ml" 40 1028 1041
+type(
+  unit
+)
+"toplevel.ml" 35 872 874 "toplevel.ml" 40 1028 1041
+type(
+  unit
+)

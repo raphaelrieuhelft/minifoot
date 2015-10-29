@@ -1,0 +1,21 @@
+f1(x) [x|->] {} [x|->NULL]
+
+f2(x,y) [x|-> * y|->] {x=y;} [false]
+
+f3(x)[emp] {
+  local y;
+  y = new();
+  while(x!=y) [y|->] {
+      dispose(y);
+      y =new();
+    }
+  x = y->tl;
+} [x|->]
+
+f4()[emp] {
+  local x;
+  f3(x)||f3(x);
+} [false]
+
+f5(x) [_t |->x] {} [_t|->x]
+

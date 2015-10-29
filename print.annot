@@ -1,0 +1,2909 @@
+"print.ml" 5 33 37 "print.ml" 5 33 46
+type(
+  Format.formatter -> string -> unit
+)
+ident(
+  def pp_string "print.ml" 7 71 71 "print.ml" 1 0 -1
+)
+"print.ml" 5 33 47 "print.ml" 5 33 48
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 5 33 49 "print.ml" 5 33 69
+)
+"print.ml" 5 33 49 "print.ml" 5 33 50
+type(
+  string
+)
+ident(
+  def s "print.ml" 5 33 53 "print.ml" 5 33 69
+)
+"print.ml" 5 33 53 "print.ml" 5 33 60
+type(
+  Format.formatter ->
+  (string -> unit, Format.formatter, unit) format -> string -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 5 33 61 "print.ml" 5 33 62
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 5 33 47 "print.ml" 5 33 48
+)
+"print.ml" 5 33 63 "print.ml" 5 33 67
+type(
+  (string -> unit, Format.formatter, unit) format
+)
+"print.ml" 5 33 68 "print.ml" 5 33 69
+type(
+  string
+)
+ident(
+  int_ref s "print.ml" 5 33 49 "print.ml" 5 33 50
+)
+"print.ml" 5 33 53 "print.ml" 5 33 69
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 7 71 79 "print.ml" 7 71 89
+type(
+  (Format.formatter -> 'a -> unit) ->
+  string -> string -> Format.formatter -> 'a list -> unit
+)
+ident(
+  def pp_listsep "print.ml" 7 71 71 "print.ml" 1 0 -1
+)
+"print.ml" 7 71 90 "print.ml" 7 71 92
+type(
+  Format.formatter -> 'a -> unit
+)
+ident(
+  def pp "print.ml" 7 71 93 "print.ml" 10 171 234
+)
+"print.ml" 7 71 93 "print.ml" 7 71 95
+type(
+  string
+)
+ident(
+  def s1 "print.ml" 7 71 96 "print.ml" 10 171 234
+)
+"print.ml" 7 71 96 "print.ml" 7 71 98
+type(
+  string
+)
+ident(
+  def s2 "print.ml" 7 71 99 "print.ml" 10 171 234
+)
+"print.ml" 7 71 99 "print.ml" 7 71 100
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 7 71 103 "print.ml" 10 171 234
+)
+"print.ml" 8 112 116 "print.ml" 8 112 118
+type(
+  'a list
+)
+"print.ml" 8 112 122 "print.ml" 8 112 129
+type(
+  Format.formatter ->
+  (string -> unit, Format.formatter, unit) format -> string -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 8 112 130 "print.ml" 8 112 131
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 7 71 99 "print.ml" 7 71 100
+)
+"print.ml" 8 112 132 "print.ml" 8 112 136
+type(
+  (string -> unit, Format.formatter, unit) format
+)
+"print.ml" 8 112 137 "print.ml" 8 112 139
+type(
+  string
+)
+ident(
+  int_ref s2 "print.ml" 7 71 96 "print.ml" 7 71 98
+)
+"print.ml" 8 112 122 "print.ml" 8 112 139
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 9 140 145 "print.ml" 9 140 146
+type(
+  'a
+)
+ident(
+  def x "print.ml" 9 140 151 "print.ml" 9 140 170
+)
+"print.ml" 9 140 144 "print.ml" 9 140 147
+type(
+  'a list
+)
+"print.ml" 9 140 151 "print.ml" 9 140 158
+type(
+  Format.formatter ->
+  ((Format.formatter -> 'a -> unit) -> 'a -> unit, Format.formatter, unit)
+  format -> (Format.formatter -> 'a -> unit) -> 'a -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 9 140 159 "print.ml" 9 140 160
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 7 71 99 "print.ml" 7 71 100
+)
+"print.ml" 9 140 161 "print.ml" 9 140 165
+type(
+  ((Format.formatter -> 'a -> unit) -> 'a -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 9 140 166 "print.ml" 9 140 168
+type(
+  Format.formatter -> 'a -> unit
+)
+ident(
+  int_ref pp "print.ml" 7 71 90 "print.ml" 7 71 92
+)
+"print.ml" 9 140 169 "print.ml" 9 140 170
+type(
+  'a
+)
+ident(
+  int_ref x "print.ml" 9 140 145 "print.ml" 9 140 146
+)
+"print.ml" 9 140 151 "print.ml" 9 140 170
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 10 171 175 "print.ml" 10 171 176
+type(
+  'a
+)
+ident(
+  def x "print.ml" 10 171 183 "print.ml" 10 171 234
+)
+"print.ml" 10 171 178 "print.ml" 10 171 179
+type(
+  'a list
+)
+ident(
+  def l "print.ml" 10 171 183 "print.ml" 10 171 234
+)
+"print.ml" 10 171 175 "print.ml" 10 171 179
+type(
+  'a list
+)
+"print.ml" 10 171 183 "print.ml" 10 171 190
+type(
+  Format.formatter ->
+  ((Format.formatter -> 'a -> unit) ->
+   'a -> string -> (Format.formatter -> 'a list -> unit) -> 'a list -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> 'a -> unit) ->
+  'a -> string -> (Format.formatter -> 'a list -> unit) -> 'a list -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 10 171 191 "print.ml" 10 171 192
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 7 71 99 "print.ml" 7 71 100
+)
+"print.ml" 10 171 193 "print.ml" 10 171 202
+type(
+  ((Format.formatter -> 'a -> unit) ->
+   'a -> string -> (Format.formatter -> 'a list -> unit) -> 'a list -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 10 171 203 "print.ml" 10 171 205
+type(
+  Format.formatter -> 'a -> unit
+)
+ident(
+  int_ref pp "print.ml" 7 71 90 "print.ml" 7 71 92
+)
+"print.ml" 10 171 206 "print.ml" 10 171 207
+type(
+  'a
+)
+ident(
+  int_ref x "print.ml" 10 171 175 "print.ml" 10 171 176
+)
+"print.ml" 10 171 208 "print.ml" 10 171 210
+type(
+  string
+)
+ident(
+  int_ref s1 "print.ml" 7 71 93 "print.ml" 7 71 95
+)
+"print.ml" 10 171 212 "print.ml" 10 171 222
+type(
+  (Format.formatter -> 'a -> unit) ->
+  string -> string -> Format.formatter -> 'a list -> unit
+)
+ident(
+  int_ref pp_listsep "print.ml" 7 71 79 "print.ml" 7 71 89
+)
+"print.ml" 10 171 223 "print.ml" 10 171 225
+type(
+  Format.formatter -> 'a -> unit
+)
+ident(
+  int_ref pp "print.ml" 7 71 90 "print.ml" 7 71 92
+)
+"print.ml" 10 171 226 "print.ml" 10 171 228
+type(
+  string
+)
+ident(
+  int_ref s1 "print.ml" 7 71 93 "print.ml" 7 71 95
+)
+"print.ml" 10 171 229 "print.ml" 10 171 231
+type(
+  string
+)
+ident(
+  int_ref s2 "print.ml" 7 71 96 "print.ml" 7 71 98
+)
+"print.ml" 10 171 211 "print.ml" 10 171 232
+call(
+  stack
+)
+type(
+  Format.formatter -> 'a list -> unit
+)
+"print.ml" 10 171 233 "print.ml" 10 171 234
+type(
+  'a list
+)
+ident(
+  int_ref l "print.ml" 10 171 178 "print.ml" 10 171 179
+)
+"print.ml" 10 171 183 "print.ml" 10 171 234
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 7 71 103 "print.ml" 10 171 234
+type(
+  'a list -> unit
+)
+"print.ml" 12 236 244 "print.ml" 12 236 250
+type(
+  (Format.formatter -> 'a -> unit) -> Format.formatter -> 'a list -> unit
+)
+ident(
+  def pp_seq "print.ml" 12 236 236 "print.ml" 1 0 -1
+)
+"print.ml" 12 236 251 "print.ml" 12 236 253
+type(
+  Format.formatter -> 'a -> unit
+)
+ident(
+  def pp "print.ml" 12 236 254 "print.ml" 15 311 359
+)
+"print.ml" 12 236 254 "print.ml" 12 236 255
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 12 236 258 "print.ml" 15 311 359
+)
+"print.ml" 13 267 271 "print.ml" 13 267 273
+type(
+  'a list
+)
+"print.ml" 13 267 277 "print.ml" 13 267 279
+type(
+  unit
+)
+"print.ml" 14 280 285 "print.ml" 14 280 286
+type(
+  'a
+)
+ident(
+  def x "print.ml" 14 280 291 "print.ml" 14 280 310
+)
+"print.ml" 14 280 284 "print.ml" 14 280 287
+type(
+  'a list
+)
+"print.ml" 14 280 291 "print.ml" 14 280 298
+type(
+  Format.formatter ->
+  ((Format.formatter -> 'a -> unit) -> 'a -> unit, Format.formatter, unit)
+  format -> (Format.formatter -> 'a -> unit) -> 'a -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 14 280 299 "print.ml" 14 280 300
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 12 236 254 "print.ml" 12 236 255
+)
+"print.ml" 14 280 301 "print.ml" 14 280 305
+type(
+  ((Format.formatter -> 'a -> unit) -> 'a -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 14 280 306 "print.ml" 14 280 308
+type(
+  Format.formatter -> 'a -> unit
+)
+ident(
+  int_ref pp "print.ml" 12 236 251 "print.ml" 12 236 253
+)
+"print.ml" 14 280 309 "print.ml" 14 280 310
+type(
+  'a
+)
+ident(
+  int_ref x "print.ml" 14 280 285 "print.ml" 14 280 286
+)
+"print.ml" 14 280 291 "print.ml" 14 280 310
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 15 311 315 "print.ml" 15 311 316
+type(
+  'a
+)
+ident(
+  def x "print.ml" 15 311 323 "print.ml" 15 311 359
+)
+"print.ml" 15 311 318 "print.ml" 15 311 319
+type(
+  'a list
+)
+ident(
+  def l "print.ml" 15 311 323 "print.ml" 15 311 359
+)
+"print.ml" 15 311 315 "print.ml" 15 311 319
+type(
+  'a list
+)
+"print.ml" 15 311 323 "print.ml" 15 311 330
+type(
+  Format.formatter ->
+  ((Format.formatter -> 'a -> unit) ->
+   'a -> (Format.formatter -> 'a list -> unit) -> 'a list -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> 'a -> unit) ->
+  'a -> (Format.formatter -> 'a list -> unit) -> 'a list -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 15 311 331 "print.ml" 15 311 332
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 12 236 254 "print.ml" 12 236 255
+)
+"print.ml" 15 311 333 "print.ml" 15 311 340
+type(
+  ((Format.formatter -> 'a -> unit) ->
+   'a -> (Format.formatter -> 'a list -> unit) -> 'a list -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 15 311 341 "print.ml" 15 311 343
+type(
+  Format.formatter -> 'a -> unit
+)
+ident(
+  int_ref pp "print.ml" 12 236 251 "print.ml" 12 236 253
+)
+"print.ml" 15 311 344 "print.ml" 15 311 345
+type(
+  'a
+)
+ident(
+  int_ref x "print.ml" 15 311 315 "print.ml" 15 311 316
+)
+"print.ml" 15 311 347 "print.ml" 15 311 353
+type(
+  (Format.formatter -> 'a -> unit) -> Format.formatter -> 'a list -> unit
+)
+ident(
+  int_ref pp_seq "print.ml" 12 236 244 "print.ml" 12 236 250
+)
+"print.ml" 15 311 354 "print.ml" 15 311 356
+type(
+  Format.formatter -> 'a -> unit
+)
+ident(
+  int_ref pp "print.ml" 12 236 251 "print.ml" 12 236 253
+)
+"print.ml" 15 311 346 "print.ml" 15 311 357
+call(
+  stack
+)
+type(
+  Format.formatter -> 'a list -> unit
+)
+"print.ml" 15 311 358 "print.ml" 15 311 359
+type(
+  'a list
+)
+ident(
+  int_ref l "print.ml" 15 311 318 "print.ml" 15 311 319
+)
+"print.ml" 15 311 323 "print.ml" 15 311 359
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 12 236 258 "print.ml" 15 311 359
+type(
+  'a list -> unit
+)
+"print.ml" 17 361 369 "print.ml" 17 361 375
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  def pp_exp "print.ml" 17 361 361 "print.ml" 1 0 -1
+)
+"print.ml" 17 361 376 "print.ml" 17 361 377
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 17 361 380 "print.ml" 19 424 458
+)
+"print.ml" 18 389 393 "print.ml" 18 389 401
+type(
+  Defs.exp
+)
+"print.ml" 18 389 405 "print.ml" 18 389 414
+type(
+  Format.formatter -> string -> unit
+)
+ident(
+  int_ref pp_string "print.ml" 5 33 37 "print.ml" 5 33 46
+)
+"print.ml" 18 389 415 "print.ml" 18 389 416
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 17 361 376 "print.ml" 17 361 377
+)
+"print.ml" 18 389 417 "print.ml" 18 389 423
+type(
+  string
+)
+"print.ml" 18 389 405 "print.ml" 18 389 423
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 19 424 438 "print.ml" 19 424 440
+ident(
+  def id "print.ml" 19 424 445 "print.ml" 19 424 458
+)
+"print.ml" 19 424 437 "print.ml" 19 424 441
+type(
+  Defs.ident
+)
+"print.ml" 19 424 428 "print.ml" 19 424 441
+type(
+  Defs.exp
+)
+"print.ml" 19 424 445 "print.ml" 19 424 453
+type(
+  Format.formatter -> Defs.ident -> unit
+)
+ident(
+  ext_ref Misc.pp_ident
+)
+"print.ml" 19 424 454 "print.ml" 19 424 455
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 17 361 376 "print.ml" 17 361 377
+)
+"print.ml" 19 424 456 "print.ml" 19 424 458
+type(
+  Defs.ident
+)
+ident(
+  int_ref id "print.ml" 19 424 437 "print.ml" 19 424 441
+)
+"print.ml" 19 424 445 "print.ml" 19 424 458
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 17 361 380 "print.ml" 19 424 458
+type(
+  Defs.exp -> unit
+)
+"print.ml" 21 460 464 "print.ml" 21 460 486
+type(
+  Format.formatter -> Defs.atomic_pure_formula -> unit
+)
+ident(
+  def pp_atomic_pure_formula "print.ml" 25 622 622 "print.ml" 1 0 -1
+)
+"print.ml" 21 460 487 "print.ml" 21 460 488
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 21 460 491 "print.ml" 23 560 620
+)
+"print.ml" 22 500 511 "print.ml" 22 500 513
+type(
+  Defs.exp
+)
+ident(
+  def e1 "print.ml" 22 500 521 "print.ml" 22 500 559
+)
+"print.ml" 22 500 514 "print.ml" 22 500 516
+type(
+  Defs.exp
+)
+ident(
+  def e2 "print.ml" 22 500 521 "print.ml" 22 500 559
+)
+"print.ml" 22 500 504 "print.ml" 22 500 517
+type(
+  Defs.atomic_pure_formula
+)
+"print.ml" 22 500 521 "print.ml" 22 500 528
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.exp -> unit) ->
+   Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.exp -> unit) ->
+  Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 22 500 529 "print.ml" 22 500 530
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 21 460 487 "print.ml" 21 460 488
+)
+"print.ml" 22 500 531 "print.ml" 22 500 539
+type(
+  ((Format.formatter -> Defs.exp -> unit) ->
+   Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 22 500 540 "print.ml" 22 500 546
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 22 500 547 "print.ml" 22 500 549
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "print.ml" 22 500 511 "print.ml" 22 500 513
+)
+"print.ml" 22 500 550 "print.ml" 22 500 556
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 22 500 557 "print.ml" 22 500 559
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "print.ml" 22 500 514 "print.ml" 22 500 516
+)
+"print.ml" 22 500 521 "print.ml" 22 500 559
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 23 560 572 "print.ml" 23 560 574
+type(
+  Defs.exp
+)
+ident(
+  def e1 "print.ml" 23 560 582 "print.ml" 23 560 620
+)
+"print.ml" 23 560 575 "print.ml" 23 560 577
+type(
+  Defs.exp
+)
+ident(
+  def e2 "print.ml" 23 560 582 "print.ml" 23 560 620
+)
+"print.ml" 23 560 564 "print.ml" 23 560 578
+type(
+  Defs.atomic_pure_formula
+)
+"print.ml" 23 560 582 "print.ml" 23 560 589
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.exp -> unit) ->
+   Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.exp -> unit) ->
+  Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 23 560 590 "print.ml" 23 560 591
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 21 460 487 "print.ml" 21 460 488
+)
+"print.ml" 23 560 592 "print.ml" 23 560 600
+type(
+  ((Format.formatter -> Defs.exp -> unit) ->
+   Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 23 560 601 "print.ml" 23 560 607
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 23 560 608 "print.ml" 23 560 610
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "print.ml" 23 560 572 "print.ml" 23 560 574
+)
+"print.ml" 23 560 611 "print.ml" 23 560 617
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 23 560 618 "print.ml" 23 560 620
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "print.ml" 23 560 575 "print.ml" 23 560 577
+)
+"print.ml" 23 560 582 "print.ml" 23 560 620
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 21 460 491 "print.ml" 23 560 620
+type(
+  Defs.atomic_pure_formula -> unit
+)
+"print.ml" 25 622 626 "print.ml" 25 622 651
+type(
+  Format.formatter -> Defs.atomic_spatial_formula -> unit
+)
+ident(
+  def pp_atomic_spatial_formula "print.ml" 29 768 768 "print.ml" 1 0 -1
+)
+"print.ml" 25 622 652 "print.ml" 25 622 653
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 25 622 656 "print.ml" 27 701 766
+)
+"print.ml" 26 665 669 "print.ml" 26 665 677
+type(
+  Defs.atomic_spatial_formula
+)
+"print.ml" 26 665 681 "print.ml" 26 665 690
+type(
+  Format.formatter -> string -> unit
+)
+ident(
+  int_ref pp_string "print.ml" 5 33 37 "print.ml" 5 33 46
+)
+"print.ml" 26 665 691 "print.ml" 26 665 692
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 25 622 652 "print.ml" 25 622 653
+)
+"print.ml" 26 665 693 "print.ml" 26 665 700
+type(
+  string
+)
+"print.ml" 26 665 681 "print.ml" 26 665 700
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 27 701 717 "print.ml" 27 701 719
+type(
+  Defs.exp
+)
+ident(
+  def e1 "print.ml" 27 701 727 "print.ml" 27 701 766
+)
+"print.ml" 27 701 720 "print.ml" 27 701 722
+type(
+  Defs.exp
+)
+ident(
+  def e2 "print.ml" 27 701 727 "print.ml" 27 701 766
+)
+"print.ml" 27 701 705 "print.ml" 27 701 723
+type(
+  Defs.atomic_spatial_formula
+)
+"print.ml" 27 701 727 "print.ml" 27 701 734
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.exp -> unit) ->
+   Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.exp -> unit) ->
+  Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 27 701 735 "print.ml" 27 701 736
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 25 622 652 "print.ml" 25 622 653
+)
+"print.ml" 27 701 737 "print.ml" 27 701 746
+type(
+  ((Format.formatter -> Defs.exp -> unit) ->
+   Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 27 701 747 "print.ml" 27 701 753
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 27 701 754 "print.ml" 27 701 756
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "print.ml" 27 701 717 "print.ml" 27 701 719
+)
+"print.ml" 27 701 757 "print.ml" 27 701 763
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 27 701 764 "print.ml" 27 701 766
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "print.ml" 27 701 720 "print.ml" 27 701 722
+)
+"print.ml" 27 701 727 "print.ml" 27 701 766
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 25 622 656 "print.ml" 27 701 766
+type(
+  Defs.atomic_spatial_formula -> unit
+)
+"print.ml" 29 768 772 "print.ml" 29 768 787
+type(
+  Format.formatter -> Defs.atomic_pure_formula list -> unit
+)
+ident(
+  def pp_pure_formula "print.ml" 30 832 832 "print.ml" 1 0 -1
+)
+"print.ml" 29 768 790 "print.ml" 29 768 800
+type(
+  (Format.formatter -> Defs.atomic_pure_formula -> unit) ->
+  string ->
+  string -> Format.formatter -> Defs.atomic_pure_formula list -> unit
+)
+ident(
+  int_ref pp_listsep "print.ml" 7 71 79 "print.ml" 7 71 89
+)
+"print.ml" 29 768 801 "print.ml" 29 768 823
+type(
+  Format.formatter -> Defs.atomic_pure_formula -> unit
+)
+ident(
+  int_ref pp_atomic_pure_formula "print.ml" 21 460 464 "print.ml" 21 460 486
+)
+"print.ml" 29 768 824 "print.ml" 29 768 828
+type(
+  string
+)
+"print.ml" 29 768 829 "print.ml" 29 768 831
+type(
+  string
+)
+"print.ml" 29 768 790 "print.ml" 29 768 831
+call(
+  stack
+)
+type(
+  Format.formatter -> Defs.atomic_pure_formula list -> unit
+)
+"print.ml" 30 832 836 "print.ml" 30 832 854
+type(
+  Format.formatter -> Defs.atomic_spatial_formula list -> unit
+)
+ident(
+  def pp_spatial_formula "print.ml" 32 906 906 "print.ml" 1 0 -1
+)
+"print.ml" 30 832 857 "print.ml" 30 832 867
+type(
+  (Format.formatter -> Defs.atomic_spatial_formula -> unit) ->
+  string ->
+  string -> Format.formatter -> Defs.atomic_spatial_formula list -> unit
+)
+ident(
+  int_ref pp_listsep "print.ml" 7 71 79 "print.ml" 7 71 89
+)
+"print.ml" 30 832 868 "print.ml" 30 832 893
+type(
+  Format.formatter -> Defs.atomic_spatial_formula -> unit
+)
+ident(
+  int_ref pp_atomic_spatial_formula "print.ml" 25 622 626 "print.ml" 25 622 651
+)
+"print.ml" 30 832 894 "print.ml" 30 832 898
+type(
+  string
+)
+"print.ml" 30 832 899 "print.ml" 30 832 904
+type(
+  string
+)
+"print.ml" 30 832 857 "print.ml" 30 832 904
+call(
+  stack
+)
+type(
+  Format.formatter -> Defs.atomic_spatial_formula list -> unit
+)
+"print.ml" 32 906 910 "print.ml" 32 906 915
+type(
+  Format.formatter ->
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list -> unit
+)
+ident(
+  def pp_sh "print.ml" 38 1140 1140 "print.ml" 1 0 -1
+)
+"print.ml" 32 906 916 "print.ml" 32 906 917
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 32 906 918 "print.ml" 36 1066 1138
+)
+"print.ml" 32 906 919 "print.ml" 32 906 921
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  def pi "print.ml" 32 906 931 "print.ml" 36 1066 1138
+)
+"print.ml" 32 906 922 "print.ml" 32 906 927
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  def sigma "print.ml" 32 906 931 "print.ml" 36 1066 1138
+)
+"print.ml" 32 906 918 "print.ml" 32 906 928
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list
+)
+"print.ml" 32 906 938 "print.ml" 32 906 940
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  int_ref pi "print.ml" 32 906 919 "print.ml" 32 906 921
+)
+"print.ml" 32 906 941 "print.ml" 32 906 946
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  int_ref sigma "print.ml" 32 906 922 "print.ml" 32 906 927
+)
+"print.ml" 32 906 937 "print.ml" 32 906 947
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list
+)
+"print.ml" 33 953 958 "print.ml" 33 953 960
+type(
+  Defs.atomic_pure_formula list
+)
+"print.ml" 33 953 961 "print.ml" 33 953 963
+type(
+  Defs.atomic_spatial_formula list
+)
+"print.ml" 33 953 957 "print.ml" 33 953 964
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list
+)
+"print.ml" 33 953 968 "print.ml" 33 953 975
+type(
+  Format.formatter -> (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 33 953 976 "print.ml" 33 953 977
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 32 906 916 "print.ml" 32 906 917
+)
+"print.ml" 33 953 978 "print.ml" 33 953 983
+type(
+  (unit, Format.formatter, unit) format
+)
+"print.ml" 33 953 968 "print.ml" 33 953 983
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 34 984 989 "print.ml" 34 984 990
+type(
+  Defs.atomic_pure_formula
+)
+"print.ml" 34 984 992 "print.ml" 34 984 993
+type(
+  Defs.atomic_pure_formula list
+)
+"print.ml" 34 984 989 "print.ml" 34 984 993
+type(
+  Defs.atomic_pure_formula list
+)
+"print.ml" 34 984 994 "print.ml" 34 984 996
+type(
+  Defs.atomic_spatial_formula list
+)
+"print.ml" 34 984 988 "print.ml" 34 984 997
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list
+)
+"print.ml" 34 984 1001 "print.ml" 34 984 1016
+type(
+  Format.formatter -> Defs.atomic_pure_formula list -> unit
+)
+ident(
+  int_ref pp_pure_formula "print.ml" 29 768 772 "print.ml" 29 768 787
+)
+"print.ml" 34 984 1017 "print.ml" 34 984 1018
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 32 906 916 "print.ml" 32 906 917
+)
+"print.ml" 34 984 1019 "print.ml" 34 984 1021
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  int_ref pi "print.ml" 32 906 919 "print.ml" 32 906 921
+)
+"print.ml" 34 984 1001 "print.ml" 34 984 1021
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 35 1022 1027 "print.ml" 35 1022 1029
+type(
+  Defs.atomic_pure_formula list
+)
+"print.ml" 35 1022 1030 "print.ml" 35 1022 1031
+type(
+  Defs.atomic_spatial_formula
+)
+"print.ml" 35 1022 1033 "print.ml" 35 1022 1034
+type(
+  Defs.atomic_spatial_formula list
+)
+"print.ml" 35 1022 1030 "print.ml" 35 1022 1034
+type(
+  Defs.atomic_spatial_formula list
+)
+"print.ml" 35 1022 1026 "print.ml" 35 1022 1035
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list
+)
+"print.ml" 35 1022 1039 "print.ml" 35 1022 1057
+type(
+  Format.formatter -> Defs.atomic_spatial_formula list -> unit
+)
+ident(
+  int_ref pp_spatial_formula "print.ml" 30 832 836 "print.ml" 30 832 854
+)
+"print.ml" 35 1022 1058 "print.ml" 35 1022 1059
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 32 906 916 "print.ml" 32 906 917
+)
+"print.ml" 35 1022 1060 "print.ml" 35 1022 1065
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  int_ref sigma "print.ml" 32 906 922 "print.ml" 32 906 927
+)
+"print.ml" 35 1022 1039 "print.ml" 35 1022 1065
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 36 1066 1070 "print.ml" 36 1066 1071
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_spatial_formula list
+)
+"print.ml" 36 1066 1075 "print.ml" 36 1066 1082
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.atomic_pure_formula list -> unit) ->
+   Defs.atomic_pure_formula list ->
+   (Format.formatter -> Defs.atomic_spatial_formula list -> unit) ->
+   Defs.atomic_spatial_formula list -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.atomic_pure_formula list -> unit) ->
+  Defs.atomic_pure_formula list ->
+  (Format.formatter -> Defs.atomic_spatial_formula list -> unit) ->
+  Defs.atomic_spatial_formula list -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 36 1066 1083 "print.ml" 36 1066 1084
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 32 906 916 "print.ml" 32 906 917
+)
+"print.ml" 36 1066 1085 "print.ml" 36 1066 1094
+type(
+  ((Format.formatter -> Defs.atomic_pure_formula list -> unit) ->
+   Defs.atomic_pure_formula list ->
+   (Format.formatter -> Defs.atomic_spatial_formula list -> unit) ->
+   Defs.atomic_spatial_formula list -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 36 1066 1095 "print.ml" 36 1066 1110
+type(
+  Format.formatter -> Defs.atomic_pure_formula list -> unit
+)
+ident(
+  int_ref pp_pure_formula "print.ml" 29 768 772 "print.ml" 29 768 787
+)
+"print.ml" 36 1066 1111 "print.ml" 36 1066 1113
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  int_ref pi "print.ml" 32 906 919 "print.ml" 32 906 921
+)
+"print.ml" 36 1066 1114 "print.ml" 36 1066 1132
+type(
+  Format.formatter -> Defs.atomic_spatial_formula list -> unit
+)
+ident(
+  int_ref pp_spatial_formula "print.ml" 30 832 836 "print.ml" 30 832 854
+)
+"print.ml" 36 1066 1133 "print.ml" 36 1066 1138
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  int_ref sigma "print.ml" 32 906 922 "print.ml" 32 906 927
+)
+"print.ml" 36 1066 1075 "print.ml" 36 1066 1138
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 32 906 931 "print.ml" 36 1066 1138
+type(
+  unit
+)
+"print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  def pp_esh "print.ml" 38 1140 1140 "print.ml" 1 0 -1
+)
+"print.ml" 38 1140 1155 "print.ml" 38 1140 1156
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 38 1140 1159 "print.ml" 43 1281 1333
+)
+"print.ml" 39 1168 1181 "print.ml" 39 1168 1183
+ident(
+  def sh "print.ml" 39 1168 1188 "print.ml" 39 1168 1198
+)
+"print.ml" 39 1168 1180 "print.ml" 39 1168 1184
+type(
+  Defs.symb_heap
+)
+"print.ml" 39 1168 1172 "print.ml" 39 1168 1184
+type(
+  Defs.ext_symb_heap
+)
+"print.ml" 39 1168 1188 "print.ml" 39 1168 1193
+type(
+  Format.formatter -> Defs.symb_heap -> unit
+)
+ident(
+  int_ref pp_sh "print.ml" 32 906 910 "print.ml" 32 906 915
+)
+"print.ml" 39 1168 1194 "print.ml" 39 1168 1195
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 38 1140 1155 "print.ml" 38 1140 1156
+)
+"print.ml" 39 1168 1196 "print.ml" 39 1168 1198
+type(
+  Defs.symb_heap
+)
+ident(
+  int_ref sh "print.ml" 39 1168 1180 "print.ml" 39 1168 1184
+)
+"print.ml" 39 1168 1188 "print.ml" 39 1168 1198
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 40 1199 1218 "print.ml" 40 1199 1222
+type(
+  Defs.atomic_pure_formula
+)
+ident(
+  def cond "print.ml" 41 1238 1244 "print.ml" 43 1281 1333
+)
+"print.ml" 40 1199 1223 "print.ml" 40 1199 1227
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh1 "print.ml" 41 1238 1244 "print.ml" 43 1281 1333
+)
+"print.ml" 40 1199 1228 "print.ml" 40 1199 1232
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh2 "print.ml" 41 1238 1244 "print.ml" 43 1281 1333
+)
+"print.ml" 40 1199 1203 "print.ml" 40 1199 1233
+type(
+  Defs.ext_symb_heap
+)
+"print.ml" 41 1238 1244 "print.ml" 41 1238 1251
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.atomic_pure_formula -> unit) ->
+   Defs.atomic_pure_formula ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.atomic_pure_formula -> unit) ->
+  Defs.atomic_pure_formula ->
+  (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap ->
+  (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 41 1238 1252 "print.ml" 41 1238 1253
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 38 1140 1155 "print.ml" 38 1140 1156
+)
+"print.ml" 41 1238 1254 "print.ml" 41 1238 1279
+type(
+  ((Format.formatter -> Defs.atomic_pure_formula -> unit) ->
+   Defs.atomic_pure_formula ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 43 1281 1282 "print.ml" 43 1281 1304
+type(
+  Format.formatter -> Defs.atomic_pure_formula -> unit
+)
+ident(
+  int_ref pp_atomic_pure_formula "print.ml" 21 460 464 "print.ml" 21 460 486
+)
+"print.ml" 43 1281 1305 "print.ml" 43 1281 1309
+type(
+  Defs.atomic_pure_formula
+)
+ident(
+  int_ref cond "print.ml" 40 1199 1218 "print.ml" 40 1199 1222
+)
+"print.ml" 43 1281 1310 "print.ml" 43 1281 1316
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  int_ref pp_esh "print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+)
+"print.ml" 43 1281 1317 "print.ml" 43 1281 1321
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh1 "print.ml" 40 1199 1223 "print.ml" 40 1199 1227
+)
+"print.ml" 43 1281 1322 "print.ml" 43 1281 1328
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  int_ref pp_esh "print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+)
+"print.ml" 43 1281 1329 "print.ml" 43 1281 1333
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "print.ml" 40 1199 1228 "print.ml" 40 1199 1232
+)
+"print.ml" 41 1238 1244 "print.ml" 43 1281 1333
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 38 1140 1159 "print.ml" 43 1281 1333
+type(
+  Defs.ext_symb_heap -> unit
+)
+"print.ml" 45 1335 1339 "print.ml" 45 1335 1347
+type(
+  Format.formatter -> (Misc.ident * Defs.exp) list -> unit
+)
+ident(
+  def pp_subst "print.ml" 49 1477 1477 "print.ml" 1 0 -1
+)
+"print.ml" 45 1335 1348 "print.ml" 45 1335 1349
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 45 1335 1350 "print.ml" 47 1420 1475
+)
+"print.ml" 45 1335 1350 "print.ml" 45 1335 1355
+type(
+  (Misc.ident * Defs.exp) list
+)
+ident(
+  def subst "print.ml" 46 1359 1361 "print.ml" 47 1420 1475
+)
+"print.ml" 46 1359 1365 "print.ml" 46 1359 1367
+type(
+  Format.formatter -> Misc.ident * Defs.exp -> unit
+)
+ident(
+  def pp "print.ml" 47 1420 1422 "print.ml" 47 1420 1475
+)
+"print.ml" 46 1359 1368 "print.ml" 46 1359 1369
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 46 1359 1370 "print.ml" 46 1359 1416
+)
+"print.ml" 46 1359 1371 "print.ml" 46 1359 1372
+type(
+  Misc.ident
+)
+ident(
+  def x "print.ml" 46 1359 1378 "print.ml" 46 1359 1416
+)
+"print.ml" 46 1359 1373 "print.ml" 46 1359 1374
+type(
+  Defs.exp
+)
+ident(
+  def e "print.ml" 46 1359 1378 "print.ml" 46 1359 1416
+)
+"print.ml" 46 1359 1370 "print.ml" 46 1359 1375
+type(
+  Misc.ident * Defs.exp
+)
+"print.ml" 46 1359 1378 "print.ml" 46 1359 1385
+type(
+  Format.formatter ->
+  ((Format.formatter -> Misc.ident -> unit) ->
+   Misc.ident -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> Misc.ident -> unit) ->
+  Misc.ident -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 46 1359 1386 "print.ml" 46 1359 1387
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 46 1359 1368 "print.ml" 46 1359 1369
+)
+"print.ml" 46 1359 1388 "print.ml" 46 1359 1396
+type(
+  ((Format.formatter -> Misc.ident -> unit) ->
+   Misc.ident -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 46 1359 1397 "print.ml" 46 1359 1405
+type(
+  Format.formatter -> Misc.ident -> unit
+)
+ident(
+  ext_ref Misc.pp_ident
+)
+"print.ml" 46 1359 1406 "print.ml" 46 1359 1407
+type(
+  Misc.ident
+)
+ident(
+  int_ref x "print.ml" 46 1359 1371 "print.ml" 46 1359 1372
+)
+"print.ml" 46 1359 1408 "print.ml" 46 1359 1414
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 46 1359 1415 "print.ml" 46 1359 1416
+type(
+  Defs.exp
+)
+ident(
+  int_ref e "print.ml" 46 1359 1373 "print.ml" 46 1359 1374
+)
+"print.ml" 46 1359 1378 "print.ml" 46 1359 1416
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 47 1420 1422 "print.ml" 47 1420 1429
+type(
+  Format.formatter ->
+  ((Format.formatter -> (Misc.ident * Defs.exp) list -> unit) ->
+   (Misc.ident * Defs.exp) list -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> (Misc.ident * Defs.exp) list -> unit) ->
+  (Misc.ident * Defs.exp) list -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 47 1420 1430 "print.ml" 47 1420 1431
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 45 1335 1348 "print.ml" 45 1335 1349
+)
+"print.ml" 47 1420 1432 "print.ml" 47 1420 1446
+type(
+  ((Format.formatter -> (Misc.ident * Defs.exp) list -> unit) ->
+   (Misc.ident * Defs.exp) list -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 47 1420 1448 "print.ml" 47 1420 1458
+type(
+  (Format.formatter -> Misc.ident * Defs.exp -> unit) ->
+  string ->
+  string -> Format.formatter -> (Misc.ident * Defs.exp) list -> unit
+)
+ident(
+  int_ref pp_listsep "print.ml" 7 71 79 "print.ml" 7 71 89
+)
+"print.ml" 47 1420 1459 "print.ml" 47 1420 1461
+type(
+  Format.formatter -> Misc.ident * Defs.exp -> unit
+)
+ident(
+  int_ref pp "print.ml" 46 1359 1365 "print.ml" 46 1359 1367
+)
+"print.ml" 47 1420 1462 "print.ml" 47 1420 1465
+type(
+  string
+)
+"print.ml" 47 1420 1466 "print.ml" 47 1420 1468
+type(
+  string
+)
+"print.ml" 47 1420 1447 "print.ml" 47 1420 1469
+call(
+  stack
+)
+type(
+  Format.formatter -> (Misc.ident * Defs.exp) list -> unit
+)
+"print.ml" 47 1420 1470 "print.ml" 47 1420 1475
+type(
+  (Misc.ident * Defs.exp) list
+)
+ident(
+  int_ref subst "print.ml" 45 1335 1350 "print.ml" 45 1335 1355
+)
+"print.ml" 47 1420 1422 "print.ml" 47 1420 1475
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 46 1359 1361 "print.ml" 47 1420 1475
+type(
+  unit
+)
+"print.ml" 49 1477 1481 "print.ml" 49 1477 1509
+type(
+  Format.formatter -> Defs.atom_symb_inst -> unit
+)
+ident(
+  def pp_atomic_symbexec_statement "print.ml" 54 1704 1704 "print.ml" 1 0 -1
+)
+"print.ml" 49 1477 1510 "print.ml" 49 1477 1511
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 49 1477 1514 "print.ml" 52 1639 1702
+)
+"print.ml" 50 1523 1538 "print.ml" 50 1523 1541
+ident(
+  def esh "print.ml" 50 1523 1546 "print.ml" 50 1523 1580
+)
+"print.ml" 50 1523 1537 "print.ml" 50 1523 1542
+type(
+  Defs.ext_symb_heap
+)
+"print.ml" 50 1523 1527 "print.ml" 50 1523 1542
+type(
+  Defs.atom_symb_inst
+)
+"print.ml" 50 1523 1546 "print.ml" 50 1523 1553
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 50 1523 1554 "print.ml" 50 1523 1555
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 49 1477 1510 "print.ml" 49 1477 1511
+)
+"print.ml" 50 1523 1556 "print.ml" 50 1523 1569
+type(
+  ((Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 50 1523 1570 "print.ml" 50 1523 1576
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  int_ref pp_esh "print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+)
+"print.ml" 50 1523 1577 "print.ml" 50 1523 1580
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh "print.ml" 50 1523 1537 "print.ml" 50 1523 1542
+)
+"print.ml" 50 1523 1546 "print.ml" 50 1523 1580
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 51 1581 1596 "print.ml" 51 1581 1599
+ident(
+  def esh "print.ml" 51 1581 1604 "print.ml" 51 1581 1638
+)
+"print.ml" 51 1581 1595 "print.ml" 51 1581 1600
+type(
+  Defs.ext_symb_heap
+)
+"print.ml" 51 1581 1585 "print.ml" 51 1581 1600
+type(
+  Defs.atom_symb_inst
+)
+"print.ml" 51 1581 1604 "print.ml" 51 1581 1611
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 51 1581 1612 "print.ml" 51 1581 1613
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 49 1477 1510 "print.ml" 49 1477 1511
+)
+"print.ml" 51 1581 1614 "print.ml" 51 1581 1627
+type(
+  ((Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 51 1581 1628 "print.ml" 51 1581 1634
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  int_ref pp_esh "print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+)
+"print.ml" 51 1581 1635 "print.ml" 51 1581 1638
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh "print.ml" 51 1581 1595 "print.ml" 51 1581 1600
+)
+"print.ml" 51 1581 1604 "print.ml" 51 1581 1638
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 52 1639 1654 "print.ml" 52 1639 1659
+ident(
+  def subst "print.ml" 52 1639 1664 "print.ml" 52 1639 1702
+)
+"print.ml" 52 1639 1653 "print.ml" 52 1639 1660
+type(
+  Defs.substitution
+)
+"print.ml" 52 1639 1643 "print.ml" 52 1639 1660
+type(
+  Defs.atom_symb_inst
+)
+"print.ml" 52 1639 1664 "print.ml" 52 1639 1671
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.substitution -> unit) ->
+   Defs.substitution -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.substitution -> unit) ->
+  Defs.substitution -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 52 1639 1672 "print.ml" 52 1639 1673
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 49 1477 1510 "print.ml" 49 1477 1511
+)
+"print.ml" 52 1639 1674 "print.ml" 52 1639 1687
+type(
+  ((Format.formatter -> Defs.substitution -> unit) ->
+   Defs.substitution -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 52 1639 1688 "print.ml" 52 1639 1696
+type(
+  Format.formatter -> Defs.substitution -> unit
+)
+ident(
+  int_ref pp_subst "print.ml" 45 1335 1339 "print.ml" 45 1335 1347
+)
+"print.ml" 52 1639 1697 "print.ml" 52 1639 1702
+type(
+  Defs.substitution
+)
+ident(
+  int_ref subst "print.ml" 52 1639 1653 "print.ml" 52 1639 1660
+)
+"print.ml" 52 1639 1664 "print.ml" 52 1639 1702
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 49 1477 1514 "print.ml" 52 1639 1702
+type(
+  Defs.atom_symb_inst -> unit
+)
+"print.ml" 54 1704 1712 "print.ml" 54 1704 1733
+type(
+  Format.formatter -> Defs.symb_inst -> unit
+)
+ident(
+  def pp_symbexec_statement "print.ml" 54 1704 1704 "print.ml" 1 0 -1
+)
+"print.ml" 54 1704 1734 "print.ml" 54 1704 1735
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 54 1704 1738 "print.ml" 58 1942 2078
+)
+"print.ml" 55 1747 1751 "print.ml" 55 1747 1758
+type(
+  Defs.symb_inst
+)
+"print.ml" 55 1747 1762 "print.ml" 55 1747 1769
+type(
+  Format.formatter -> (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 55 1747 1770 "print.ml" 55 1747 1771
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 54 1704 1734 "print.ml" 54 1704 1735
+)
+"print.ml" 55 1747 1772 "print.ml" 55 1747 1778
+type(
+  (unit, Format.formatter, unit) format
+)
+"print.ml" 55 1747 1762 "print.ml" 55 1747 1778
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 56 1779 1793 "print.ml" 56 1779 1794
+type(
+  Defs.atom_symb_inst
+)
+ident(
+  def c "print.ml" 56 1779 1807 "print.ml" 56 1779 1839
+)
+"print.ml" 56 1779 1795 "print.ml" 56 1779 1802
+type(
+  Defs.symb_inst
+)
+"print.ml" 56 1779 1783 "print.ml" 56 1779 1803
+type(
+  Defs.symb_inst
+)
+"print.ml" 56 1779 1807 "print.ml" 56 1779 1835
+type(
+  Format.formatter -> Defs.atom_symb_inst -> unit
+)
+ident(
+  int_ref pp_atomic_symbexec_statement "print.ml" 49 1477 1481 "print.ml" 49 1477 1509
+)
+"print.ml" 56 1779 1836 "print.ml" 56 1779 1837
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 54 1704 1734 "print.ml" 54 1704 1735
+)
+"print.ml" 56 1779 1838 "print.ml" 56 1779 1839
+type(
+  Defs.atom_symb_inst
+)
+ident(
+  int_ref c "print.ml" 56 1779 1793 "print.ml" 56 1779 1794
+)
+"print.ml" 56 1779 1807 "print.ml" 56 1779 1839
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 57 1840 1854 "print.ml" 57 1840 1855
+type(
+  Defs.atom_symb_inst
+)
+ident(
+  def c "print.ml" 57 1840 1865 "print.ml" 57 1840 1941
+)
+"print.ml" 57 1840 1856 "print.ml" 57 1840 1860
+type(
+  Defs.symb_inst
+)
+ident(
+  def cseq "print.ml" 57 1840 1865 "print.ml" 57 1840 1941
+)
+"print.ml" 57 1840 1844 "print.ml" 57 1840 1861
+type(
+  Defs.symb_inst
+)
+"print.ml" 57 1840 1865 "print.ml" 57 1840 1872
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.atom_symb_inst -> unit) ->
+   Defs.atom_symb_inst ->
+   (Format.formatter -> Defs.symb_inst -> unit) -> Defs.symb_inst -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.atom_symb_inst -> unit) ->
+  Defs.atom_symb_inst ->
+  (Format.formatter -> Defs.symb_inst -> unit) -> Defs.symb_inst -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 57 1840 1873 "print.ml" 57 1840 1874
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 54 1704 1734 "print.ml" 54 1704 1735
+)
+"print.ml" 57 1840 1875 "print.ml" 57 1840 1883
+type(
+  ((Format.formatter -> Defs.atom_symb_inst -> unit) ->
+   Defs.atom_symb_inst ->
+   (Format.formatter -> Defs.symb_inst -> unit) -> Defs.symb_inst -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 57 1840 1884 "print.ml" 57 1840 1912
+type(
+  Format.formatter -> Defs.atom_symb_inst -> unit
+)
+ident(
+  int_ref pp_atomic_symbexec_statement "print.ml" 49 1477 1481 "print.ml" 49 1477 1509
+)
+"print.ml" 57 1840 1913 "print.ml" 57 1840 1914
+type(
+  Defs.atom_symb_inst
+)
+ident(
+  int_ref c "print.ml" 57 1840 1854 "print.ml" 57 1840 1855
+)
+"print.ml" 57 1840 1915 "print.ml" 57 1840 1936
+type(
+  Format.formatter -> Defs.symb_inst -> unit
+)
+ident(
+  int_ref pp_symbexec_statement "print.ml" 54 1704 1712 "print.ml" 54 1704 1733
+)
+"print.ml" 57 1840 1937 "print.ml" 57 1840 1941
+type(
+  Defs.symb_inst
+)
+ident(
+  int_ref cseq "print.ml" 57 1840 1856 "print.ml" 57 1840 1860
+)
+"print.ml" 57 1840 1865 "print.ml" 57 1840 1941
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 58 1942 1956 "print.ml" 58 1942 1958
+type(
+  Defs.symb_inst
+)
+ident(
+  def c1 "print.ml" 58 1942 1966 "print.ml" 58 1942 2078
+)
+"print.ml" 58 1942 1959 "print.ml" 58 1942 1961
+type(
+  Defs.symb_inst
+)
+ident(
+  def c2 "print.ml" 58 1942 1966 "print.ml" 58 1942 2078
+)
+"print.ml" 58 1942 1946 "print.ml" 58 1942 1962
+type(
+  Defs.symb_inst
+)
+"print.ml" 58 1942 1966 "print.ml" 58 1942 1973
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.symb_inst -> unit) ->
+   Defs.symb_inst ->
+   (Format.formatter -> Defs.symb_inst -> unit) -> Defs.symb_inst -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.symb_inst -> unit) ->
+  Defs.symb_inst ->
+  (Format.formatter -> Defs.symb_inst -> unit) -> Defs.symb_inst -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 58 1942 1974 "print.ml" 58 1942 1975
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 54 1704 1734 "print.ml" 54 1704 1735
+)
+"print.ml" 58 1942 1976 "print.ml" 58 1942 2028
+type(
+  ((Format.formatter -> Defs.symb_inst -> unit) ->
+   Defs.symb_inst ->
+   (Format.formatter -> Defs.symb_inst -> unit) -> Defs.symb_inst -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 58 1942 2029 "print.ml" 58 1942 2050
+type(
+  Format.formatter -> Defs.symb_inst -> unit
+)
+ident(
+  int_ref pp_symbexec_statement "print.ml" 54 1704 1712 "print.ml" 54 1704 1733
+)
+"print.ml" 58 1942 2051 "print.ml" 58 1942 2053
+type(
+  Defs.symb_inst
+)
+ident(
+  int_ref c1 "print.ml" 58 1942 1956 "print.ml" 58 1942 1958
+)
+"print.ml" 58 1942 2054 "print.ml" 58 1942 2075
+type(
+  Format.formatter -> Defs.symb_inst -> unit
+)
+ident(
+  int_ref pp_symbexec_statement "print.ml" 54 1704 1712 "print.ml" 54 1704 1733
+)
+"print.ml" 58 1942 2076 "print.ml" 58 1942 2078
+type(
+  Defs.symb_inst
+)
+ident(
+  int_ref c2 "print.ml" 58 1942 1959 "print.ml" 58 1942 1961
+)
+"print.ml" 58 1942 1966 "print.ml" 58 1942 2078
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 54 1704 1738 "print.ml" 58 1942 2078
+type(
+  Defs.symb_inst -> unit
+)
+"print.ml" 60 2080 2084 "print.ml" 60 2080 2097
+type(
+  Format.formatter -> Defs.ext_symb_heap * Defs.ext_symb_heap -> unit
+)
+ident(
+  def pp_entailment "print.ml" 63 2194 2194 "print.ml" 1 0 -1
+)
+"print.ml" 60 2080 2098 "print.ml" 60 2080 2099
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 60 2080 2100 "print.ml" 61 2114 2192
+)
+"print.ml" 60 2080 2101 "print.ml" 60 2080 2105
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh1 "print.ml" 61 2114 2116 "print.ml" 61 2114 2192
+)
+"print.ml" 60 2080 2106 "print.ml" 60 2080 2110
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh2 "print.ml" 61 2114 2116 "print.ml" 61 2114 2192
+)
+"print.ml" 60 2080 2100 "print.ml" 60 2080 2111
+type(
+  Defs.ext_symb_heap * Defs.ext_symb_heap
+)
+"print.ml" 61 2114 2116 "print.ml" 61 2114 2123
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap ->
+  (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 61 2114 2124 "print.ml" 61 2114 2125
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 60 2080 2098 "print.ml" 60 2080 2099
+)
+"print.ml" 61 2114 2126 "print.ml" 61 2114 2168
+type(
+  ((Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 61 2114 2169 "print.ml" 61 2114 2175
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  int_ref pp_esh "print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+)
+"print.ml" 61 2114 2176 "print.ml" 61 2114 2180
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh1 "print.ml" 60 2080 2101 "print.ml" 60 2080 2105
+)
+"print.ml" 61 2114 2181 "print.ml" 61 2114 2187
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  int_ref pp_esh "print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+)
+"print.ml" 61 2114 2188 "print.ml" 61 2114 2192
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "print.ml" 60 2080 2106 "print.ml" 60 2080 2110
+)
+"print.ml" 61 2114 2116 "print.ml" 61 2114 2192
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 63 2194 2198 "print.ml" 63 2194 2206
+type(
+  Format.formatter -> Defs.ext_symb_heap * Defs.ext_symb_heap -> unit
+)
+ident(
+  def pp_frame "print.ml" 66 2309 2309 "print.ml" 1 0 -1
+)
+"print.ml" 63 2194 2207 "print.ml" 63 2194 2208
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 63 2194 2209 "print.ml" 64 2223 2307
+)
+"print.ml" 63 2194 2210 "print.ml" 63 2194 2214
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh1 "print.ml" 64 2223 2225 "print.ml" 64 2223 2307
+)
+"print.ml" 63 2194 2215 "print.ml" 63 2194 2219
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  def esh2 "print.ml" 64 2223 2225 "print.ml" 64 2223 2307
+)
+"print.ml" 63 2194 2209 "print.ml" 63 2194 2220
+type(
+  Defs.ext_symb_heap * Defs.ext_symb_heap
+)
+"print.ml" 64 2223 2225 "print.ml" 64 2223 2232
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap ->
+  (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 64 2223 2233 "print.ml" 64 2223 2234
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 63 2194 2207 "print.ml" 63 2194 2208
+)
+"print.ml" 64 2223 2235 "print.ml" 64 2223 2283
+type(
+  ((Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 64 2223 2284 "print.ml" 64 2223 2290
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  int_ref pp_esh "print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+)
+"print.ml" 64 2223 2291 "print.ml" 64 2223 2295
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh1 "print.ml" 63 2194 2210 "print.ml" 63 2194 2214
+)
+"print.ml" 64 2223 2296 "print.ml" 64 2223 2302
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  int_ref pp_esh "print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+)
+"print.ml" 64 2223 2303 "print.ml" 64 2223 2307
+type(
+  Defs.ext_symb_heap
+)
+ident(
+  int_ref esh2 "print.ml" 63 2194 2215 "print.ml" 63 2194 2219
+)
+"print.ml" 64 2223 2225 "print.ml" 64 2223 2307
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 66 2309 2313 "print.ml" 66 2309 2331
+type(
+  Format.formatter ->
+  Defs.atomic_pure_formula list * Defs.atomic_pure_formula list -> unit
+)
+ident(
+  def pp_pure_entailment "print.ml" 70 2446 2446 "print.ml" 1 0 -1
+)
+"print.ml" 66 2309 2332 "print.ml" 66 2309 2333
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 66 2309 2334 "print.ml" 68 2401 2444
+)
+"print.ml" 66 2309 2335 "print.ml" 66 2309 2338
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  def pi1 "print.ml" 67 2346 2348 "print.ml" 68 2401 2444
+)
+"print.ml" 66 2309 2339 "print.ml" 66 2309 2342
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  def pi2 "print.ml" 67 2346 2348 "print.ml" 68 2401 2444
+)
+"print.ml" 66 2309 2334 "print.ml" 66 2309 2343
+type(
+  Defs.atomic_pure_formula list * Defs.atomic_pure_formula list
+)
+"print.ml" 67 2346 2348 "print.ml" 67 2346 2355
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.atomic_pure_formula list -> unit) ->
+   Defs.atomic_pure_formula list ->
+   (Format.formatter -> Defs.atomic_pure_formula list -> unit) ->
+   Defs.atomic_pure_formula list -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.atomic_pure_formula list -> unit) ->
+  Defs.atomic_pure_formula list ->
+  (Format.formatter -> Defs.atomic_pure_formula list -> unit) ->
+  Defs.atomic_pure_formula list -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 67 2346 2356 "print.ml" 67 2346 2357
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 66 2309 2332 "print.ml" 66 2309 2333
+)
+"print.ml" 67 2346 2358 "print.ml" 67 2346 2400
+type(
+  ((Format.formatter -> Defs.atomic_pure_formula list -> unit) ->
+   Defs.atomic_pure_formula list ->
+   (Format.formatter -> Defs.atomic_pure_formula list -> unit) ->
+   Defs.atomic_pure_formula list -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 68 2401 2405 "print.ml" 68 2401 2420
+type(
+  Format.formatter -> Defs.atomic_pure_formula list -> unit
+)
+ident(
+  int_ref pp_pure_formula "print.ml" 29 768 772 "print.ml" 29 768 787
+)
+"print.ml" 68 2401 2421 "print.ml" 68 2401 2424
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  int_ref pi1 "print.ml" 66 2309 2335 "print.ml" 66 2309 2338
+)
+"print.ml" 68 2401 2425 "print.ml" 68 2401 2440
+type(
+  Format.formatter -> Defs.atomic_pure_formula list -> unit
+)
+ident(
+  int_ref pp_pure_formula "print.ml" 29 768 772 "print.ml" 29 768 787
+)
+"print.ml" 68 2401 2441 "print.ml" 68 2401 2444
+type(
+  Defs.atomic_pure_formula list
+)
+ident(
+  int_ref pi2 "print.ml" 66 2309 2339 "print.ml" 66 2309 2342
+)
+"print.ml" 67 2346 2348 "print.ml" 68 2401 2444
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 70 2446 2450 "print.ml" 70 2446 2471
+type(
+  Format.formatter ->
+  Defs.atomic_spatial_formula list * Defs.atomic_spatial_formula list -> unit
+)
+ident(
+  def pp_spatial_entailment "print.ml" 74 2604 2604 "print.ml" 1 0 -1
+)
+"print.ml" 70 2446 2472 "print.ml" 70 2446 2473
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 70 2446 2474 "print.ml" 72 2547 2602
+)
+"print.ml" 70 2446 2475 "print.ml" 70 2446 2481
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  def sigma1 "print.ml" 71 2492 2494 "print.ml" 72 2547 2602
+)
+"print.ml" 70 2446 2482 "print.ml" 70 2446 2488
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  def sigma2 "print.ml" 71 2492 2494 "print.ml" 72 2547 2602
+)
+"print.ml" 70 2446 2474 "print.ml" 70 2446 2489
+type(
+  Defs.atomic_spatial_formula list * Defs.atomic_spatial_formula list
+)
+"print.ml" 71 2492 2494 "print.ml" 71 2492 2501
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.atomic_spatial_formula list -> unit) ->
+   Defs.atomic_spatial_formula list ->
+   (Format.formatter -> Defs.atomic_spatial_formula list -> unit) ->
+   Defs.atomic_spatial_formula list -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.atomic_spatial_formula list -> unit) ->
+  Defs.atomic_spatial_formula list ->
+  (Format.formatter -> Defs.atomic_spatial_formula list -> unit) ->
+  Defs.atomic_spatial_formula list -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 71 2492 2502 "print.ml" 71 2492 2503
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 70 2446 2472 "print.ml" 70 2446 2473
+)
+"print.ml" 71 2492 2504 "print.ml" 71 2492 2546
+type(
+  ((Format.formatter -> Defs.atomic_spatial_formula list -> unit) ->
+   Defs.atomic_spatial_formula list ->
+   (Format.formatter -> Defs.atomic_spatial_formula list -> unit) ->
+   Defs.atomic_spatial_formula list -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 72 2547 2551 "print.ml" 72 2547 2569
+type(
+  Format.formatter -> Defs.atomic_spatial_formula list -> unit
+)
+ident(
+  int_ref pp_spatial_formula "print.ml" 30 832 836 "print.ml" 30 832 854
+)
+"print.ml" 72 2547 2570 "print.ml" 72 2547 2576
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  int_ref sigma1 "print.ml" 70 2446 2475 "print.ml" 70 2446 2481
+)
+"print.ml" 72 2547 2577 "print.ml" 72 2547 2595
+type(
+  Format.formatter -> Defs.atomic_spatial_formula list -> unit
+)
+ident(
+  int_ref pp_spatial_formula "print.ml" 30 832 836 "print.ml" 30 832 854
+)
+"print.ml" 72 2547 2596 "print.ml" 72 2547 2602
+type(
+  Defs.atomic_spatial_formula list
+)
+ident(
+  int_ref sigma2 "print.ml" 70 2446 2482 "print.ml" 70 2446 2488
+)
+"print.ml" 71 2492 2494 "print.ml" 72 2547 2602
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 74 2604 2608 "print.ml" 74 2604 2613
+type(
+  Format.formatter -> Defs.verification_condition -> unit
+)
+ident(
+  def pp_vc "print.ml" 78 2769 2769 "print.ml" 1 0 -1
+)
+"print.ml" 74 2604 2614 "print.ml" 74 2604 2615
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 74 2604 2616 "print.ml" 76 2679 2766
+)
+"print.ml" 74 2604 2616 "print.ml" 74 2604 2618
+type(
+  Defs.verification_condition
+)
+ident(
+  def vc "print.ml" 75 2621 2623 "print.ml" 76 2679 2766
+)
+"print.ml" 75 2621 2623 "print.ml" 75 2621 2630
+type(
+  Format.formatter ->
+  (string ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap ->
+   (Format.formatter -> Defs.symb_inst -> unit) ->
+   Defs.symb_inst ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format ->
+  string ->
+  (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap ->
+  (Format.formatter -> Defs.symb_inst -> unit) ->
+  Defs.symb_inst ->
+  (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+  Defs.ext_symb_heap -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 75 2621 2631 "print.ml" 75 2621 2632
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 74 2604 2614 "print.ml" 74 2604 2615
+)
+"print.ml" 75 2621 2633 "print.ml" 75 2621 2678
+type(
+  (string ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap ->
+   (Format.formatter -> Defs.symb_inst -> unit) ->
+   Defs.symb_inst ->
+   (Format.formatter -> Defs.ext_symb_heap -> unit) ->
+   Defs.ext_symb_heap -> unit, Format.formatter, unit)
+  format
+)
+"print.ml" 76 2679 2683 "print.ml" 76 2679 2685
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "print.ml" 74 2604 2616 "print.ml" 74 2604 2618
+)
+"print.ml" 76 2679 2683 "print.ml" 76 2679 2693
+type(
+  string
+)
+"print.ml" 76 2679 2694 "print.ml" 76 2679 2700
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  int_ref pp_esh "print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+)
+"print.ml" 76 2679 2701 "print.ml" 76 2679 2703
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "print.ml" 74 2604 2616 "print.ml" 74 2604 2618
+)
+"print.ml" 76 2679 2701 "print.ml" 76 2679 2710
+type(
+  Defs.ext_symb_heap
+)
+"print.ml" 76 2679 2711 "print.ml" 76 2679 2732
+type(
+  Format.formatter -> Defs.symb_inst -> unit
+)
+ident(
+  int_ref pp_symbexec_statement "print.ml" 54 1704 1712 "print.ml" 54 1704 1733
+)
+"print.ml" 76 2679 2733 "print.ml" 76 2679 2735
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "print.ml" 74 2604 2616 "print.ml" 74 2604 2618
+)
+"print.ml" 76 2679 2733 "print.ml" 76 2679 2748
+type(
+  Defs.symb_inst
+)
+"print.ml" 76 2679 2749 "print.ml" 76 2679 2755
+type(
+  Format.formatter -> Defs.ext_symb_heap -> unit
+)
+ident(
+  int_ref pp_esh "print.ml" 38 1140 1148 "print.ml" 38 1140 1154
+)
+"print.ml" 76 2679 2756 "print.ml" 76 2679 2758
+type(
+  Defs.verification_condition
+)
+ident(
+  int_ref vc "print.ml" 74 2604 2616 "print.ml" 74 2604 2618
+)
+"print.ml" 76 2679 2756 "print.ml" 76 2679 2766
+type(
+  Defs.ext_symb_heap
+)
+"print.ml" 75 2621 2623 "print.ml" 76 2679 2766
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 78 2769 2777 "print.ml" 78 2769 2794
+type(
+  Format.formatter -> Defs.atomic_command -> unit
+)
+ident(
+  def pp_atomic_command "print.ml" 78 2769 2769 "print.ml" 1 0 -1
+)
+"print.ml" 78 2769 2795 "print.ml" 78 2769 2796
+type(
+  Format.formatter
+)
+ident(
+  def f "print.ml" 78 2769 2799 "print.ml" 83 3051 3119
+)
+"print.ml" 79 2808 2819 "print.ml" 79 2808 2821
+ident(
+  def id "print.ml" 79 2808 2826 "print.ml" 79 2808 2861
+)
+"print.ml" 79 2808 2818 "print.ml" 79 2808 2822
+type(
+  Defs.ident
+)
+"print.ml" 79 2808 2812 "print.ml" 79 2808 2822
+type(
+  Defs.atomic_command
+)
+"print.ml" 79 2808 2826 "print.ml" 79 2808 2833
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.ident -> unit) -> Defs.ident -> unit,
+   Format.formatter, unit)
+  format -> (Format.formatter -> Defs.ident -> unit) -> Defs.ident -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 79 2808 2834 "print.ml" 79 2808 2835
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 78 2769 2795 "print.ml" 78 2769 2796
+)
+"print.ml" 79 2808 2836 "print.ml" 79 2808 2849
+type(
+  ((Format.formatter -> Defs.ident -> unit) -> Defs.ident -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 79 2808 2850 "print.ml" 79 2808 2858
+type(
+  Format.formatter -> Defs.ident -> unit
+)
+ident(
+  ext_ref Misc.pp_ident
+)
+"print.ml" 79 2808 2859 "print.ml" 79 2808 2861
+type(
+  Defs.ident
+)
+ident(
+  int_ref id "print.ml" 79 2808 2818 "print.ml" 79 2808 2822
+)
+"print.ml" 79 2808 2826 "print.ml" 79 2808 2861
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 80 2862 2877 "print.ml" 80 2862 2878
+ident(
+  def e "print.ml" 80 2862 2883 "print.ml" 80 2862 2916
+)
+"print.ml" 80 2862 2876 "print.ml" 80 2862 2879
+type(
+  Defs.exp
+)
+"print.ml" 80 2862 2866 "print.ml" 80 2862 2879
+type(
+  Defs.atomic_command
+)
+"print.ml" 80 2862 2883 "print.ml" 80 2862 2890
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 80 2862 2891 "print.ml" 80 2862 2892
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 78 2769 2795 "print.ml" 78 2769 2796
+)
+"print.ml" 80 2862 2893 "print.ml" 80 2862 2907
+type(
+  ((Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 80 2862 2908 "print.ml" 80 2862 2914
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 80 2862 2915 "print.ml" 80 2862 2916
+type(
+  Defs.exp
+)
+ident(
+  int_ref e "print.ml" 80 2862 2876 "print.ml" 80 2862 2879
+)
+"print.ml" 80 2862 2883 "print.ml" 80 2862 2916
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 81 2917 2931 "print.ml" 81 2917 2933
+type(
+  Defs.ident
+)
+ident(
+  def id "print.ml" 81 2917 2940 "print.ml" 81 2917 2981
+)
+"print.ml" 81 2917 2934 "print.ml" 81 2917 2935
+type(
+  Defs.exp
+)
+ident(
+  def e "print.ml" 81 2917 2940 "print.ml" 81 2917 2981
+)
+"print.ml" 81 2917 2921 "print.ml" 81 2917 2936
+type(
+  Defs.atomic_command
+)
+"print.ml" 81 2917 2940 "print.ml" 81 2917 2947
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.ident -> unit) ->
+   Defs.ident -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.ident -> unit) ->
+  Defs.ident -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 81 2917 2948 "print.ml" 81 2917 2949
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 78 2769 2795 "print.ml" 78 2769 2796
+)
+"print.ml" 81 2917 2950 "print.ml" 81 2917 2960
+type(
+  ((Format.formatter -> Defs.ident -> unit) ->
+   Defs.ident -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 81 2917 2961 "print.ml" 81 2917 2969
+type(
+  Format.formatter -> Defs.ident -> unit
+)
+ident(
+  ext_ref Misc.pp_ident
+)
+"print.ml" 81 2917 2970 "print.ml" 81 2917 2972
+type(
+  Defs.ident
+)
+ident(
+  int_ref id "print.ml" 81 2917 2931 "print.ml" 81 2917 2933
+)
+"print.ml" 81 2917 2973 "print.ml" 81 2917 2979
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 81 2917 2980 "print.ml" 81 2917 2981
+type(
+  Defs.exp
+)
+ident(
+  int_ref e "print.ml" 81 2917 2934 "print.ml" 81 2917 2935
+)
+"print.ml" 81 2917 2940 "print.ml" 81 2917 2981
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 82 2982 2996 "print.ml" 82 2982 2998
+type(
+  Defs.ident
+)
+ident(
+  def id "print.ml" 82 2982 3005 "print.ml" 82 2982 3050
+)
+"print.ml" 82 2982 2999 "print.ml" 82 2982 3000
+type(
+  Defs.exp
+)
+ident(
+  def e "print.ml" 82 2982 3005 "print.ml" 82 2982 3050
+)
+"print.ml" 82 2982 2986 "print.ml" 82 2982 3001
+type(
+  Defs.atomic_command
+)
+"print.ml" 82 2982 3005 "print.ml" 82 2982 3012
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.ident -> unit) ->
+   Defs.ident -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.ident -> unit) ->
+  Defs.ident -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 82 2982 3013 "print.ml" 82 2982 3014
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 78 2769 2795 "print.ml" 78 2769 2796
+)
+"print.ml" 82 2982 3015 "print.ml" 82 2982 3029
+type(
+  ((Format.formatter -> Defs.ident -> unit) ->
+   Defs.ident -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 82 2982 3030 "print.ml" 82 2982 3038
+type(
+  Format.formatter -> Defs.ident -> unit
+)
+ident(
+  ext_ref Misc.pp_ident
+)
+"print.ml" 82 2982 3039 "print.ml" 82 2982 3041
+type(
+  Defs.ident
+)
+ident(
+  int_ref id "print.ml" 82 2982 2996 "print.ml" 82 2982 2998
+)
+"print.ml" 82 2982 3042 "print.ml" 82 2982 3048
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 82 2982 3049 "print.ml" 82 2982 3050
+type(
+  Defs.exp
+)
+ident(
+  int_ref e "print.ml" 82 2982 2999 "print.ml" 82 2982 3000
+)
+"print.ml" 82 2982 3005 "print.ml" 82 2982 3050
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 83 3051 3065 "print.ml" 83 3051 3067
+type(
+  Defs.exp
+)
+ident(
+  def e1 "print.ml" 83 3051 3075 "print.ml" 83 3051 3119
+)
+"print.ml" 83 3051 3068 "print.ml" 83 3051 3070
+type(
+  Defs.exp
+)
+ident(
+  def e2 "print.ml" 83 3051 3075 "print.ml" 83 3051 3119
+)
+"print.ml" 83 3051 3055 "print.ml" 83 3051 3071
+type(
+  Defs.atomic_command
+)
+"print.ml" 83 3051 3075 "print.ml" 83 3051 3082
+type(
+  Format.formatter ->
+  ((Format.formatter -> Defs.exp -> unit) ->
+   Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format ->
+  (Format.formatter -> Defs.exp -> unit) ->
+  Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"print.ml" 83 3051 3083 "print.ml" 83 3051 3084
+type(
+  Format.formatter
+)
+ident(
+  int_ref f "print.ml" 78 2769 2795 "print.ml" 78 2769 2796
+)
+"print.ml" 83 3051 3085 "print.ml" 83 3051 3099
+type(
+  ((Format.formatter -> Defs.exp -> unit) ->
+   Defs.exp -> (Format.formatter -> Defs.exp -> unit) -> Defs.exp -> unit,
+   Format.formatter, unit)
+  format
+)
+"print.ml" 83 3051 3100 "print.ml" 83 3051 3106
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 83 3051 3107 "print.ml" 83 3051 3109
+type(
+  Defs.exp
+)
+ident(
+  int_ref e1 "print.ml" 83 3051 3065 "print.ml" 83 3051 3067
+)
+"print.ml" 83 3051 3110 "print.ml" 83 3051 3116
+type(
+  Format.formatter -> Defs.exp -> unit
+)
+ident(
+  int_ref pp_exp "print.ml" 17 361 369 "print.ml" 17 361 375
+)
+"print.ml" 83 3051 3117 "print.ml" 83 3051 3119
+type(
+  Defs.exp
+)
+ident(
+  int_ref e2 "print.ml" 83 3051 3068 "print.ml" 83 3051 3070
+)
+"print.ml" 83 3051 3075 "print.ml" 83 3051 3119
+call(
+  tail
+)
+type(
+  unit
+)
+"print.ml" 78 2769 2799 "print.ml" 83 3051 3119
+type(
+  Defs.atomic_command -> unit
+)
