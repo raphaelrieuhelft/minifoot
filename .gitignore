@@ -12,3 +12,7 @@ minifoot
 #build folders
 ._d/
 ._bcdi/
+parser.ml
+parser.output
+parser.mli
+lexer.ml
