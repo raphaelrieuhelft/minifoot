@@ -9,6 +9,8 @@ minifoot
 *.cmxs
 *.cmxa
 
+smallfoot*.exe
+
 #build folders
 ._d/
 ._bcdi/
