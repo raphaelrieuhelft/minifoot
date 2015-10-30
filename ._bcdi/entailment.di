@@ -1,1 +1,0 @@
-entailment.cmi : defs.cmo
