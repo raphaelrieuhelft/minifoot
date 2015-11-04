@@ -18,3 +18,4 @@ parser.ml
 parser.output
 parser.mli
 lexer.ml
+minifoot
