@@ -35,3 +35,5 @@ x = new();
 x -> tl = t;
 } [_z != x * x |-> t * _z|->y ]
 */
+
+/* TODO x=x, check undeclared variables*/

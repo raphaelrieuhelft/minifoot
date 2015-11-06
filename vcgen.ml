@@ -6,11 +6,23 @@ exception LookupNull
 exception UpdateNull
 exception DisposeNull
 exception AssignNull
+exception CallNull
 
 (*jsr record type, to be compiled into symbolic instructions*)
-type jsr = {jsr_pre: ext_symb_heap; jsr_mod_var : IdSet.t; jsr_post: ext_symb_heap}
+type jsr = {jsr_pre: ext_symb_heap; jsr_mod_vars : IdSet.t; jsr_post: ext_symb_heap}
 
-let compile_jsr jsr = SI_skip (*TODO*)
+let rec pure_of_esh = function
+	|ESH_base(pf,_) -> ESH_base(pf, [])
+	|ESH_ifthenelse(pf,esh1, esh2) -> ESH_ifthenelse(pf, pure_of_esh esh1, pure_of_esh esh2)
+
+(*compiles a jsr, adapted from the inference rule in http://arxiv.org/pdf/1204.4804.pdf page 6*)
+let compile_jsr jsr = 
+	let subst = List.map (fun id -> (id, EXP_ident(gensym id))) (IdSet.elements jsr.jsr_mod_vars) in
+	SI_atomic( ASI_inhale(jsr.jsr_pre), 
+		SI_atomic( ASI_exhale(pure_of_esh(jsr.jsr_pre)),
+			SI_atomic (ASI_rename(subst),
+				SI_atomic( ASI_exhale(jsr.jsr_post),
+					SI_skip))))
 
 (*helper functions*)
 let rec symbseq si1 si2 = match si1 with
@@ -22,9 +34,8 @@ let rename id id2 = SI_atomic(ASI_rename ( [id, EXP_ident(id2)]), SI_skip)
 
 let rename id = rename id (gensym id)
 
-let negate_pf = function 
-	|PF_eq(e1,e2) -> PF_neq(e1,e2)
-	|PF_neq(e1,e2) -> PF_eq(e1,e2)
+let esh_pointsto e1 e2 = ESH_base([], [SF_pointsto(e1,e2)])
+let esh_eq e1 e2 = ESH_base([PF_eq(e1,e2)], [])
 
 (*computes the set of variables modified by a command*)
 let rec mod_vars fundecls acc = function
@@ -44,28 +55,39 @@ let rec mod_vars fundecls acc = function
 			in
 			let params = List.fold_left (fun s p -> match p with EXP_null -> s | EXP_ident id -> IdSet.add id s) IdSet.empty l in 
 			mod_vars fundecls (IdSet.union acc (IdSet.union modf params)) (CO_parallelCalls(t))
+			(* should be empty every time if all variables are local ?*)
 
-(*compiles an atomic command into a symbolic instruction*)		
+(*compiles an atomic command into a jsr, then into a symbolic instruction via compile_jsr*)				
 let rec chop_atom = function
-  |AC_new id -> symbseq (rename id) (SI_atomic (ASI_exhale (ESH_base ([],[SF_pointsto(EXP_ident id, EXP_ident (wildcard ()))])), SI_skip))
-  |AC_dispose (EXP_null) -> raise DisposeNull
-  |AC_dispose (EXP_ident id) -> SI_atomic (ASI_inhale (ESH_base ([],[SF_pointsto(EXP_ident id,  EXP_ident (wildcard ()))])), SI_skip)
-  |AC_assign(id, EXP_null) -> raise AssignNull
-  |AC_assign(id, e) -> symbseq (rename id) (SI_atomic (ASI_exhale (ESH_base ([PF_eq(EXP_ident id, e)], [])), SI_skip))
-  |AC_update(e1, e2) -> begin
+	|AC_new id -> compile_jsr {jsr_pre = esh_emp; jsr_mod_vars = IdSet.singleton id; jsr_post = esh_pointsto (EXP_ident id) (EXP_ident (wildcard ()))}
+	|AC_dispose (EXP_null) -> raise DisposeNull
+	|AC_dispose (EXP_ident id) -> compile_jsr {jsr_pre = esh_pointsto (EXP_ident id) (EXP_ident (wildcard ())); jsr_mod_vars = IdSet.empty; jsr_post = esh_emp}
+	|AC_assign(id, EXP_null) -> raise AssignNull
+	|AC_assign(id, EXP_ident id2) when id = id2 -> SI_skip (*not the same as next case: x not modified*)
+	|AC_assign(id, EXP_ident id2) -> compile_jsr {jsr_pre = esh_eq (EXP_ident id) (EXP_ident (wildcard ())); jsr_mod_vars = IdSet.singleton id; jsr_post = esh_eq (EXP_ident id) (EXP_ident id2)}
+	|AC_update(e1, e2) -> begin
 		match e1 with
 		 |EXP_null -> raise UpdateNull
-		 |EXP_ident id -> symbseq (chop_atom (AC_dispose e1)) (SI_atomic(ASI_exhale (ESH_base ([],[SF_pointsto(e1, e2)])), SI_skip))
-		 end
-  |AC_lookup(id, e) -> 
-		match e with 
-		 |EXP_null -> raise LookupNull 
-		 |EXP_ident id2 -> 
-			let id1 = gensym id2 in 
-			SI_atomic (ASI_inhale (ESH_base ([],[SF_pointsto(EXP_ident id,  EXP_ident id1)])), 
-				SI_atomic (ASI_exhale(ESH_base([PF_eq(EXP_ident id1, EXP_ident id2)], [SF_pointsto(EXP_ident id, EXP_ident id1)])), SI_skip)
-				)
-
+		 |EXP_ident id -> compile_jsr {jsr_pre = esh_pointsto (EXP_ident id) (EXP_ident (wildcard ())); jsr_mod_vars = IdSet.empty; jsr_post = esh_pointsto (EXP_ident id) e2}
+		end
+	|AC_lookup(id, e) -> begin
+		match e with
+		 |EXP_null -> raise LookupNull
+		 |EXP_ident id2 ->
+			let next = EXP_ident (wildcard ()) in
+			compile_jsr {jsr_pre = esh_pointsto e next; jsr_mod_vars = IdSet.singleton id; jsr_post = ESH_base([PF_eq(EXP_ident id, next)], [SF_pointsto(e, next)])}
+		end
+	
+let jsrs_of_call fd fundecls callargs = 
+	let fresh_args = List.map gensym fd.fd_params in 
+	let post1 = ESH_base((List.map2 (fun ca fa -> match ca with EXP_null -> raise CallNull | _ -> PF_eq(ca, EXP_ident fa)) callargs fresh_args), []) in(*call by value : copy each parameter*)
+	let modf = mod_vars fundecls IdSet.empty (fd.fd_body).command_desc in
+	let modf = List.fold_left2 (fun s a fa -> if IdSet.mem a s then IdSet.add fa (IdSet.remove a s) else s) modf fd.fd_params fresh_args in (* the modified variables are the copies that are passed to the function *)
+	let subst = List.map2 (fun a b -> (a,EXP_ident b)) fd.fd_params fresh_args in
+	let pre2 = esh_rename subst fd.fd_precondition in
+	let post2 = esh_rename subst fd.fd_postcondition in
+	{jsr_pre = esh_emp; jsr_mod_vars = IdSet.empty; jsr_post = post1}, {jsr_pre = pre2; jsr_mod_vars = modf; jsr_post = post2}
+	
 
 let rec chop fundecls = function
   |CO_block l -> List.fold_left (fun (sis,vcs) c -> let (sis1, vcs1) = (chop fundecls c)  in (symbseq sis1 sis, vcs1@vcs)) (SI_skip,[]) (List.map (fun c -> c.command_desc) l)		(* go right to left ? *)
@@ -75,8 +97,8 @@ let rec chop fundecls = function
 		let si2, vc2 = chop fundecls c2.command_desc in
 		SI_branch (si1, si2), vc1@vc2
   |CO_while (cond, inv, c) ->
-		let post = esh_star inv (ESH_base([negate_pf cond], [])) in
-		let jsr = {jsr_pre = inv; jsr_mod_var = mod_vars fundecls IdSet.empty c.command_desc; jsr_post = post} in
+		let post = esh_star inv (ESH_base([pure_neg cond], [])) in
+		let jsr = {jsr_pre = inv; jsr_mod_vars = mod_vars fundecls IdSet.empty c.command_desc; jsr_post = post} in
 		(compile_jsr jsr, vc_gen_cmd c.command_desc inv post "comes from a while loop" fundecls)
 
 and vc_gen_cmd cmd pre post info fundecls =	
