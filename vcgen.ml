@@ -100,6 +100,16 @@ let rec chop fundecls = function
 		let post = esh_star inv (ESH_base([pure_neg cond], [])) in
 		let jsr = {jsr_pre = inv; jsr_mod_vars = mod_vars fundecls IdSet.empty c.command_desc; jsr_post = post} in
 		(compile_jsr jsr, vc_gen_cmd c.command_desc inv post "comes from a while loop" fundecls)
+  |CO_parallelCalls(l) ->
+		let jsrs_list = List.map 
+		(fun (fname, args) -> let fd = List.find (fun fd -> fd.fd_name = fname) fundecls in jsrs_of_call fd fundecls args) l in
+		let (post1, pre2, post2, modv) = List.fold_left (fun (post1, pre2, post2, modv) (jsr1, jsr2) ->
+			((esh_star post1 jsr1.jsr_post), (esh_star pre2 jsr2.jsr_pre), (esh_star post2 jsr2.jsr_post),  (IdSet.union modv jsr2.jsr_mod_vars))) (esh_emp, esh_emp, esh_emp, IdSet.empty) jsrs_list in 
+			(*union is disjoint by construction*)
+		let jsr1 = {jsr_pre = esh_emp; jsr_mod_vars = IdSet.empty; jsr_post = post1} in
+		let jsr2 = {jsr_pre = pre2; jsr_mod_vars = modv; jsr_post = post2} in
+		(symbseq (compile_jsr jsr1) (compile_jsr jsr2), [])
+
 
 and vc_gen_cmd cmd pre post info fundecls =	
 	let si, vcs = chop fundecls cmd in
