@@ -36,6 +36,7 @@ x -> tl = t;
 } [_z != x * x |-> t * _z|->y ]
 */
 
+/* TODO x=x, check undeclared variables*/
 
 
 /* tests on frame inference */
@@ -108,6 +109,4 @@ testD2(x,y) [x|->*y|->] { } [_x!=_y*x|->_x*y|->]
 */
 
 testE(x,y) [x|->*x|->] { } [y|->*y|->]
-
-
 
