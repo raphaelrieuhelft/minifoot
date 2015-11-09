@@ -14,6 +14,7 @@ let exp_is_existential = function
   | EXP_null -> false
   | EXP_ident id -> is_existential id
 
+let esh_of_pure c = ESH_base([c], [])
 
 module ESet = Set.Make (struct type t = exp let compare = compare end)   
 module ESSet = Set.Make (struct type t = ESet.t let compare = compare end)
@@ -51,8 +52,8 @@ let compute_repr_map pure_formulas =
   List.fold_left
     (fun repr_map eset ->
 	  let repr = choose_repr eset in
-	  List.fold_left (fun repr_map e -> EMap.add e repr repr_map) repr_map (Eset.elements eset))
-	EMap.empty (Esset.elements esset)
+	  List.fold_left (fun repr_map e -> EMap.add e repr repr_map) repr_map (ESet.elements eset))
+	EMap.empty (ESSet.elements esset)
 
 let neqs_from_pure repr_map pure_formulas =
   List.fold_left (fun neqs -> function
@@ -69,14 +70,14 @@ let compute_pointsto_map repr_map spatial_formulas =
     | SF_false -> raise ImpliesFalse
     | SF_pointsto (e1,e2) -> 
       let key = EMap.find e1 repr_map in
-	  if (key = EXP_null) or (EMap.mem key pointsto_map) then raise ImpliesFalse
+	  if (key = EXP_null) || (EMap.mem key pointsto_map) then raise ImpliesFalse
 	  else EMap.add key (EMap.find e2 repr_map) pointsto_map
   in
   List.fold_left process_spatial_formula EMap.empty spatial_formulas
 
 let verify_precise pointsto_map =
   let exp_is_precise precise_exps e _ =
-    (not (exp_is_existential e)) or ESet.mem e precise_exps in
+    (not (exp_is_existential e)) || ESet.mem e precise_exps in
   let choose_precise_binding precise_exps pointsto_map =
     EMap.choose (EMap.filter (exp_is_precise precise_exps) pointsto_map) in
   let rec loop precise_exps pointsto_map =
@@ -121,6 +122,7 @@ let update_repr_map repr_map right_pure_formulas =
 		(repr_map, unify e1 e2 esset)
 	  else raise NoFrameExists
 	else raise NoFrameExists
+  in
   let (repr_map, esset) = List.fold_left
     (fun (repr_map, esset) -> function
 	  | PF_eq (e1,e2) -> process_eq (repr_map, esset) e1 e2
@@ -132,7 +134,7 @@ let update_repr_map repr_map right_pure_formulas =
 let compute_frame_map repr_map exst_cls pointsto_map right_spatial_formulas =
   let spatials = List.map (function 
     | SF_false -> raise NoFrameExists
-	| SF_pointsto x -> x
+	| SF_pointsto (e1,e2) -> (e1,e2)
 	) right_spatial_formulas in
   let rec loop repr_map exst_cls pointsto_map spatials =
     if spatials = [] then (repr_map, exst_cls, pointsto_map) else
@@ -140,7 +142,7 @@ let compute_frame_map repr_map exst_cls pointsto_map right_spatial_formulas =
 	  try List.find (fun (e1,_) -> EMap.mem e1 repr_map) spatials
 	  with Not_found -> raise NoFrameExists
 	in
-	let spatials' = List.remove (e1,e2)
+	let spatials' = (* List.remove (e1,e2) *) spatials in (*TODO*)
 	let repr1 = EMap.find e1 repr_map in
 	if EMap.mem repr1 pointsto_map then
 	  let target = EMap.find repr1 pointsto_map in
@@ -154,7 +156,7 @@ let compute_frame_map repr_map exst_cls pointsto_map right_spatial_formulas =
 	    try
 		  let e2_cl = esset_find (fun cl -> ESet.mem e2 cl) exst_cls in
 		  let repr_map' = ESet.fold 
-		    (fun e repr_map -> EMap.add e target repr_map) e2_cl in
+		    (fun e repr_map -> EMap.add e target repr_map) e2_cl repr_map in
 		  let exst_cls' = ESSet.remove e2_cl exst_cls in
 		  loop repr_map' exst_cls' pointsto_map' spatials'
 		with Not_found ->
@@ -167,8 +169,8 @@ let compute_frame_map repr_map exst_cls pointsto_map right_spatial_formulas =
 let verify_right_neqs repr_map exst_cls left_neqs right_pure_formulas =
   let repr_map = ESSet.fold (fun cl repr_map ->
     let repr = ESet.choose cl in
-	ESet.fold (fun e repr_map -> EMap.add e repr repr_map) cl
-	) exst_cls in
+	ESet.fold (fun e repr_map -> EMap.add e repr repr_map) cl repr_map
+	) exst_cls repr_map in
   List.iter (function
     | PF_eq _ -> ()
 	| PF_neq (e1,e2) ->
@@ -194,7 +196,7 @@ let get_frame_base (pfs,sfs) (pfs2,sfs2) =
 	let () = verify_right_neqs repr_map exst_cls neqs pfs2 in
 	(* verify that second formula is precise alone? *)
 	
-	frame_of_asf_list (List.map (fun bd -> SF_pointsto bd) (EMap.bindings frame_map))
+	frame_of_asf_list (List.map (fun (e1,e2) -> SF_pointsto (e1,e2)) (EMap.bindings frame_map))
 	
   with 
     | ImpliesFalse -> frame_of_asf_list [SF_false]
@@ -202,10 +204,20 @@ let get_frame_base (pfs,sfs) (pfs2,sfs2) =
 
 
 
-let get_frame esh esh2 = match esh, esh2 with
+let rec get_frame esh esh2 = match esh, esh2 with
   | ESH_base sh, ESH_base sh2 -> get_frame_base sh sh2
-  (* TODO *)
-  | _ -> failwith "TODO: ESH_ifthenelse in get_frame"
+  | ESH_ifthenelse(c, esht, eshf), _ -> 
+	let ft = get_frame (esh_star (esh_of_pure c) esht) esh2 in
+	let ff = get_frame (esh_star (esh_of_pure (pure_neg c)) eshf) esh2 in
+	(match ft, ff with
+		Some ft, Some ff -> Some(ESH_ifthenelse(c, ft, ff)) (*TODO*)
+		|_-> failwith "TODO")
+  | ESH_base _, ESH_ifthenelse(c, esh2t, esh2f) ->
+	let ft = get_frame (esh_star esh (esh_of_pure c)) esh2t in
+	let ff = get_frame (esh_star esh (esh_of_pure (pure_neg c))) esh2f in
+	(match ft, ff with
+		Some ft, Some ff -> Some(ESH_ifthenelse(c, ft, ff))	(*TODO*)
+		|_-> failwith "TODO")
 
 
 
