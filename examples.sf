@@ -35,3 +35,79 @@ x = new();
 x -> tl = t;
 } [_z != x * x |-> t * _z|->y ]
 */
+
+
+
+/* tests on frame inference */
+
+/*
+test_frame1()[emp] {
+} [_x==_y]
+
+
+
+test_frame2(x)[_x==x*x|->] {
+} [_x==x*x|->]
+
+test_frame2a(x)[_x==x*_x|->] {
+} [_x==x*_x|->]
+
+test_frame2b(x)[x|->] {
+} [_x==x*_x|->]
+
+test_frame3(x,y)[x|->y] {
+} [_x==y*x|->_x]
+
+test_frame4(x,y)[x|->y] {
+} [x==x]
+
+test_frame5(x,y)[x==y] {
+} [_x==y]
+
+test_frame6(x,y)[x==y] {
+} [emp]
+
+*/
+
+/*
+test1(x,y) [x|->y] { } [x==_x*_x|->y]
+
+test2(x,y) [x|->y] { } [y==_y*x|->_y]
+
+test3(x,y) [x==_x*_x|->y] { } [x==_x*_x|->y]
+
+test4() [emp] { } [_x==_y*emp]
+
+test5() [emp] { } [_x==_x*emp]
+
+test6(x,y) [x==y*emp] { } [_x==y*emp]
+
+test7(x,y) [x==y*emp] { } [emp]
+
+test8(x,y) [x==y*emp] { } [x==y*_x==_y*emp]
+*/
+
+fB(x)[x|->x*x|->x] {
+} [false]
+
+fB2(x,y)[x==y*x|->y*y|->x] {
+} [false]
+
+fC()[NULL|->] {
+} [false]
+
+
+testA(x,y) [x|->*y|->] { } [x!=NULL*x!=y*x|->*y|->]
+
+
+
+
+testD(x,y) [x|->*y|->] { } [x|->_x*y|->_y]
+/*
+testD2(x,y) [x|->*y|->] { } [_x!=_y*x|->_x*y|->]
+*/
+
+testE(x,y) [x|->*x|->] { } [y|->*y|->]
+
+
+
