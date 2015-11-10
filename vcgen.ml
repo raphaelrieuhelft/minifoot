@@ -92,7 +92,7 @@ let jsrs_of_call fd fundecls callargs =
 	
 
 let rec chop fundecls = function
-  |CO_block l -> List.fold_left (fun (sis,vcs) c -> let (sis1, vcs1) = (chop fundecls c)  in (symbseq sis1 sis, vcs1@vcs)) (SI_skip,[]) (List.map (fun c -> c.command_desc) l)		(* go right to left ? *)
+  |CO_block l -> List.fold_left (fun (sis,vcs) c -> let (sis1, vcs1) = (chop fundecls c)  in (symbseq sis sis1, vcs1)) (SI_skip,[]) (List.map (fun c -> c.command_desc) l)		
   |CO_atom (ac) -> (chop_atom ac, [])
   |CO_if (cond, c1, c2) ->
 		let si1, vc1 = chop fundecls c1.command_desc in
