@@ -1,0 +1,12 @@
+* vcgen.ml
+
+Le jeu d'instructions symboliques (inhale, exhale, rename) semble plus adapté à la compilation d'instructions jsr qu'à la compilation directe des instructions du langage source. Nous avons donc pris le parti de compiler dans un premier temps les instructions source vers des jsr à l'aide des petits axiomes du cours, puis de compiler chaque jsr vers des instructions symboliques.
+
+La compilation d'une instruction source vers un jsr est très simple sauf pour les boucles et les appels de fonction. Pour ces instructions, nous nous sommes largement inspirés de l'article de 2012 présent sur la page de smallfoot (http://arxiv.org/pdf/1204.4804.pdf). Dans cet article, le jeu d'instructions symboliques comprend des jsr et les instructions source qui ne sont pas des boucles ou des appels de fonction, on peut donc compiler ce jeu d'instructions vers des jsr uniquement. En particulier, nous avons utilisé leur compilation des boucles et des appels de fonction vers des jsr pratiquement telle quelle.
+
+Le même article contient une règle d'inférence pour exécuter les jsr dont nous nous sommes inspirés pour les compiler vers notre jeu d'instructions symboliques (inhale, exhale, rename).
+
+Notre algorithme pour parcourir le code d'une fonction et le compiler tout en générant d'éventuelles conditions de vérification supplémentaires est lui-même tiré du même article.
+
+Cette approche a aussi l'avantage de concentrer toutes les erreurs potentielles de notre part vers la fonction qui compile les jsr, puisque la compilation d'instructions source vers des jsr est soit évidente, soit tirée de l'article...
+

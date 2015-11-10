@@ -52,6 +52,7 @@ let rec mod_vars fundecls acc = function
   |CO_parallelCalls((f,l)::t) -> 
 			let fd = List.find (fun fd -> fd.fd_name = f) fundecls in
 			let modf = IdSet.diff (mod_vars fundecls IdSet.empty fd.fd_body.command_desc) (List.fold_right IdSet.add fd.fd_params IdSet.empty)
+			(*parameters are passed by value : they are not modified*)
 			in
 			let params = List.fold_left (fun s p -> match p with EXP_null -> s | EXP_ident id -> IdSet.add id s) IdSet.empty l in 
 			mod_vars fundecls (IdSet.union acc (IdSet.union modf params)) (CO_parallelCalls(t))
@@ -115,5 +116,5 @@ and vc_gen_cmd cmd pre post info fundecls =
 	let si, vcs = chop fundecls cmd in
 	{vc_pre = pre; vc_symb_stmt = si; vc_post = post; vc_info = info}::vcs
 	
-and vc_gen fd fundecls = vc_gen_cmd fd.fd_body.command_desc fd.fd_precondition fd.fd_postcondition ("comes from "^fd.fd_name) fundecls 
+let vc_gen fd fundecls = vc_gen_cmd fd.fd_body.command_desc fd.fd_precondition fd.fd_postcondition ("comes from "^fd.fd_name) fundecls 
 
