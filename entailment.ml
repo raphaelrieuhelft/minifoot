@@ -210,14 +210,14 @@ let rec get_frame esh esh2 = match esh, esh2 with
 	let ft = get_frame (esh_star (esh_of_pure c) esht) esh2 in
 	let ff = get_frame (esh_star (esh_of_pure (pure_neg c)) eshf) esh2 in
 	(match ft, ff with
-		Some ft, Some ff -> Some(ESH_ifthenelse(c, ft, ff)) (*TODO*)
-		|_-> failwith "TODO")
+		Some ft, Some ff -> Some(ESH_ifthenelse(c, ft, ff))
+		|_-> None)
   | ESH_base _, ESH_ifthenelse(c, esh2t, esh2f) ->
 	let ft = get_frame (esh_star esh (esh_of_pure c)) esh2t in
 	let ff = get_frame (esh_star esh (esh_of_pure (pure_neg c))) esh2f in
 	(match ft, ff with
-		Some ft, Some ff -> Some(ESH_ifthenelse(c, ft, ff))	(*TODO*)
-		|_-> failwith "TODO")
+		Some ft, Some ff -> Some(ESH_ifthenelse(c, ft, ff))	
+		|_-> None)
 
 
 
