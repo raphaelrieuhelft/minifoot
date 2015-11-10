@@ -202,10 +202,14 @@ let get_frame_base (pfs,sfs) (pfs2,sfs2) =
     | ImpliesFalse -> frame_of_asf_list [SF_false]
 	| NoFrameExists -> None
 
-
+let print_exn esh1 esh2 = Format.fprintf !Config.formatter "Error finding frame for %a@." pp_frame (esh1, esh2)
 
 let rec get_frame esh esh2 = match esh, esh2 with
-  | ESH_base sh, ESH_base sh2 -> get_frame_base sh sh2
+  | ESH_base sh, ESH_base sh2 -> 
+  (try 
+	get_frame_base sh sh2
+  with e -> print_exn esh esh2; raise e
+  )
   | ESH_ifthenelse(c, esht, eshf), _ -> 
 	let ft = get_frame (esh_star (esh_of_pure c) esht) esh2 in
 	let ff = get_frame (esh_star (esh_of_pure (pure_neg c)) eshf) esh2 in
