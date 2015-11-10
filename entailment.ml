@@ -7,8 +7,11 @@ open Error
 type esh = ext_symb_heap
 type frame = esh option
 
+let print = Format.fprintf !Config.formatter
+
 exception ImpliesFalse
 exception ImpreciseFormula
+exception NoFrameExists
 
 let exp_is_existential = function
   | EXP_null -> false
@@ -65,30 +68,45 @@ let neqs_from_pure repr_map pure_formulas =
 	  else (repr1,repr2)::neqs
 	) [] pure_formulas
 
-let compute_pointsto_map repr_map spatial_formulas =
-  let process_spatial_formula pointsto_map = function
-    | SF_false -> raise ImpliesFalse
-    | SF_pointsto (e1,e2) -> 
-      let key = EMap.find e1 repr_map in
-	  if (key = EXP_null) || (EMap.mem key pointsto_map) then raise ImpliesFalse
-	  else EMap.add key (EMap.find e2 repr_map) pointsto_map
-  in
-  List.fold_left process_spatial_formula EMap.empty spatial_formulas
+let rec list_remove_once x = function
+  | [] -> []
+  | hd::tl when hd = x -> tl
+  | hd::tl -> hd::(list_remove_once x tl)
 
-let verify_precise pointsto_map =
-  let exp_is_precise precise_exps e _ =
-    (not (exp_is_existential e)) || ESet.mem e precise_exps in
-  let choose_precise_binding precise_exps pointsto_map =
-    EMap.choose (EMap.filter (exp_is_precise precise_exps) pointsto_map) in
-  let rec loop precise_exps pointsto_map =
-    if not (EMap.is_empty pointsto_map) then
-	  try 
-	    let e1,e2 = choose_precise_binding precise_exps pointsto_map in
-		loop (ESet.add e2 precise_exps) (EMap.remove e1 pointsto_map)
-	  with Not_found -> raise ImpreciseFormula
-	(* if pointsto_map is empty then the first argument of get_frame is indeed precise *)
+let process_spatial_formulas repr_map spatial_formulas =
+  let pointsto_couples = List.map (function 
+    | SF_false -> raise NoFrameExists
+	| SF_pointsto (e1,e2) -> (e1,e2)
+	) spatial_formulas in
+  let add_if_absent e repr_map =
+    if EMap.mem e repr_map then repr_map
+	else EMap.add e e repr_map
   in
-  loop ESet.empty pointsto_map
+  let repr_map = List.fold_left (fun repr_map (e1,e2) ->
+      add_if_absent e1 (add_if_absent e2 repr_map)
+	) repr_map pointsto_couples in
+  let pointsto_couples = List.map (fun (e1,e2) -> 
+    (EMap.find e1 repr_map, EMap.find e2 repr_map)) pointsto_couples in
+  let first_exp_is_precise precise_exps (e1,_) =
+	(not (exp_is_existential e1)) || ESet.mem e1 precise_exps in
+  let rec loop pointsto_couples precise_exps pointsto_map =
+    if pointsto_couples = [] then
+	  pointsto_map
+	else
+	  let (e1,e2) =
+	    try List.find (first_exp_is_precise precise_exps) pointsto_couples
+		with Not_found -> raise ImpreciseFormula
+	  in
+	  let next_pointsto_couples = list_remove_once (e1,e2) pointsto_couples in
+	  if (e1 = EXP_null) || (EMap.mem e1 pointsto_map) then raise ImpliesFalse
+	  else
+	    let next_pointsto_map = EMap.add e1 e2 pointsto_map in
+		let next_precise_exps = ESet.add e2 precise_exps in
+		loop next_pointsto_couples next_precise_exps next_pointsto_map
+  in
+  let pointsto_map = loop pointsto_couples ESet.empty EMap.empty in
+  repr_map, pointsto_map
+
 
 let neqs_from_spatial pointsto_map =
   let pointings = List.map fst (EMap.bindings pointsto_map) in
@@ -101,7 +119,7 @@ let neqs_from_spatial pointsto_map =
   in
   compute_neqs pointings []
 
-exception NoFrameExists
+
   
 let update_repr_map repr_map right_pure_formulas =
   let process_eq (repr_map, esset) e1 e2 =
@@ -131,6 +149,7 @@ let update_repr_map repr_map right_pure_formulas =
   in
   (repr_map, esset)
 
+
 let compute_frame_map repr_map exst_cls pointsto_map right_spatial_formulas =
   let spatials = List.map (function 
     | SF_false -> raise NoFrameExists
@@ -142,7 +161,7 @@ let compute_frame_map repr_map exst_cls pointsto_map right_spatial_formulas =
 	  try List.find (fun (e1,_) -> EMap.mem e1 repr_map) spatials
 	  with Not_found -> raise NoFrameExists
 	in
-	let spatials' = (* List.remove (e1,e2) *) spatials in (*TODO*)
+	let spatials' = list_remove_once (e1,e2) spatials in
 	let repr1 = EMap.find e1 repr_map in
 	if EMap.mem repr1 pointsto_map then
 	  let target = EMap.find repr1 pointsto_map in
@@ -165,19 +184,27 @@ let compute_frame_map repr_map exst_cls pointsto_map right_spatial_formulas =
 	else raise NoFrameExists
   in
   loop repr_map exst_cls pointsto_map spatials
-  
+
 let verify_right_neqs repr_map exst_cls left_neqs right_pure_formulas =
+  (*print "verify_right_neqs with@.";
+  print "repr_map = ";
+  EMap.iter (fun e1 e2 -> Format.fprintf !Config.formatter " %a|->%a;" pp_exp e1 pp_exp e2) repr_map;
+  print "@.exst_cls =";
+  ESSet.iter (fun cl -> Format.fprintf !Config.formatter "  {"; ESet.iter (Format.fprintf !Config.formatter " %a" pp_exp) cl; Format.fprintf !Config.formatter " }") exst_cls; 
+  print "@.";*)
   let repr_map = ESSet.fold (fun cl repr_map ->
-    let repr = ESet.choose cl in
-	ESet.fold (fun e repr_map -> EMap.add e repr repr_map) cl repr_map
+      let repr = ESet.choose cl in
+	  ESet.fold (fun e repr_map -> EMap.add e repr repr_map) cl repr_map
 	) exst_cls repr_map in
   List.iter (function
     | PF_eq _ -> ()
 	| PF_neq (e1,e2) ->
-	  let repr1 = EMap.find e1 repr_map in
-	  let repr2 = EMap.find e2 repr_map in
+	  let repr1 = try EMap.find e1 repr_map with Not_found -> e1 in
+	  let repr2 = try EMap.find e2 repr_map with Not_found -> e2 in
 	  if repr1 = repr2 then raise NoFrameExists
     ) right_pure_formulas
+
+
 
 
 let frame_of_asf_list sfs = Some (ESH_base ([],sfs))
@@ -186,15 +213,16 @@ let get_frame_base (pfs,sfs) (pfs2,sfs2) =
   try
   
     let repr_map = compute_repr_map pfs in
-	let pointsto_map = compute_pointsto_map repr_map sfs in
-	let () = verify_precise pointsto_map in
+	(*let pointsto_map = compute_pointsto_map repr_map sfs in
+	let () = verify_precise pointsto_map in*)
+	let repr_map, pointsto_map = process_spatial_formulas repr_map sfs in
 	let neqs = (neqs_from_pure repr_map pfs)@(neqs_from_spatial pointsto_map) in
 	
 	let repr_map, exst_cls = update_repr_map repr_map pfs2 in
 	let repr_map, exst_cls, frame_map = 
 	  compute_frame_map repr_map exst_cls pointsto_map sfs2 in
 	let () = verify_right_neqs repr_map exst_cls neqs pfs2 in
-	(* verify that second formula is precise alone? *)
+	(* TODO: verify that second formula is precise alone *)
 	
 	frame_of_asf_list (List.map (fun (e1,e2) -> SF_pointsto (e1,e2)) (EMap.bindings frame_map))
 	
@@ -202,6 +230,26 @@ let get_frame_base (pfs,sfs) (pfs2,sfs2) =
     | ImpliesFalse -> frame_of_asf_list [SF_false]
 	| NoFrameExists -> None
 
+	(*
+    let repr_map = compute_repr_map pfs in
+	print "repr_map done@.";
+	(*let pointsto_map = compute_pointsto_map repr_map sfs in
+	let () = verify_precise pointsto_map in*)
+	let repr_map, pointsto_map = process_spatial_formulas repr_map sfs in
+	print "process_spatial_formulas done@.";
+	let neqs = (neqs_from_pure repr_map pfs)@(neqs_from_spatial pointsto_map) in
+	print "neqs_from done@.";
+	
+	let repr_map, exst_cls = update_repr_map repr_map pfs2 in
+	print "update_repr_map done@.";
+	let repr_map, exst_cls, frame_map = 
+	  compute_frame_map repr_map exst_cls pointsto_map sfs2 in
+	print "compute_frame_map done@.";
+	let () = verify_right_neqs repr_map exst_cls neqs pfs2 in
+	print "verify_right_neqs done@.";
+	(* verify that second formula is precise alone? *)
+	*)
+	
 let print_exn esh1 esh2 = Format.fprintf !Config.formatter "Error finding frame for %a@." pp_frame (esh1, esh2)
 
 let rec get_frame esh esh2 = match esh, esh2 with

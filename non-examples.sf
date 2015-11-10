@@ -57,4 +57,5 @@ testE(x) [x|->] { } [x|->*x|->]
 
 testF(x) [x|->] { } [_x|->]
 
-
+/* not precise */
+testG(x) [_x==_y*_x|->] { } [_x==_y*_x|->]

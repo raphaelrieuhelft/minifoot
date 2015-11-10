@@ -110,3 +110,5 @@ testD2(x,y) [x|->*y|->] { } [_x!=_y*x|->_x*y|->]
 
 testE(x,y) [x|->*x|->] { } [y|->*y|->]
 
+/* x|->_x*_x|-> is precise */
+testH(x) [x|->_x*_x|->] { } [x|->_x*_x|->]
