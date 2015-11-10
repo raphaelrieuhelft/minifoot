@@ -1,6 +1,7 @@
 open Defs
 open Symbheap
 open Misc
+open Entailment
 
 exception LookupNull
 exception UpdateNull
@@ -100,7 +101,7 @@ let rec chop fundecls = function
   |CO_while (cond, inv, c) ->
 		let post = esh_star inv (ESH_base([pure_neg cond], [])) in
 		let jsr = {jsr_pre = inv; jsr_mod_vars = mod_vars fundecls IdSet.empty c.command_desc; jsr_post = post} in
-		(compile_jsr jsr, vc_gen_cmd c.command_desc inv post "comes from a while loop" fundecls)
+		(compile_jsr jsr, vc_gen_cmd c.command_desc (esh_star inv (ESH_base([cond], []))) inv "comes from a while loop" fundecls)
   |CO_parallelCalls(l) ->
 		let jsrs_list = List.map 
 		(fun (fname, args) -> let fd = List.find (fun fd -> fd.fd_name = fname) fundecls in jsrs_of_call fd fundecls args) l in
