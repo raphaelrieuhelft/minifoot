@@ -20,10 +20,9 @@ let rec pure_of_esh = function
 let compile_jsr jsr = 
 	let subst = List.map (fun id -> (id, EXP_ident(gensym id))) (IdSet.elements jsr.jsr_mod_vars) in
 	SI_atomic( ASI_inhale(jsr.jsr_pre), 
-		SI_atomic( ASI_exhale(pure_of_esh(jsr.jsr_pre)),
-			SI_atomic (ASI_rename(subst),
-				SI_atomic( ASI_exhale(jsr.jsr_post),
-					SI_skip))))
+		SI_atomic (ASI_rename(subst),
+			SI_atomic( ASI_exhale(jsr.jsr_post),
+				SI_skip))))
 
 (*helper functions*)
 let rec symbseq si1 si2 = match si1 with
@@ -79,13 +78,14 @@ let rec chop_atom = function
 			let next = EXP_ident (wildcard ()) in
 			compile_jsr {jsr_pre = esh_pointsto e next; jsr_mod_vars = IdSet.singleton id; jsr_post = ESH_base([PF_eq(EXP_ident id, next)], [SF_pointsto(e, next)])}
 		end
-	
-let jsrs_of_call fd fundecls callargs = 
-	let fresh_args = List.map gensym fd.fd_params in 
-	let post1 = ESH_base((List.map2 (fun ca fa -> match ca with EXP_null -> raise CallNull | _ -> PF_eq(ca, EXP_ident fa)) callargs fresh_args), []) in(*call by value : copy each parameter*)
+
+let jsrs_of_call fd fundecls callargs =
+	let to_rename = IdSet.union (List.fold_right IdSet.add fd.fd_params IdSet.empty) (IdSet.union (vars_of_esh fd.fd_precondition) (vars_of_esh fd.fd_postcondition)) in
+	let subst_ids = List.map (fun id -> (id, gensym id)) (IdSet.elements to_rename) in
+	let subst = List.map (fun (a,b) -> (a, EXP_ident b)) subst_ids in
+	let post1 = ESH_base((List.map2 (fun ca p -> PF_eq(ca, EXP_ident (List.assoc p subst_ids))) callargs fd.fd_params), []) in	(*call by value : copy each parameter*)
 	let modf = mod_vars fundecls IdSet.empty (fd.fd_body).command_desc in
-	let modf = List.fold_left2 (fun s a fa -> if IdSet.mem a s then IdSet.add fa (IdSet.remove a s) else s) modf fd.fd_params fresh_args in (* the modified variables are the copies that are passed to the function *)
-	let subst = List.map2 (fun a b -> (a,EXP_ident b)) fd.fd_params fresh_args in
+	let modf = IdSet.fold (fun x s -> IdSet.add (try List.assoc x subst_ids with Not_found -> x) s) modf IdSet.empty in (* the modified variables are the copies that are passed to the function *)
 	let pre2 = esh_rename subst fd.fd_precondition in
 	let post2 = esh_rename subst fd.fd_postcondition in
 	{jsr_pre = esh_emp; jsr_mod_vars = IdSet.empty; jsr_post = post1}, {jsr_pre = pre2; jsr_mod_vars = modf; jsr_post = post2}
