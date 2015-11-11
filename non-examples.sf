@@ -27,22 +27,11 @@ x -> tl = t;
 
 f7()[false]{} [_x|->_y] /*imprecise*/
 
+
+/* frame tests*/
+
 test4() [emp] { } [_x==_y*_x!=_y*emp]
 
-/*
-/* x in precondition but not an argument */
-fA()[x==x] {
-} [emp]
-*/
-
-fB()[_x|->_x] {
-} [_x|->_x]
-
-fB2()[_x|->_y*_y|->_x] {
-} [_x|->_y*_y|->_x]
-
-fB3()[_x|->_x] {
-} [false]
 
 f10(x) [x|->] {} [x==x]
 testA(x,y) [x|->*y|->] { } [emp]
@@ -52,7 +41,12 @@ testB(x,y) [emp] { } [x==y]
 testB1(x,y) [emp] { } [x!=y]
 
 
+
+
+/* not precise */
 testC(x) [x|->] { } [_x|->]
+
+/* not precise */
 testC1(x) [x==_x*_x|->] { } [_x|->]
 
 testD(x,y) [x|->*y|->] { } [x|->_x*y|->_x]
@@ -61,6 +55,7 @@ testD2(x,y) [x|->*y|->] { } [_x!=_y*x|->_x*y|->_y]
 
 testE(x) [x|->] { } [x|->*x|->]
 
+/* not precise */
 testF(x) [x|->] { } [_x|->]
 
 /* not precise */
@@ -68,5 +63,15 @@ testG(x) [_x==_y*_x|->] { } [_x==_y*_x|->]
 
 testI(x,y) [x|->*y|->] { } [x|->_y*_y|->]
 
+/* not precise */
+fB()[_x|->_x] {
+} [_x|->_x]
 
+/* not precise */
+fB2()[_x|->_y*_y|->_x] {
+} [_x|->_y*_y|->_x]
+
+/* not precise */
+fB3()[_x|->_x] {
+} [false]
 

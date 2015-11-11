@@ -38,5 +38,14 @@ On commence par étudier indépendamment L et R. Pour chacun, on obtient soit qu
 	
 Si un tas n'est pas précis, on affiche un message d'erreur correspondant, puis on renvoie qu'il n'y a pas de frame. Ce n'est pas ce qu'on est censé renvoyer, mais c'est le meilleur moyen auquel on ait pensé pour que l'exécution sur l'ensemble des fonctions d'un fichier ne soit pas interrompue, sans avoir à modifier d'autres fichiers que vcgen.ml et entailment.ml. Or on a plusieurs exemples avec des formules non précises dans negatives.ml, et on veut pouvoir tous les tester d'un coup.
 
+On étend cet algorithme aux tas symboliques étendus en implémentant les règles d'inférence suivantes : 
 
+if C then L1 else L2 |- (if C then F1 else F2) * R 
+	si :
+		L1 |- F1 * R ET L2 |- F2 * R
+
+L |- (if C then F1 else F2) * (if C then R1 else R2) 
+	si  :
+		C * L |-> F1 * R1 ET (not C)* L |-> F2 * R2 
+(dans ce cas, on a clairement L |- (if C then F1*R1 else F2*R2) ce qui est équivalent)
 
