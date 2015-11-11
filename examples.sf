@@ -70,6 +70,8 @@ test_frame6(x,y)[x==y] {
 
 */
 
+test0(x,y) [emp] { } [emp]
+
 /*
 test1(x,y) [x|->y] { } [x==_x*_x|->y]
 

@@ -10,8 +10,8 @@ type frame = esh option
 let print = Format.fprintf !Config.formatter
 
 exception ImpliesFalse
-exception ImpreciseFormula
 exception NoFrameExists
+exception ImpreciseFormula
 
 let exp_is_existential = function
   | EXP_null -> false
@@ -85,6 +85,7 @@ let process_spatial_formulas repr_map spatial_formulas =
   let repr_map = List.fold_left (fun repr_map (e1,e2) ->
       add_if_absent e1 (add_if_absent e2 repr_map)
 	) repr_map pointsto_couples in
+  let repr_map = add_if_absent EXP_null repr_map in
   let pointsto_couples = List.map (fun (e1,e2) -> 
     (EMap.find e1 repr_map, EMap.find e2 repr_map)) pointsto_couples in
   let first_exp_is_precise precise_exps (e1,_) =
@@ -119,8 +120,85 @@ let neqs_from_spatial pointsto_map =
   in
   compute_neqs pointings []
 
+let process_symb_heap (pure_formulas, spatial_formulas) =
+  try
+    let repr_map = compute_repr_map pure_formulas in
+	let repr_map, pointsto_map = process_spatial_formulas repr_map spatial_formulas in
+	let neqs = (neqs_from_pure repr_map pure_formulas)@(neqs_from_spatial pointsto_map) in
+	repr_map, pointsto_map, neqs
+  with ImpreciseFormula -> raise (Imprecise_formula (pure_formulas, spatial_formulas))
+	
+(* Computes trans_map which associates, to every right representative,
+Some of a left representative if they have to be equal, None if there is no such left representative. There cannot be two such left representatives because that would force them to be equal, which cannot be deduced from the left symbolic heap *)
+let compute_trans_map left_repr_map right_repr_map =
+  let translate e rrepr trans_map = (* to fold on right_repr_map *)
+    if EMap.mem e left_repr_map then
+	  let lrepr = EMap.find e left_repr_map in
+	  if EMap.mem rrepr trans_map then
+	    match EMap.find rrepr trans_map with
+		  | None -> EMap.add rrepr (Some lrepr) trans_map
+		  | Some tr ->
+		    if tr = lrepr then trans_map
+			else raise NoFrameExists (* equality of distinct left representatives cannot be proven *)
+	  else
+	    EMap.add rrepr (Some lrepr) trans_map
+	else if exp_is_existential e then
+	  if EMap.mem rrepr trans_map then trans_map
+	  else EMap.add rrepr None trans_map
+	else raise NoFrameExists (* non existential ident appearing in the right symbolic heap but not in the left one (cannot be EXP_null because left_repr_map always contains it *)
+  in
+  let trans_map = EMap.fold translate right_repr_map EMap.empty in
+  trans_map
 
-  
+let inhale_right_pointsto_map trans_map left_pointsto_map right_pointsto_map =
+try
+  let inhalable rrepr _ = match EMap.find rrepr trans_map with
+    Some _ -> true | None -> false in
+  let inhale rrepr1 rrepr2 (trans_map, left_pointsto_map, right_pointsto_map) =
+    let lrepr1 = match EMap.find rrepr1 trans_map with 
+	  Some lrepr1 -> lrepr1 | None -> assert false in
+	if EMap.mem lrepr1 left_pointsto_map then
+	  let ltarget = EMap.find lrepr1 left_pointsto_map in
+	  let next_left_pointsto_map = EMap.remove lrepr1 left_pointsto_map in
+	  let next_right_pointsto_map = EMap.remove rrepr1 right_pointsto_map in
+	  match EMap.find rrepr2 trans_map with
+	    | None ->
+		  (EMap.add rrepr2 (Some ltarget) trans_map, next_left_pointsto_map, next_right_pointsto_map)
+		| Some lrepr2 ->
+		  if lrepr2 = ltarget then
+		    (trans_map, next_left_pointsto_map, next_right_pointsto_map)
+		  else raise NoFrameExists
+	else raise NoFrameExists (* cannot prove rrepr1|-> *)
+  in
+  let rec loop (trans_map, left_pointsto_map, right_pointsto_map) =
+    if EMap.is_empty right_pointsto_map then
+	  trans_map, left_pointsto_map
+	else
+	  let inhalables = EMap.filter inhalable right_pointsto_map in
+	  let (rrepr1,rrepr2) = try EMap.choose inhalables 
+	    with Not_found -> raise NoFrameExists in
+	  loop (inhale rrepr1 rrepr2 (trans_map, left_pointsto_map, right_pointsto_map))
+  in
+  let trans_map, frame_map = loop (trans_map, left_pointsto_map, right_pointsto_map) in
+  trans_map, frame_map
+with Not_found -> assert false
+
+let verify_right_neqs trans_map left_neqs right_neqs =
+try
+  let rec mem_pair (x,y) = function
+    | [] -> false
+	| (a,b)::_ when (a=x&&b=y) || (a=y&&b=x) -> true
+	| _::tl -> mem_pair (x,y) tl
+  in
+  let verify (rrepr1,rrepr2) =
+    match EMap.find rrepr1 trans_map, EMap.find rrepr2 trans_map with
+	  | Some lrepr1, Some lrepr2 ->
+	    if not (mem_pair (lrepr1,lrepr2) left_neqs) then raise NoFrameExists
+	  | tr1, tr2 -> if tr1 = tr2 then raise NoFrameExists
+  in
+  List.iter verify right_neqs
+with Not_found -> assert false
+
 let update_repr_map repr_map right_pure_formulas =
   let process_eq (repr_map, esset) e1 e2 =
 	if EMap.mem e1 repr_map then
@@ -185,6 +263,7 @@ let compute_frame_map repr_map exst_cls pointsto_map right_spatial_formulas =
   in
   loop repr_map exst_cls pointsto_map spatials
 
+  (*
 let verify_right_neqs repr_map exst_cls left_neqs right_pure_formulas =
   (*print "verify_right_neqs with@.";
   print "repr_map = ";
@@ -203,8 +282,7 @@ let verify_right_neqs repr_map exst_cls left_neqs right_pure_formulas =
 	  let repr2 = try EMap.find e2 repr_map with Not_found -> e2 in
 	  if repr1 = repr2 then raise NoFrameExists
     ) right_pure_formulas
-
-
+*)
 
 
 let frame_of_asf_list sfs = Some (ESH_base ([],sfs))
@@ -212,12 +290,21 @@ let frame_of_asf_list sfs = Some (ESH_base ([],sfs))
 let get_frame_base (pfs,sfs) (pfs2,sfs2) =
   try
   
-    let repr_map = compute_repr_map pfs in
+    (*let repr_map = compute_repr_map pfs in
 	(*let pointsto_map = compute_pointsto_map repr_map sfs in
 	let () = verify_precise pointsto_map in*)
 	let repr_map, pointsto_map = process_spatial_formulas repr_map sfs in
-	let neqs = (neqs_from_pure repr_map pfs)@(neqs_from_spatial pointsto_map) in
-	
+	let neqs = (neqs_from_pure repr_map pfs)@(neqs_from_spatial pointsto_map) in*)
+	let repr_map, pointsto_map, neqs = process_symb_heap (pfs,sfs) in
+	try
+	  let repr_map2, pointsto_map2, neqs2 = process_symb_heap (pfs2,sfs2) in
+	  let trans_map = compute_trans_map repr_map repr_map2 in
+	  let trans_map, frame_map = inhale_right_pointsto_map trans_map pointsto_map pointsto_map2 in
+	  let () = verify_right_neqs trans_map neqs neqs2 in
+	  frame_of_asf_list (List.map (fun (e1,e2) -> SF_pointsto (e1,e2)) (EMap.bindings frame_map))
+	with
+	  | ImpliesFalse -> None
+(*	
 	let repr_map, exst_cls = update_repr_map repr_map pfs2 in
 	let repr_map, exst_cls, frame_map = 
 	  compute_frame_map repr_map exst_cls pointsto_map sfs2 in
@@ -225,7 +312,7 @@ let get_frame_base (pfs,sfs) (pfs2,sfs2) =
 	(* TODO: verify that second formula is precise alone *)
 	
 	frame_of_asf_list (List.map (fun (e1,e2) -> SF_pointsto (e1,e2)) (EMap.bindings frame_map))
-	
+*)	
   with 
     | ImpliesFalse -> frame_of_asf_list [SF_false]
 	| NoFrameExists -> None
