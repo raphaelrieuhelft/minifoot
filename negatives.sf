@@ -35,7 +35,7 @@ x -> tl = t;
 
 test0() [emp] { } [_x==_y*_x!=_y*emp]
 
-test1a() [emp] {} [_x|->]
+test1a(x) [emp] {} [x|->]
 test1b(x) [x|->] {} [emp]
 test1c(x) [x|->] { } [x|->*x|->]
 
@@ -49,10 +49,12 @@ test3c(x,y) [x|->*y|->] { } [_x!=_y*x|->_x*y|->_y]
 test4(x,y) [x|->*y|->] { } [x|->_y*_y|->]
 
 test5(x) [emp] { } [_x==x]
-/* We are not sure about this one and put it here because our program rejects it, because we refuse to find a frame for L |- ??*R when R contains non existential variables which are not present in L. Anyway the behavior on this one does not seem very important. */
+/* We are not sure about this one and put it here because our program rejects it, because we refuse to find a frame for L |- ??*R when R contains non existential variables which are not present in L. Anyway the behavior on this one does not seem very important, especially as test1c(x) [x==x] { } [_x==x] in positives.sf passes. */
+
 
 
 /* tests on imprecise formulas */
+
 
 imprecise0a() [_x|->] { } [_x|->]
 imprecise0b()[_x|->_x] { } [_x|->_x]

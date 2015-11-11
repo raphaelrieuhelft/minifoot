@@ -86,7 +86,7 @@ test3a(x)[x|->] {
 test3b(x)[x|->] {
 } [_x==x*_x|->]
 
-test3d(x)[x|->] {
+test3c(x)[x|->] {
 } [_x==_y*x|->]
 
 
