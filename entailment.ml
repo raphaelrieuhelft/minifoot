@@ -248,10 +248,12 @@ let build_if c ft ff =
 		| (Some esht, Some eshf) when esht=eshf -> 
 		  ((*Format.fprintf !Config.formatter "esht=eshf=%a@." pp_esh esht  ;*) 
 		  ft)
-		| Some esht, _ when esht = esh_false -> ff
-		| _, Some eshf when eshf = esh_false -> ft
+		| Some esht, Some eshf when esht = esh_false -> 
+		  Some (esh_star eshf (esh_of_pure (pure_neg c)))
+		| Some esht, Some eshf when eshf = esh_false -> 
+		  Some (esh_star esht (esh_of_pure c))
 		| Some esht, Some eshf -> ((*Format.fprintf !Config.formatter "esht=%a, eshf=%a@." pp_esh esht pp_esh eshf;*) Some(ESH_ifthenelse(c, esht, eshf)))
-		| _-> None
+		| _ -> None
 
 let rec get_frame esh esh2 = 
 try match esh, esh2 with

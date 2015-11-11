@@ -40,7 +40,7 @@ f5(x,y)[if x==y then (if x==y then x|-> y else (x |-> y * y |-> x)) else (if x==
 
 /* tests on frame inference */
 
-/*
+
 test_frame1()[emp] {
 } [_x==_y]
 
@@ -59,7 +59,7 @@ test_frame3(x,y)[x|->y] {
 } [_x==y*x|->_x]
 
 test_frame4(x,y)[x|->y] {
-} [x==x]
+} [x==x*x|->y]
 
 test_frame5(x,y)[x==y] {
 } [_x==y]
@@ -67,11 +67,15 @@ test_frame5(x,y)[x==y] {
 test_frame6(x,y)[x==y] {
 } [emp]
 
-*/
+test_frame7(x,y,z)[x==y*y==z] {
+} [x==z]
+
+test_frame7a(x,y,z)[x==y*y!=z] {
+} [x!=z]
 
 test0(x,y) [emp] { } [emp]
 
-/*
+
 test1(x,y) [x|->y] { } [x==_x*_x|->y]
 
 test2(x,y) [x|->y] { } [y==_y*x|->_y]
@@ -87,13 +91,16 @@ test6(x,y) [x==y*emp] { } [_x==y*emp]
 test7(x,y) [x==y*emp] { } [emp]
 
 test8(x,y) [x==y*emp] { } [x==y*_x==_y*emp]
-*/
 
-fB(x)[x|->x*x|->x] {
+
+fB(x)[x|->*x|->] {
 } [false]
 
-fB2(x,y)[x==y*x|->y*y|->x] {
+fB2(x,y)[x==y*x|->*y|->] {
 } [false]
+
+fB3(x,y)[x|->*y|->] {
+} [x!=y*x|->*y|->]
 
 fC()[NULL|->] {
 } [false]

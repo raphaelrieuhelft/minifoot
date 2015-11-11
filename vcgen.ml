@@ -22,7 +22,7 @@ let compile_jsr jsr =
 	SI_atomic( ASI_inhale(jsr.jsr_pre), 
 		SI_atomic (ASI_rename(subst),
 			SI_atomic( ASI_exhale(jsr.jsr_post),
-				SI_skip))))
+				SI_skip)))
 
 (*helper functions*)
 let rec symbseq si1 si2 = match si1 with
