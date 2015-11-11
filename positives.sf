@@ -68,9 +68,11 @@ test1a() [emp] { } [_x==_x]
 
 test1b() [emp] { } [_x==_y]
 
-test1c(x) [x==x] { } [_x==x]
+test1c() [emp] { } [_x==NULL]
 
-test1d(x,y) [x==y] { } [emp]
+test1d(x) [x==x] { } [_x==x]
+
+test1e(x,y) [x==y] { } [emp]
 
 
 test2a(x,y,z)[x==y*y==z] {
@@ -98,6 +100,9 @@ test4b(x,y)[x|->y] {
 
 test4c(x,y) [x|->y] {
 } [x==_x*_x|->y]
+
+test4d(x) [x|->NULL] {
+} [x|->_x]
 
 
 test5a(x,y) [x|->*y|->] {
