@@ -127,6 +127,7 @@ let neqs_from_spatial pointsto_map =
   in
   compute_neqs pointings []
 
+
 let process_symb_heap ((pure_formulas, spatial_formulas) as sh) =
   try
     let repr_map = compute_repr_map pure_formulas in
@@ -135,9 +136,7 @@ let process_symb_heap ((pure_formulas, spatial_formulas) as sh) =
 	let neqs = neqs@(neqs_from_spatial pointsto_map) in
 	repr_map, pointsto_map, neqs
   with 
-    | ImpreciseFormula ->
-	  Format.fprintf !Config.formatter "Imprecise formula %a. Signaled as NoFrameExists so that execution is not interrupted.@." pp_sh sh; 
-	  raise NoFrameExists
+    | ImpreciseFormula -> raise (Imprecise_formula sh)
     | e when e <> ImpliesFalse -> (Format.fprintf !Config.formatter "Error in process_symb_heap on %a@." pp_sh sh; raise e)
 
 	
@@ -217,59 +216,60 @@ with Not_found -> assert false
 
 
 
-
-
-let frame_of_asf_list sfs = Some (ESH_base ([],sfs))
-
-let get_frame_base (pfs,sfs) (pfs2,sfs2) =
+let get_frame_base sh sh2 =
   try
-	let repr_map, pointsto_map, neqs = process_symb_heap (pfs,sfs) in
-	try
-	  let repr_map2, pointsto_map2, neqs2 = process_symb_heap (pfs2,sfs2) in
-	  let trans_map = compute_trans_map repr_map repr_map2 in
-	  let trans_map, frame_map = inhale_right_pointsto_map trans_map pointsto_map pointsto_map2 in
-	  let () = verify_right_neqs trans_map neqs neqs2 in
-	  frame_of_asf_list (List.map (fun (e1,e2) -> SF_pointsto (e1,e2)) (EMap.bindings frame_map))
-	with
-	  | ImpliesFalse -> None
+	let repr_map, pointsto_map, neqs = process_symb_heap sh in
+	let repr_map2, pointsto_map2, neqs2 = 
+	  try process_symb_heap sh2 
+	  with ImpliesFalse -> raise NoFrameExists
+	in
+	let trans_map = compute_trans_map repr_map repr_map2 in
+	let trans_map, frame_map = inhale_right_pointsto_map trans_map pointsto_map pointsto_map2 in
+	let () = verify_right_neqs trans_map neqs neqs2 in
+	let frame_spatials = List.map (fun (e1,e2) -> SF_pointsto (e1,e2)) (EMap.bindings frame_map) in
+	(* the frame consists of the computed spatial formulas, but also all pure formulas of sh *)
+	Some (ESH_base ((fst sh), frame_spatials))
   with 
-    | ImpliesFalse -> frame_of_asf_list [SF_false]
+    | ImpliesFalse -> 
+	  (* This can only be about sh (or it would have been caught above). The frame to return is then false, but we still process sh2 to check that it is precise. *)
+	  (try let _ = process_symb_heap sh2 in Some esh_false
+	  with ImpliesFalse -> Some esh_false)
 	| NoFrameExists -> None
-	(*| Imprecise_formula sh -> 
-	  (Format.fprintf !Config.formatter "Imprecise formula %a. Signaled as no existing frame so that execution is not interrupted.@." pp_sh sh; 
-	  None)*)
 	| Not_found -> 
 	  (Format.fprintf !Config.formatter "Not_found in get_frame_base@."; 
 	  assert false)
 
 
 	
-let print_exn esh1 esh2 = Format.fprintf !Config.formatter "Error finding frame for %a@." pp_frame (esh1, esh2)
 
-let handle_if c oft off =
-	match oft, off with
-		|(Some ft, Some ff) when ft=ff -> ((*Format.fprintf !Config.formatter "ft=ff=%a@." pp_esh ft  ;*)Some ft)
-		|Some ft, Some ff when oft = frame_of_asf_list [SF_false] -> off
-		|Some ft, Some ff when off = frame_of_asf_list [SF_false] -> oft
-		|Some ft, Some ff -> ((*Format.fprintf !Config.formatter "ft=%a, ff=%a@." pp_esh ft pp_esh ff;*) Some(ESH_ifthenelse(c, ft, ff)))
-		|_-> None
 
-let rec get_frame esh esh2 = match esh, esh2 with
-  | ESH_base sh, ESH_base sh2 -> 
-  (try 
-	get_frame_base sh sh2
-  with e -> print_exn esh esh2; raise e
-  )
+let build_if c ft ff =
+	match ft, ff with
+		| (Some esht, Some eshf) when esht=eshf -> 
+		  ((*Format.fprintf !Config.formatter "esht=eshf=%a@." pp_esh esht  ;*) 
+		  ft)
+		| Some esht, _ when esht = esh_false -> ff
+		| _, Some eshf when eshf = esh_false -> ft
+		| Some esht, Some eshf -> ((*Format.fprintf !Config.formatter "esht=%a, eshf=%a@." pp_esh esht pp_esh eshf;*) Some(ESH_ifthenelse(c, esht, eshf)))
+		| _-> None
+
+let rec get_frame esh esh2 = 
+try match esh, esh2 with
+  | ESH_base sh, ESH_base sh2 -> get_frame_base sh sh2
   | ESH_ifthenelse(c, esht, eshf), _ -> 
 	(*Format.fprintf !Config.formatter "get_frame ifthenelse : if %a then %a else %a@." pp_atomic_pure_formula c pp_esh esht pp_esh eshf; *)
 	let ft = get_frame (esh_star (esh_of_pure c) esht) esh2 in
 	let ff = get_frame (esh_star (esh_of_pure (pure_neg c)) eshf) esh2 in
-	handle_if c ft ff
+	build_if c ft ff
   | ESH_base _, ESH_ifthenelse(c, esh2t, esh2f) ->
 	let ft = get_frame (esh_star esh (esh_of_pure c)) esh2t in
 	let ff = get_frame (esh_star esh (esh_of_pure (pure_neg c))) esh2f in
-	handle_if c ft ff
-
+	build_if c ft ff
+with 
+  | Imprecise_formula sh ->
+	Format.fprintf !Config.formatter "Imprecise formula %a.@.The corresponding call to get_frame returns that no frame exists so that execution is not aborted; therefore following messages may be inaccurate.@." pp_sh sh; 
+	None
+  | e -> Format.fprintf !Config.formatter "Error finding frame for %a@." pp_frame (esh, esh2); raise e
 
 
 let is_emp_sh (pi,sigma) = sigma=[]
