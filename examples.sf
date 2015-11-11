@@ -27,16 +27,32 @@ f4()[emp] {
   y->tl = t;
 } [if x==y then false else x|-> _u * y|-> _u]
 
-/* f5(x,y)[(if x==y then x|->y else emp) * (if x==y then emp else y|->x)] {} [y|->x] */
-
-f5(x,y)[if x==y then (if x==y then x|-> y else (x |-> y * y |-> x)) else (if x==y then emp else y|-> x)]
-{}
-[y|-> x]
+f5(x,y)[(if x==y then x|->y else emp) * (if x==y then emp else y|->x)] {} [y|->x] 
 
 
+f6(x,y) [x|->y] {
+if (x==y) {}
+else {
+dispose(x);
+y=new();
+y->next=x;
+	}	
+}
+[y |->x]
 
-/* TODO x=x, check undeclared variables*/
+f7(x) [emp] {
+local y;
+if(x!=x){}
+else {
+y=new();
+}
+}
+[y|->]
 
+f8(x,y) [x==y]{
+x=x;		/*variable x should NOT be renamed here*/
+}
+[x==y]
 
 /* tests on frame inference */
 
@@ -120,4 +136,4 @@ testD3(x,y) [x|->_x*y|->_x] { } [x|->_y*y|->_y]
 testE(x,y) [x|->*x|->] { } [y|->*y|->]
 
 /* x|->_x*_x|-> is precise */
-testH(x) [x|->_x*_x|->] { } [x|->_x*_x|->]
+testH(x,y) [x|->y*y|->] { } [x|->_x*_x|->]
