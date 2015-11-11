@@ -11,8 +11,6 @@ Notre algorithme pour parcourir le code d'une fonction et le compiler tout en g�
 Cette approche a aussi l'avantage de concentrer les erreurs potentielles de notre part vers la fonction qui compile les jsr, puisque la compilation d'instructions source vers des jsr est soit facile avec les petits axiomes, soit tirée de l'article...
 
 
-
-
 entailment.ml
 
 Obtention de frame pour des tas symboliques de base (sans if-then-else) :
@@ -24,19 +22,20 @@ On commence par étudier indépendamment L et R. Pour chacun, on obtient soit qu
 
 	- Si L implique faux et que R est bien précis, on renvoie une frame avec faux comme seule formule spatiale, et les formules pures de L.
 
-	- Si R implique fois mais que L n'implique pas faux, il n'existe pas de frame.
+	- Si R implique faux mais que L n'implique pas faux, il n'existe pas de frame.
 
 	- Si L et R sont précises et aucune n'implique faux, on veut vérifier que toutes les formules (pures comme spatiales) de R sont impliquées par L, et renvoyer une frame dont les formules spatiales sont celles de L privées de celles qui impliquent une formule spatiale de R, s'il en existe une. On utilise alors les informations suivantes.
 
 		a) Les classes d'équivalence induites par les formules pures qui sont des égalités, sous la forme d'une table qui à chaque expression associe le représentant de sa classe. Le représentant de chaque classe est choisi comme NULL s'il est présent, sinon une variable non existentielle s'il y en a une. Ainsi, en regardant juste le représentant d'une classe, on peut déterminer si elle contient NULL, et si elle ne contient que des variables existentielles. Cette table contient toutes les expressions présentes dans le tas, y compris les variables n'apparaissant pas dans une égalité, qui sont alors seules dans leur classe et donc leur propre représentant.
  
-		b) Une table décrivant formules spatiales, qui à la source d'un flèche associe sa cible, où chaque expression a été remplacée par son représentant. C'est en construisant cette table qu'on remarque si NULL (ou une expression de sa classe) pointe vers quelque chose, ou si le tas n'est pas bien séparé, c'est-à-dire qu'une expression apparaît (ou des expressions de la même classe apparaissent) plusieurs fois comme source. Si cela arrive, le tas implique faux. C'est aussi à ce moment qu'on vérifie que le tas est précis : on définit récursivement qu'une classe est précise si elle ne contient pas que des variables existentielles ou si elle apparaît comme cible d'une flèche dont la source est précise ; le tas est précis si toutes les sources de flèches sont dans des classes précises.
+		b) Une table décrivant les formules spatiales, qui à la source d'une flèche associe sa cible, où chaque expression a été remplacée par son représentant. C'est en construisant cette table qu'on remarque si NULL (ou une expression de sa classe) pointe vers quelque chose, ou si le tas n'est pas bien séparé, c'est-à-dire qu'une expression apparaît (ou des expressions de la même classe apparaissent) plusieurs fois comme source. Si cela arrive, le tas implique faux. C'est aussi à ce moment qu'on vérifie que le tas est précis : on définit récursivement qu'une classe est précise si elle ne contient pas que des variables existentielles ou si elle apparaît comme cible d'une flèche dont la source est précise ; le tas est précis si toutes les sources de flèches sont dans des classes précises.
  
 		c) Une liste de "non-égalités" (x!=y), ne contenant que des représentants, qui consiste en la liste des formules pures qui sont des non-égalités (traduites en termes de représentants), à laquelle on ajoute que toutes les expressions apparaissant comme source d'une flèche dans la table précédente sont deux à deux distinctes et chacune différente de NULL.
 
-	
+On cherche ensuite un matching entre les formules spatiales à droite et un sous-ensemble des formules spatiales de gauche. Chaque formule porte maintenant uniquement sur des représentants de classe d'équivalence. On va pour cela à éliminer des paires de formules spatiales correspondantes une à une jusqu'à ce qu'il n'y en ait plus à droite. On commence par chercher une formule spatiale à droite x |-> y telle que x doive nécessairement correspondre à un représentant à gauche (par exemple parce que x est aussi présent dans la formule de gauche, auquel cas il doit correspondre à lui-même). Il y a alors au plus une formule à gauche qui peut correspondre : s'il y en a une, on l'enlève et on impose dans la suite que y doit correspondre à la cible de cette formule (si y devait déjà correspondre à une autre classe, il n'y a pas de frame). S'il n'y a pas de formule à gauche qui correspond, il n'y a pas de frame. On itère jusqu'à ce que plus aucune source de paire de droite ne soit contrainte à correspondre à une classe à gauche, auquel cas soit il reste des formules spatiales à droite et il n'y a pas de frame, soit la formule de droite est maintenant vide. Dans ce cas, la frame est la liste des formules spatiales restantes à gauche auxquelles on ajoute toutes les formules pures de gauche.
 	
 Si un tas n'est pas précis, on affiche un message d'erreur correspondant, puis on renvoie qu'il n'y a pas de frame. Ce n'est pas ce qu'on est censé renvoyer, mais c'est le meilleur moyen auquel on ait pensé pour que l'exécution sur l'ensemble des fonctions d'un fichier ne soit pas interrompue, sans avoir à modifier d'autres fichiers que vcgen.ml et entailment.ml. Or on a plusieurs exemples avec des formules non précises dans negatives.ml, et on veut pouvoir tous les tester d'un coup.
+
 
 On étend cet algorithme aux tas symboliques étendus en implémentant les règles d'inférence suivantes : 
 
