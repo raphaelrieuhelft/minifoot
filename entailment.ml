@@ -7,7 +7,6 @@ open Error
 type esh = ext_symb_heap
 type frame = esh option
 
-let print = Format.fprintf !Config.formatter
 
 exception ImpliesFalse
 exception NoFrameExists
@@ -160,7 +159,7 @@ let compute_trans_map left_repr_map right_repr_map =
 	else if exp_is_existential e then
 	  if EMap.mem rrepr trans_map then trans_map
 	  else EMap.add rrepr None trans_map
-	else raise NoFrameExists (* non existential ident appearing in the right symbolic heap but not in the left one (cannot be EXP_null because left_repr_map always contains it *)
+	else raise NoFrameExists (* non existential ident appearing in the right symbolic heap but not in the left one (cannot be EXP_null because left_repr_map always contains it) *)
   in
   let trans_map = EMap.fold translate right_repr_map EMap.empty in
   trans_map
@@ -245,21 +244,20 @@ let get_frame_base sh sh2 =
 
 let build_if c ft ff =
 	match ft, ff with
-		| (Some esht, Some eshf) when esht=eshf -> 
-		  ((*Format.fprintf !Config.formatter "esht=eshf=%a@." pp_esh esht  ;*) 
-		  ft)
+		| (Some esht, Some eshf) when esht=eshf -> ft
 		| Some esht, Some eshf when esht = esh_false -> 
 		  Some (esh_star eshf (esh_of_pure (pure_neg c)))
 		| Some esht, Some eshf when eshf = esh_false -> 
 		  Some (esh_star esht (esh_of_pure c))
-		| Some esht, Some eshf -> ((*Format.fprintf !Config.formatter "esht=%a, eshf=%a@." pp_esh esht pp_esh eshf;*) Some(ESH_ifthenelse(c, esht, eshf)))
+		| Some esht, Some eshf -> Some(ESH_ifthenelse(c, esht, eshf))
 		| _ -> None
 
+		
+		
 let rec get_frame esh esh2 = 
 try match esh, esh2 with
   | ESH_base sh, ESH_base sh2 -> get_frame_base sh sh2
-  | ESH_ifthenelse(c, esht, eshf), _ -> 
-	(*Format.fprintf !Config.formatter "get_frame ifthenelse : if %a then %a else %a@." pp_atomic_pure_formula c pp_esh esht pp_esh eshf; *)
+  | ESH_ifthenelse(c, esht, eshf), _ ->
 	let ft = get_frame (esh_star (esh_of_pure c) esht) esh2 in
 	let ff = get_frame (esh_star (esh_of_pure (pure_neg c)) eshf) esh2 in
 	build_if c ft ff
