@@ -1,0 +1,33 @@
+On ajoute dans le langage source une commande CO_return of exp. Pour pouvoir parler de la valeur de retour dans les annotations (notamment la postcondition), on demande que l'utilisateur indique un nom de variable à retourner, avec par exemple le synopsis suivant :
+
+f(x) [x |-> _z ]
+returns r;
+local t;
+{
+t = x->next;
+return t;
+}
+[x|->r]
+
+On ajoute aux descripteurs de fonction un champ fd_returns of ident. Ce champ est initialisé à r quand l'utilisateur l'indique et à un identifiant frais sinon (dans ce cas, il n'est de toute façon pas utilisé). On ajoute à la fin du corps de chaque fonction une commande return NULL en preprocessing.
+
+On ajoute une instruction SI_return of ext_esh_heap telle que la concaténation de SI_return(esh) et d'une autre instruction symbolique est SI_return(esh).  Sémantiquement, le tas symbolique contenu dans return est la postcondition de la fonction courante.
+La commande CO_return(e) peut alors se compiler comme CO_assign(r, e) suivi de SI_return(post), où r est la valeur de la fonction courante et post sa postcondition.
+On peut ainsi ajouter à la fonction Symbexe.execute_statement le cas suivant :
+
+SI_return post -> if entails esh post then [] else raise InvalidEntailment 
+
+où InvalidEntailment est une nouvelle exception à rattraper dans check_vc : l'important est que la vérification de la condition courante échoue immédiatement.
+
+Préciser la postcondition de la fonction courante est utile pour vérifier des boucles while qui contiennent des return : la condition de vérification associée à la boucle while peut rester inchangée. En effet, quand on exécute l'instruction symbolique return à l'intérieur de la boucle while, la post-condition de la fonction courante court-circuite l'invariant de boucle, ce qui est exactement le comportement souhaité (quand on exécute un return à l'intérieur d'une boucle, on quitte immédiatement la fonction courante : on veut savoir si la postcondition de la fonction est vérifiée et l'invariant de boucle n'a plus d'importance).
+
+De plus, quand on vérifie le corps d'une fonction qui contient une boucle, on peut aussi garder le même jsr que dans notre implémentation actuelle pour la boucle while et continuer à traiter ainsi les cas où on ne quitte pas la fonction depuis l'intérieur de la boucle, tandis que les cas où on quitte la fonction depuis l'intérieur de la boucle sont traités dans la condition de vérification associée à la boucle.
+
+Les appels de fonction doivent alors avoir la forme x=f(y), et la commande CO_parallelCalls a pour syntaxe :
+CO_parallelCalls of (id * func_name * exp list) list. On peut envisager d'ajouter du sucre syntaxique en créant un identifiant frais pour recevoir la valeur de retour si l'utilisateur souhaite la défausser.
+
+Pour chaque appel de fonction x = f(y) où y retourne r, on crée un identifiant frais r' pour r, on substitue r' à r dans la postcondition du deuxième jsr fourni par la fonction Vcgen.jsrs_of_call actuelle (en même temps qu'on substitue les arguments et autres variables de f par leurs copies), et on ajoute un troisième jsr dans lequel on compile l'assignation x = r (en particulier, on renomme x à ce moment là et pas avant : la valeur de x n'a pas encore changé quand on appelle la fonction).
+
+Quand on appelle plusieurs fonctions en parallèle (x1=f1(Y), x2=f2(Z)...), il faut maintenant vérifier que les noms de variable xi sont tous distincts (leur valeur n'est pas importante : elle est remplacée par la valeur de retour de toute façon).
+
+

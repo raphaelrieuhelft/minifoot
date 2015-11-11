@@ -29,7 +29,7 @@ let rec symbseq si1 si2 = match si1 with
   |SI_skip -> si2
   |SI_atomic (asi, si) -> SI_atomic(asi, symbseq si si2)
   |SI_branch (si3, si4) -> SI_branch ((symbseq si3 si2), (symbseq si4 si2))
-
+  
 let rename id id2 = SI_atomic(ASI_rename ( [id, EXP_ident(id2)]), SI_skip)
 
 let rename id = rename id (gensym id)
@@ -97,7 +97,7 @@ let rec chop fundecls = function
   |CO_if (cond, c1, c2) ->
 		let si1, vc1 = chop fundecls c1.command_desc in
 		let si2, vc2 = chop fundecls c2.command_desc in
-		SI_branch (si1, si2), vc1@vc2
+		SI_branch ((SI_atomic(ASI_exhale(cond) ,si1)),(SI_atomic (ASI_exhale(pure_neg cond),si2))), vc1@vc2
   |CO_while (cond, inv, c) ->
 		let post = esh_star inv (ESH_base([pure_neg cond], [])) in
 		let jsr = {jsr_pre = inv; jsr_mod_vars = mod_vars fundecls IdSet.empty c.command_desc; jsr_post = post} in
