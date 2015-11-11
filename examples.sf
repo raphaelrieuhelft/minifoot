@@ -19,22 +19,24 @@ f3(x)[x == _x] {
 } [x== _x * x== y * y|->]
 
 
-/*
+
 f4()[emp] {
   local x,y,t;
   f3(x)||f3(y);
   t = x->tl;
   y->tl = t;
 } [if x==y then false else x|-> _u * y|-> _u]
-*/
+
+
 f5(x,y)[(if x==y then x|->y else emp) * (if x==y then emp else y|->x)] {} [y|->x]
-/*
+
+
 f6(x,y) [x |->y] {
 local t;
 x = new();
 x -> tl = t;
 } [_z != x * x |-> t * _z|->y ]
-*/
+
 
 /* TODO x=x, check undeclared variables*/
 
@@ -106,9 +108,8 @@ testA(x,y) [x|->*y|->] { } [x!=NULL*x!=y*x|->*y|->]
 
 
 testD(x,y) [x|->*y|->] { } [x|->_x*y|->_y]
-/*
 testD2(x,y) [x|->*y|->] { } [_x!=_y*x|->_x*y|->]
-*/
+testD3(x,y) [x|->_x*y|->_x] { } [x|->_y*y|->_y]
 
 testE(x,y) [x|->*x|->] { } [y|->*y|->]
 
