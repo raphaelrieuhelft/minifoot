@@ -167,7 +167,7 @@ let compute_trans_map left_repr_map right_repr_map =
 
 let inhale_right_pointsto_map trans_map left_pointsto_map right_pointsto_map =
 try
-  let inhalable rrepr _ = match EMap.find rrepr trans_map with
+  let inhalable trans_map rrepr _ = match EMap.find rrepr trans_map with
     Some _ -> true | None -> false in
   let inhale rrepr1 rrepr2 (trans_map, left_pointsto_map, right_pointsto_map) =
     let lrepr1 = match EMap.find rrepr1 trans_map with 
@@ -189,7 +189,7 @@ try
     if EMap.is_empty right_pointsto_map then
 	  trans_map, left_pointsto_map
 	else
-	  let inhalables = EMap.filter inhalable right_pointsto_map in
+	  let inhalables = EMap.filter (inhalable trans_map) right_pointsto_map in
 	  let (rrepr1,rrepr2) = try EMap.choose inhalables 
 	    with Not_found -> raise NoFrameExists in
 	  loop (inhale rrepr1 rrepr2 (trans_map, left_pointsto_map, right_pointsto_map))
