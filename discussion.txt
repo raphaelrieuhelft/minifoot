@@ -1,6 +1,6 @@
 * vcgen.ml
 
-Le jeu d'instructions symboliques (inhale, exhale, rename) semble plus adapté à la compilation d'instructions jsr qu'à la compilation directe des instructions du langage source. Nous avons donc pris le parti de compiler dans un premier temps les instructions source vers des jsr à l'aide des petits axiomes du cours, puis de compiler chaque jsr vers des instructions symboliques. On évite ainsi la duplication de code dans la mesure où les instructions symboliques n'apparaissent que dans la fonction qui compile les jsr.
+Le jeu d'instructions symboliques (inhale, exhale, rename) semble plus adapté à la compilation d'instructions jsr qu'à la compilation directe des instructions du langage source. Nous avons donc pris le parti de compiler dans un premier temps les instructions source vers des jsr à l'aide des petits axiomes du cours, puis de compiler chaque jsr vers des instructions symboliques. On évite ainsi la duplication de code dans la mesure où les instructions symboliques n'apparaissent pratiquement que dans la fonction qui compile les jsr.
 
 La compilation d'une instruction source vers un jsr est très simple sauf pour les boucles et les appels de fonction. Pour ces instructions, nous nous sommes largement inspirés de l'article de 2012 présent sur la page de smallfoot (http://arxiv.org/pdf/1204.4804.pdf). Dans cet article, le jeu d'instructions symboliques comprend des jsr et les instructions source qui ne sont pas des boucles ou des appels de fonction, on peut donc compiler ce jeu d'instructions vers des jsr uniquement. En particulier, nous avons utilisé leur compilation des boucles et des appels de fonction vers des jsr pratiquement telle quelle.
 
@@ -9,4 +9,34 @@ Le même article contient une règle d'inférence pour exécuter les jsr dont no
 Notre algorithme pour parcourir le code d'une fonction et le compiler tout en générant d'éventuelles conditions de vérification supplémentaires est lui-même tiré du même article.
 
 Cette approche a aussi l'avantage de concentrer les erreurs potentielles de notre part vers la fonction qui compile les jsr, puisque la compilation d'instructions source vers des jsr est soit facile avec les petits axiomes, soit tirée de l'article...
+
+
+
+
+entailment.ml
+
+Obtention de frame pour des tas symboliques de base (sans if-then-else) :
+          L |- ?? * R
+		  
+Comme expliqué plus haut, on a décidé que les frames renvoyées contiennent toujours toutes les formules pures de L.
+
+On commence par étudier indépendamment L et R. Pour chacun, on obtient soit que le tas n'est pas précis, soit qu'il implique faux (à l'aide d'exceptions), soit les informations a), b) et c) décrites ci-dessous.
+
+	- Si L implique faux et que R est bien précis, on renvoie une frame avec faux comme seule formule spatiale, et les formules pures de L.
+
+	- Si R implique fois mais que L n'implique pas faux, il n'existe pas de frame.
+
+	- Si L et R sont précises et aucune n'implique faux, on veut vérifier que toutes les formules (pures comme spatiales) de R sont impliquées par L, et renvoyer une frame dont les formules spatiales sont celles de L privées de celles qui impliquent une formule spatiale de R, s'il en existe une. On utilise alors les informations suivantes.
+
+		a) Les classes d'équivalence induites par les formules pures qui sont des égalités, sous la forme d'une table qui à chaque expression associe le représentant de sa classe. Le représentant de chaque classe est choisi comme NULL s'il est présent, sinon une variable non existentielle s'il y en a une. Ainsi, en regardant juste le représentant d'une classe, on peut déterminer si elle contient NULL, et si elle ne contient que des variables existentielles. Cette table contient toutes les expressions présentes dans le tas, y compris les variables n'apparaissant pas dans une égalité, qui sont alors seules dans leur classe et donc leur propre représentant.
+ 
+		b) Une table décrivant formules spatiales, qui à la source d'un flèche associe sa cible, où chaque expression a été remplacée par son représentant. C'est en construisant cette table qu'on remarque si NULL (ou une expression de sa classe) pointe vers quelque chose, ou si le tas n'est pas bien séparé, c'est-à-dire qu'une expression apparaît (ou des expressions de la même classe apparaissent) plusieurs fois comme source. Si cela arrive, le tas implique faux. C'est aussi à ce moment qu'on vérifie que le tas est précis : on définit récursivement qu'une classe est précise si elle ne contient pas que des variables existentielles ou si elle apparaît comme cible d'une flèche dont la source est précise ; le tas est précis si toutes les sources de flèches sont dans des classes précises.
+ 
+		c) Une liste de "non-égalités" (x!=y), ne contenant que des représentants, qui consiste en la liste des formules pures qui sont des non-égalités (traduites en termes de représentants), à laquelle on ajoute que toutes les expressions apparaissant comme source d'une flèche dans la table précédente sont deux à deux distinctes et chacune différente de NULL.
+
+	
+	
+Si un tas n'est pas précis, on affiche un message d'erreur correspondant, puis on renvoie qu'il n'y a pas de frame. Ce n'est pas ce qu'on est censé renvoyer, mais c'est le meilleur moyen auquel on ait pensé pour que l'exécution sur l'ensemble des fonctions d'un fichier ne soit pas interrompue, sans avoir à modifier d'autres fichiers que vcgen.ml et entailment.ml. Or on a plusieurs exemples avec des formules non précises dans negatives.ml, et on veut pouvoir tous les tester d'un coup.
+
+
 
