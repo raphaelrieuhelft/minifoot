@@ -19,7 +19,13 @@ f4()[emp] {
 
 f5(x) [_t |->x] {} [_t|->x]
 
+f6(x,y) [x |->y] {
+local t;
+x = new();
+x -> tl = t;
+} [_z != x * x |-> t * _z|->y ]  /*imprecise formula*/
 
+f7()[false]{} [_x|->_y] /*imprecise*/
 
 test4() [emp] { } [_x==_y*_x!=_y*emp]
 

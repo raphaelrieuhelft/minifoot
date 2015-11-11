@@ -27,15 +27,12 @@ f4()[emp] {
   y->tl = t;
 } [if x==y then false else x|-> _u * y|-> _u]
 
+/* f5(x,y)[(if x==y then x|->y else emp) * (if x==y then emp else y|->x)] {} [y|->x] */
 
-f5(x,y)[(if x==y then x|->y else emp) * (if x==y then emp else y|->x)] {} [y|->x]
+f5(x,y)[if x==y then (if x==y then x|-> y else (x |-> y * y |-> x)) else (if x==y then emp else y|-> x)]
+{}
+[y|-> x]
 
-
-f6(x,y) [x |->y] {
-local t;
-x = new();
-x -> tl = t;
-} [_z != x * x |-> t * _z|->y ]
 
 
 /* TODO x=x, check undeclared variables*/
@@ -100,6 +97,8 @@ fB2(x,y)[x==y*x|->y*y|->x] {
 
 fC()[NULL|->] {
 } [false]
+
+fD(x,y)[x==y*x!=y]{}[false]
 
 
 testA(x,y) [x|->*y|->] { } [x!=NULL*x!=y*x|->*y|->]

@@ -246,6 +246,14 @@ let get_frame_base (pfs,sfs) (pfs2,sfs2) =
 	
 let print_exn esh1 esh2 = Format.fprintf !Config.formatter "Error finding frame for %a@." pp_frame (esh1, esh2)
 
+let handle_if c oft off =
+	match oft, off with
+		|(Some ft, Some ff) when ft=ff -> ((*Format.fprintf !Config.formatter "ft=ff=%a@." pp_esh ft  ;*)Some ft)
+		|Some ft, Some ff when oft = frame_of_asf_list [SF_false] -> off
+		|Some ft, Some ff when off = frame_of_asf_list [SF_false] -> oft
+		|Some ft, Some ff -> ((*Format.fprintf !Config.formatter "ft=%a, ff=%a@." pp_esh ft pp_esh ff;*) Some(ESH_ifthenelse(c, ft, ff)))
+		|_-> None
+
 let rec get_frame esh esh2 = match esh, esh2 with
   | ESH_base sh, ESH_base sh2 -> 
   (try 
@@ -253,17 +261,14 @@ let rec get_frame esh esh2 = match esh, esh2 with
   with e -> print_exn esh esh2; raise e
   )
   | ESH_ifthenelse(c, esht, eshf), _ -> 
+	(*Format.fprintf !Config.formatter "get_frame ifthenelse : if %a then %a else %a@." pp_atomic_pure_formula c pp_esh esht pp_esh eshf; *)
 	let ft = get_frame (esh_star (esh_of_pure c) esht) esh2 in
 	let ff = get_frame (esh_star (esh_of_pure (pure_neg c)) eshf) esh2 in
-	(match ft, ff with
-		Some ft, Some ff -> Some(ESH_ifthenelse(c, ft, ff))
-		|_-> None)
+	handle_if c ft ff
   | ESH_base _, ESH_ifthenelse(c, esh2t, esh2f) ->
 	let ft = get_frame (esh_star esh (esh_of_pure c)) esh2t in
 	let ff = get_frame (esh_star esh (esh_of_pure (pure_neg c))) esh2f in
-	(match ft, ff with
-		Some ft, Some ff -> Some(ESH_ifthenelse(c, ft, ff))	
-		|_-> None)
+	handle_if c ft ff
 
 
 
