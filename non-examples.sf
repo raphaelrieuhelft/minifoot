@@ -25,53 +25,43 @@ x = new();
 x -> tl = t;
 } [_z != x * x |-> t * _z|->y ]  /*imprecise formula*/
 
-f7()[false]{} [_x|->_y] /*imprecise*/
-
-
-/* frame tests*/
-
-test4() [emp] { } [_x==_y*_x!=_y*emp]
-
-
-f10(x) [x|->] {} [x==x]
-testA(x,y) [x|->*y|->] { } [emp]
-testA1(x,y,a,b,c) [x|->*y|->*a|->*b|->*c|->] { } [emp]
-
-testB(x,y) [emp] { } [x==y]
-testB1(x,y) [emp] { } [x!=y]
 
 
 
 
-/* not precise */
-testC(x) [x|->] { } [_x|->]
 
-/* not precise */
-testC1(x) [x==_x*_x|->] { } [_x|->]
+/* tests on frame inference */
 
-testD(x,y) [x|->*y|->] { } [x|->_x*y|->_x]
-testD1(x,y) [x|->*y|->] { } [_x==_y*x|->_x*y|->_y]
-testD2(x,y) [x|->*y|->] { } [_x!=_y*x|->_x*y|->_y]
 
-testE(x) [x|->] { } [x|->*x|->]
+test0() [emp] { } [_x==_y*_x!=_y*emp]
 
-/* not precise */
-testF(x) [x|->] { } [_x|->]
+test1a() [emp] {} [_x|->]
+test1b(x) [x|->] {} [emp]
+test1c(x) [x|->] { } [x|->*x|->]
 
-/* not precise */
-testG(x) [_x==_y*_x|->] { } [_x==_y*_x|->]
+test2a(x,y) [emp] { } [x==y]
+test2b(x,y) [emp] { } [x!=y]
 
-testI(x,y) [x|->*y|->] { } [x|->_y*_y|->]
+test3a(x,y) [x|->*y|->] { } [x|->_x*y|->_x]
+test3b(x,y) [x|->*y|->] { } [_x==_y*x|->_x*y|->_y]
+test3c(x,y) [x|->*y|->] { } [_x!=_y*x|->_x*y|->_y]
 
-/* not precise */
-fB()[_x|->_x] {
-} [_x|->_x]
+test4(x,y) [x|->*y|->] { } [x|->_y*_y|->]
 
-/* not precise */
-fB2()[_x|->_y*_y|->_x] {
-} [_x|->_y*_y|->_x]
+test5(x) [emp] { } [_x==x]
+/* We are not sure about this one and put it here because our program rejects it, because we refuse to find a frame for L |- ??*R when R contains non existential variables which are not present in L. Anyway the behavior on this one does not seem very important. */
 
-/* not precise */
-fB3()[_x|->_x] {
-} [false]
 
+/* tests on imprecise formulas */
+
+imprecise0a() [_x|->] { } [_x|->]
+imprecise0b()[_x|->_x] { } [_x|->_x]
+imprecise0c()[_x|->_y*_y|->_x] { } [_x|->_y*_y|->_x]
+imprecise0d(x) [_x==_y*_x|->] { } [_x==_y*_x|->]
+/* all existential variables appearing as target of an arrow or in an equality is not enough */
+
+imprecise1a(x) [x|->] { } [_x|->]
+imprecise1b(x) [x==_x*_x|->] { } [_x|->]
+
+imprecise2a()[_x|->] { } [false]
+imprecise2b()[false]{} [_x|->]

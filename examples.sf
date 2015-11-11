@@ -18,8 +18,6 @@ f3(x)[x == _x] {
     }
 } [x== _x * x== y * y|->]
 
-
-
 f4()[emp] {
   local x,y,t;
   f3(x)||f3(y);
@@ -28,6 +26,7 @@ f4()[emp] {
 } [if x==y then false else x|-> _u * y|-> _u]
 
 f5(x,y)[(if x==y then x|->y else emp) * (if x==y then emp else y|->x)] {} [y|->x] 
+
 
 
 f6(x,y) [x|->y] {
@@ -54,86 +53,77 @@ x=x;		/*variable x should NOT be renamed here*/
 }
 [x==y]
 
+
+
+
+
+
 /* tests on frame inference */
 
 
-test_frame1()[emp] {
-} [_x==_y]
+test0() [emp] { } [emp]
 
 
+test1a() [emp] { } [_x==_x]
 
-test_frame2(x)[_x==x*x|->] {
-} [_x==x*x|->]
+test1b() [emp] { } [_x==_y]
 
-test_frame2a(x)[_x==x*_x|->] {
-} [_x==x*_x|->]
+test1c(x) [x==x] { } [_x==x]
 
-test_frame2b(x)[x|->] {
-} [_x==x*_x|->]
+test1d(x,y) [x==y] { } [emp]
 
-test_frame3(x,y)[x|->y] {
-} [_x==y*x|->_x]
 
-test_frame4(x,y)[x|->y] {
-} [x==x*x|->y]
-
-test_frame5(x,y)[x==y] {
-} [_x==y]
-
-test_frame6(x,y)[x==y] {
-} [emp]
-
-test_frame7(x,y,z)[x==y*y==z] {
+test2a(x,y,z)[x==y*y==z] {
 } [x==z]
 
-test_frame7a(x,y,z)[x==y*y!=z] {
+test2b(x,y,z)[x==y*y!=z] {
 } [x!=z]
 
-test0(x,y) [emp] { } [emp]
+
+test3a(x)[x|->] {
+} [x|->]
+
+test3b(x)[x|->] {
+} [_x==x*_x|->]
+
+test3d(x)[x|->] {
+} [_x==_y*x|->]
 
 
-test1(x,y) [x|->y] { } [x==_x*_x|->y]
+test4a(x,y)[x|->y] {
+} [_x==y*x|->_x]
 
-test2(x,y) [x|->y] { } [y==_y*x|->_y]
+test4b(x,y)[x|->y] {
+} [x|->_x]
 
-test3(x,y) [x==_x*_x|->y] { } [x==_x*_x|->y]
-
-test4() [emp] { } [_x==_y*emp]
-
-test5() [emp] { } [_x==_x*emp]
-
-test6(x,y) [x==y*emp] { } [_x==y*emp]
-
-test7(x,y) [x==y*emp] { } [emp]
-
-test8(x,y) [x==y*emp] { } [x==y*_x==_y*emp]
+test4c(x,y) [x|->y] {
+} [x==_x*_x|->y]
 
 
-fB(x)[x|->*x|->] {
+test5a(x,y) [x|->*y|->] {
+} [x|->_x*y|->_y]
+
+test5b(x,y) [x|->_x*y|->_x] {
+} [x|->_y*y|->_y]
+
+test5c(x,y) [x|->*y|->] {
+} [x!=NULL*x!=y*x|->*y|->]
+
+
+test6(x,y) [x|->y*y|->] { } [x|->_x*_x|->]
+
+
+test7a()[NULL|->] {
 } [false]
 
-fB2(x,y)[x==y*x|->*y|->] {
+test7b(x)[x|->*x|->] {
 } [false]
 
-fB3(x,y)[x|->*y|->] {
-} [x!=y*x|->*y|->]
-
-fC()[NULL|->] {
+test7c(x,y)[x==y*x|->*y|->] {
 } [false]
 
-fD(x,y)[x==y*x!=y]{}[false]
+test7d(x,y)[x==y*x!=y]{
+}[false]
 
+test7e(x,y) [x|->*x|->] { } [y|->*y|->]
 
-testA(x,y) [x|->*y|->] { } [x!=NULL*x!=y*x|->*y|->]
-
-
-
-
-testD(x,y) [x|->*y|->] { } [x|->_x*y|->_y]
-testD2(x,y) [x|->*y|->] { } [_x!=_y*x|->_x*y|->]
-testD3(x,y) [x|->_x*y|->_x] { } [x|->_y*y|->_y]
-
-testE(x,y) [x|->*x|->] { } [y|->*y|->]
-
-/* x|->_x*_x|-> is precise */
-testH(x,y) [x|->y*y|->] { } [x|->_x*_x|->]

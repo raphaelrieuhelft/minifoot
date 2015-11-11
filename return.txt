@@ -4,15 +4,15 @@ f(x) [x |-> _z ]
 returns r;
 local t;
 {
-t = x->next;
-return t;
+	t = x->next;
+	return t;
 }
 [x|->r]
 
-On ajoute aux descripteurs de fonction un champ fd_returns of ident. Ce champ est initialisé à r quand l'utilisateur l'indique et à un identifiant frais sinon (dans ce cas, il n'est de toute façon pas utilisé). On ajoute à la fin du corps de chaque fonction une commande return NULL en preprocessing.
+On ajoute aux descripteurs de fonction un champ fd_returns of ident. Ce champ est initialisé à r quand l'utilisateur l'indique et à un identifiant frais sinon (dans ce cas, il n'est de toute façon pas présent dans les annotations). On ajoute à la fin du corps de chaque fonction une commande return NULL en preprocessing.
 
 On ajoute une instruction SI_return of ext_esh_heap telle que la concaténation de SI_return(esh) et d'une autre instruction symbolique est SI_return(esh).  Sémantiquement, le tas symbolique contenu dans return est la postcondition de la fonction courante.
-La commande CO_return(e) peut alors se compiler comme CO_assign(r, e) suivi de SI_return(post), où r est la valeur de la fonction courante et post sa postcondition.
+La commande CO_return(e) peut alors se compiler comme CO_assign(r, e) suivi de SI_return(post), où r est la valeur de retour de la fonction courante et post sa postcondition.
 On peut ainsi ajouter à la fonction Symbexe.execute_statement le cas suivant :
 
 SI_return post -> if entails esh post then [] else raise InvalidEntailment 

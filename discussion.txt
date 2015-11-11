@@ -1,6 +1,6 @@
-* vcgen.ml
+vcgen.ml
 
-Le jeu d'instructions symboliques (inhale, exhale, rename) semble plus adapté à la compilation d'instructions jsr qu'à la compilation directe des instructions du langage source. Nous avons donc pris le parti de compiler dans un premier temps les instructions source vers des jsr à l'aide des petits axiomes du cours, puis de compiler chaque jsr vers des instructions symboliques. On évite ainsi la duplication de code dans la mesure où les instructions symboliques n'apparaissent pratiquement que dans la fonction qui compile les jsr.
+Le jeu d'instructions symboliques (inhale, exhale, rename) semble particulièrement adapté à la compilation d'instructions jsr. Nous avons donc pris le parti de compiler dans un premier temps les instructions source vers des jsr à l'aide des petits axiomes du cours, puis de compiler chaque jsr vers des instructions symboliques. On évite ainsi la duplication de code dans la mesure où les instructions symboliques n'apparaissent pratiquement que dans la fonction qui compile les jsr.
 
 La compilation d'une instruction source vers un jsr est très simple sauf pour les boucles et les appels de fonction. Pour ces instructions, nous nous sommes largement inspirés de l'article de 2012 présent sur la page de smallfoot (http://arxiv.org/pdf/1204.4804.pdf). Dans cet article, le jeu d'instructions symboliques comprend des jsr et les instructions source qui ne sont pas des boucles ou des appels de fonction, on peut donc compiler ce jeu d'instructions vers des jsr uniquement. En particulier, nous avons utilisé leur compilation des boucles et des appels de fonction vers des jsr pratiquement telle quelle.
 
@@ -11,7 +11,13 @@ Notre algorithme pour parcourir le code d'une fonction et le compiler tout en g�
 Cette approche a aussi l'avantage de concentrer les erreurs potentielles de notre part vers la fonction qui compile les jsr, puisque la compilation d'instructions source vers des jsr est soit facile avec les petits axiomes, soit tirée de l'article...
 
 
+
+---
+
+
 entailment.ml
+
+
 
 Obtention de frame pour des tas symboliques de base (sans if-then-else) :
           L |- ?? * R
@@ -32,9 +38,15 @@ On commence par étudier indépendamment L et R. Pour chacun, on obtient soit qu
  
 		c) Une liste de "non-égalités" (x!=y), ne contenant que des représentants, qui consiste en la liste des formules pures qui sont des non-égalités (traduites en termes de représentants), à laquelle on ajoute que toutes les expressions apparaissant comme source d'une flèche dans la table précédente sont deux à deux distinctes et chacune différente de NULL.
 
-On cherche ensuite un matching entre les formules spatiales à droite et un sous-ensemble des formules spatiales de gauche. Chaque formule porte maintenant uniquement sur des représentants de classe d'équivalence. On va pour cela à éliminer des paires de formules spatiales correspondantes une à une jusqu'à ce qu'il n'y en ait plus à droite. On commence par chercher une formule spatiale à droite x |-> y telle que x doive nécessairement correspondre à un représentant à gauche (par exemple parce que x est aussi présent dans la formule de gauche, auquel cas il doit correspondre à lui-même). Il y a alors au plus une formule à gauche qui peut correspondre : s'il y en a une, on l'enlève et on impose dans la suite que y doit correspondre à la cible de cette formule (si y devait déjà correspondre à une autre classe, il n'y a pas de frame). S'il n'y a pas de formule à gauche qui correspond, il n'y a pas de frame. On itère jusqu'à ce que plus aucune source de paire de droite ne soit contrainte à correspondre à une classe à gauche, auquel cas soit il reste des formules spatiales à droite et il n'y a pas de frame, soit la formule de droite est maintenant vide. Dans ce cas, la frame est la liste des formules spatiales restantes à gauche auxquelles on ajoute toutes les formules pures de gauche.
+	On cherche ensuite un matching entre les formules spatiales de R et un sous-ensemble des formules spatiales de L, en utilisant b) qui porte uniquement sur des représentants de classe d'équivalence. On va pour cela éliminer des paires de formules spatiales correspondantes une à une jusqu'à ce qu'il n'y en ait plus à droite. On commence par chercher une formule spatiale à droite x |-> y telle que x doive nécessairement correspondre à un représentant à gauche (par exemple parce que x est aussi présent dans la formule de gauche, auquel cas il doit correspondre à lui-même). Il y a alors au plus une formule à gauche qui peut correspondre : s'il y en a une, on l'enlève et on impose dans la suite que y doit correspondre à la cible de cette formule (si y devait déjà correspondre à une autre classe, il n'y a pas de frame). S'il n'y a pas de formule à gauche qui correspond, il n'y a pas de frame. On itère jusqu'à ce que plus aucune source de paire de droite ne soit contrainte à correspondre à une classe à gauche, auquel cas soit il reste des formules spatiales à droite et il n'y a pas de frame, soit la formule de droite est maintenant vide. Dans ce cas, la frame candidate est la liste des formules spatiales restantes à gauche auxquelles on ajoute toutes les formules pures de gauche.
+	Enfin, on vérifie que chaque non-égalité de c) pour R est correspond à une non-égalité de c) pour L (en utilisant la correspondance sur les expressions déterminée à l'étape précédente), ou concerne au moins une variable existentielle sur laquelle on n'a pas de correspondance dans L. Si ce n'est pas le cas, il n'y a pas de frame. Si c'est le cas, on renvoie la frame candidate qu'on vient de calculer.
+	
+	Pour faciliter l'implémentation, on a décidé que si R contient des variables non existentielles qui ne sont pas présentes dans L, alors il n'y a pas de frame. C'est vrai si une telle variable apparaît dans L dans une flèche, ou dans une formule pure concernant aussi une expression à laquelle est associée une classe de gauche, puisqu'on ne peut rien déduire à partir de L sur une variable n'apparaissant pas dans L. Le seul cas où cette décision est discutable est si la variable est dans une formule pure de R avec une existentielle : par exemple emp |- ?? * x==_x n'admet pas de frame, ce qui n'est peut-être pas le plus naturel mais ne semble pas très grave.
+	
+	
 	
 Si un tas n'est pas précis, on affiche un message d'erreur correspondant, puis on renvoie qu'il n'y a pas de frame. Ce n'est pas ce qu'on est censé renvoyer, mais c'est le meilleur moyen auquel on ait pensé pour que l'exécution sur l'ensemble des fonctions d'un fichier ne soit pas interrompue, sans avoir à modifier d'autres fichiers que vcgen.ml et entailment.ml. Or on a plusieurs exemples avec des formules non précises dans negatives.ml, et on veut pouvoir tous les tester d'un coup.
+
 
 
 On étend cet algorithme aux tas symboliques étendus en implémentant les règles d'inférence suivantes : 
